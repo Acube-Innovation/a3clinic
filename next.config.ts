@@ -16,6 +16,21 @@ const nextConfig: NextConfig = {
     // deprecated in Next 16).
     remotePatterns: [],
   },
+  async headers() {
+    return [
+      {
+        // Admin uploads in public/uploads have immutable UUID filenames — cache
+        // them hard, matching what the old serving route set.
+        source: "/uploads/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

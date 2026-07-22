@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "db:migrate-content": "node --env-file=.env.local scripts/migrate-content-to-mysql.mjs"
+    "db:migrate": "node --env-file=.env.local scripts/migrate-normalized.ts"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.13.0",

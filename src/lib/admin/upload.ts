@@ -8,12 +8,17 @@ import sharp from "sharp";
 import { requireAdmin } from "./auth";
 
 /**
- * Admin image upload. Files land in content/uploads (NOT /public — files
- * added to /public after build are not reliably served by `next start`) and
- * are streamed back via app/uploads/[...path]/route.ts.
+ * Admin image upload. Files land in public/uploads and are served statically
+ * from the site root at /uploads/<name> (the returned URL). Watermarks are
+ * baked into the pixels here, so static serving keeps them.
+ *
+ * DEPLOYMENT: runtime-written files under public/ are served correctly by
+ * `next start` on a persistent-disk host (EC2 / Lightsail — the deploy target).
+ * They are NOT reliably served on ephemeral/serverless hosts (Vercel/Lambda),
+ * which is one more reason this app is hosted on a normal VM.
  */
 
-const UPLOAD_DIR = path.join(process.cwd(), "content", "uploads");
+const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
 const MAX_BYTES = 5 * 1024 * 1024; // 5 MB
 
 const extensionFor: Record<string, string> = {

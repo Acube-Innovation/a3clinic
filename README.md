@@ -193,21 +193,26 @@ Not yet done: Lighthouse, axe audit, and a real screen-reader pass.
 - **Content editing** — Treatments & Conditions, Shop Products, Blog Posts,
   Testimonials, Homepage FAQs, the Doctor Profile, Clinic Photos, the
   Consultation Page and Clinic & Contact settings are all editable through
-  schema-driven forms (`src/lib/admin/schemas.ts`). Saving writes each
-  collection as a JSON document to **MySQL/MariaDB** (the `documents` table,
-  configured via `MYSQL_*` env vars — see `.env.example`) and revalidates the
-  live site immediately. Without `MYSQL_*` set, the store falls back to JSON
-  files under `/content`. First-time reads fall back to the in-code defaults
-  in `src/data/*`, so an empty database is never an error.
+  schema-driven forms (`src/lib/admin/schemas.ts`). Saving writes to a **fully
+  normalized MySQL/MariaDB schema** — one table per section plus a child table
+  for every nested list (`condition_faqs`, `product_ingredients`, `post_blocks`,
+  `doctor_timeline`, …), configured via `MYSQL_*` env vars (see `.env.example`)
+  — and revalidates the live site immediately. The storage layer lives under
+  `src/lib/admin/db/*` behind the document-shaped `readDoc`/`writeDoc` façade in
+  `store.ts`, so pages and forms are unaware of the schema. Without `MYSQL_*`
+  set, the store falls back to JSON files under `/content`. A section with no
+  rows yet falls back to the in-code defaults in `src/data/*`, so an empty
+  database is never an error.
   - **Setup**: create the database and user (any MySQL 8 / MariaDB 10.x,
-    including AWS RDS), fill `MYSQL_*` in `.env.local`, then load existing
-    `/content` data with `npm run db:migrate-content` (re-runnable; file copy
-    wins). Uploaded images stay on disk in `content/uploads` — back up that
-    folder and the database together.
+    including AWS RDS), fill `MYSQL_*` in `.env.local`, then load existing data
+    with `npm run db:migrate` (re-runnable; decomposes the current documents/JSON
+    into the normalized tables via the app's own repositories). Back up the
+    database and `public/uploads` together.
 - **Clinic Photos** — image uploads (JPG/PNG/WebP ≤ 5 MB) stored in
-  `content/uploads` and served via `app/uploads/[...path]/route.ts` (files
-  added to `/public` after build are not reliably served). They render in the
-  About page gallery; placeholders show until the first upload.
+  `public/uploads` and served statically from the site root at `/uploads/<name>`.
+  They render in the About page gallery; placeholders show until the first upload.
+  Runtime-written `public/` files serve correctly under `next start` on a
+  persistent-disk host (EC2 / Lightsail); avoid ephemeral/serverless hosts.
 - **Before & After** — photo pairs live ON each condition (edited in the
   condition's own form, "Before & after photos"). Each condition page shows its
   pairs in a "Documenting progress" section; the homepage/hair-treatment
