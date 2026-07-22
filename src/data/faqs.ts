@@ -1,0 +1,103 @@
+/** Homepage FAQ set. Condition-specific FAQs live on each condition record. */
+
+import { readDoc } from "@/lib/admin/store";
+
+export type Faq = { question: string; answer: string };
+
+const defaultFaqs: Faq[] = [
+  {
+    question: "How is an online consultation different from visiting the clinic?",
+    answer:
+      "The consultation itself is the same — the same detailed history, the same length, the same follow-up schedule. The difference is that scalp examination happens through clear photographs you upload beforehand rather than in person, and medicines are couriered to you. For most hair and skin conditions this works well. If Dr. Riji judges that a case needs physical examination, you will be told and asked to attend in person.",
+  },
+  {
+    question: "How long does treatment usually take?",
+    answer:
+      "It depends on the condition and how long it has been present. Hair grows about a centimetre a month, so no treatment can show visible change faster than that. Most hair patients are asked to allow three to four months before judging progress, with follow-ups every four to six weeks. Chronic conditions such as PCOD or thyroid disease are managed over a longer period rather than in a fixed course.",
+  },
+  {
+    question: "Can I take homeopathic medicine with my regular medication?",
+    answer:
+      "In most cases yes. You must disclose everything you are taking, including supplements and topical treatments, at your first consultation. Critically, you should never stop or reduce a medication prescribed by another doctor on the basis of starting homeopathic treatment. Any change to conventional medication is a decision for the physician who prescribed it.",
+  },
+  {
+    question: "Do I need blood tests before starting?",
+    answer:
+      "Sometimes. If your history points toward a thyroid, iron, vitamin or hormonal cause, you will be asked for specific tests, because treating hair fall without correcting an underlying deficiency rarely holds. If you have reports from the last year, bring or upload them even if you were told they were normal — some values are worth re-reading in the context of hair.",
+  },
+  {
+    question: "Are homeopathic medicines safe during pregnancy or for children?",
+    answer:
+      "Homeopathic medicines are prepared in highly dilute form and are generally well tolerated, including by children. Always tell the doctor if you are pregnant, trying to conceive or breastfeeding, as this affects both the prescription and any supplements advised. Medicines should never be shared between family members, even with similar symptoms.",
+  },
+  {
+    question: "What results can I expect?",
+    answer:
+      "That depends entirely on your condition, its cause and how long it has been present, and it will be discussed honestly at your first consultation — including when the realistic answer is limited. Some conditions respond well, some are managed rather than resolved, and some do not respond. No outcome is guaranteed, and any clinic guaranteeing one is worth being cautious about.",
+  },
+  {
+    question: "How do I get my medicines if I consult online?",
+    answer:
+      "Medicines are dispensed by the clinic and couriered to your address. Delivery within Kerala typically takes two to three days, and elsewhere in India four to six. International delivery is possible for some destinations but is subject to local import rules, which vary considerably.",
+  },
+  {
+    question: "What does a consultation cost?",
+    answer:
+      "TODO(client): confirm and publish current consultation and follow-up fees here before launch. Patients consistently look for this before booking, and its absence is a common reason for drop-off.",
+  },
+];
+
+export async function getHomeFaqs(): Promise<Faq[]> {
+  return readDoc<Faq[]>("faqs", defaultFaqs);
+}
+
+/** The raw defaults, used by the admin panel to seed first-time edits. */
+export function getFaqDefaults(): Faq[] {
+  return structuredClone(defaultFaqs);
+}
+
+/** Steps rendered by the online consultation process section. */
+export const consultationSteps = [
+  {
+    step: "01",
+    title: "Book your slot",
+    detail:
+      "Choose a date and time that suits you. Online and clinic appointments use the same booking form.",
+    icon: "calendar",
+  },
+  {
+    step: "02",
+    title: "Share your history",
+    detail:
+      "Complete a short health questionnaire and upload any recent blood reports and clear photographs.",
+    icon: "upload",
+  },
+  {
+    step: "03",
+    title: "Consult with Dr. Riji",
+    detail:
+      "A detailed video or in-person consultation of roughly forty-five minutes covering history, cause and plan.",
+    icon: "video",
+  },
+  {
+    step: "04",
+    title: "Receive your prescription",
+    detail:
+      "Your individualised prescription, along with dietary and hair-care guidance, is issued after the consultation.",
+    icon: "file",
+  },
+  {
+    step: "05",
+    title: "Medicines delivered",
+    detail:
+      "Medicines are dispensed by the clinic and couriered to your address, or collected in person.",
+    icon: "package",
+  },
+  {
+    step: "06",
+    title: "Follow up and review",
+    detail:
+      "A review every four to six weeks, with comparison photographs, to assess response and adjust treatment.",
+    icon: "refresh",
+  },
+] as const;

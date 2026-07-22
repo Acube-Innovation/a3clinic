@@ -1,0 +1,130 @@
+{
+  "biography": {
+    "intro": "Dr. Riji Rasheed is a homeopathic physician practising in Kattakkada, Thiruvananthapuram, with a clinical focus on hair and scalp disorders alongside general homeopathic practice.",
+    "paragraphs": [
+      "I am Dr. Riji Rasheed, a Homoeopathic physician with over 16 years of clinical experience. During my years of practice at Dr Rijis Health Care, Kattakada, I observed that hair loss was not merely a cosmetic concern—it often reflected deeper disturbances within the body and mind.",
+      "Patients suffering from alopecia, androgenetic hair loss, dandruff-related hair fall, post-COVID hair loss, thyroid disorders, PCOS, stress, anxiety, and nutritional deficiencies inspired me to study hair disorders more deeply. Every successful recovery reinforced my belief that lasting hair restoration requires identifying and treating the root cause rather than masking symptoms.",
+      "Over the years, I have managed thousands of hair-related cases, refining a patient-centered approach that combines detailed case-taking, constitutional homoeopathic prescribing, lifestyle guidance, and long-term follow-up. My special interest lies in helping patients regain not only healthy hair but also confidence and emotional well-being.",
+      "Today, hair restoration has become one of the core specialties of Dr Rijis Health Care, driven by a commitment to scientific clinical observation, individualized homoeopathic treatment, and compassionate patient care. My mission is to help people restore their hair naturally by addressing the underlying causes and promoting holistic healing.",
+      "\"Healthy hair begins with a healthy person. Treat the cause, and nature restores the rest.\""
+    ]
+  },
+  "education": [
+    {
+      "year": "2011",
+      "qualification": "BHMS — Bachelor of Homeopathic Medicine and Surgery",
+      "institution": "TODO(client): confirm college and university",
+      "detail": "Five-and-a-half year professional degree including a rotating internship."
+    },
+    {
+      "year": "2013",
+      "qualification": "Certificate course in Trichology",
+      "institution": "TODO(client): confirm awarding body",
+      "detail": "Focused study of hair and scalp disorders and their systemic causes."
+    },
+    {
+      "year": "2017",
+      "qualification": "Advanced training — Dermatology in homeopathic practice",
+      "institution": "TODO(client): confirm awarding body",
+      "detail": "Clinical training in chronic skin disease management."
+    }
+  ],
+  "timeline": [
+    {
+      "year": "2011",
+      "title": "Graduated BHMS",
+      "detail": "Completed the degree and rotating internship."
+    },
+    {
+      "year": "2013",
+      "title": "Opened the Kattakkada clinic",
+      "detail": "General homeopathic practice serving Kattakkada and the surrounding panchayats."
+    },
+    {
+      "year": "2016",
+      "title": "Dedicated hair and scalp practice",
+      "detail": "Established a distinct consultation pathway for hair disorders after they became the largest single presenting complaint."
+    },
+    {
+      "year": "2019",
+      "title": "First formulated products",
+      "detail": "Developed the initial scalp oil and shampoo for use alongside treatment."
+    },
+    {
+      "year": "2021",
+      "title": "Online consultation launched",
+      "detail": "Video consultation introduced, extending the practice to patients outside Kerala."
+    },
+    {
+      "year": "2024",
+      "title": "Complete care range",
+      "detail": "Expanded to the current hair and skin range, with a routine card issued at consultation."
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Community health camps",
+      "detail": "Regular free consultation camps across Kattakkada panchayat, with a focus on adolescent and women's health."
+    },
+    {
+      "title": "Patient education",
+      "detail": "Ongoing Malayalam-language content on hair and scalp health, correcting common misinformation about hair loss."
+    },
+    {
+      "title": "Product formulation",
+      "detail": "Developed a range of cosmetic hair and skin preparations for use alongside clinical treatment."
+    },
+    {
+      "title": "Online practice",
+      "detail": "Established a video consultation pathway now serving patients across India and the Gulf."
+    }
+  ],
+  "mission": {
+    "mission": "To treat the person rather than the complaint — identifying why hair or skin is behaving as it is, and being honest about what treatment can and cannot achieve.",
+    "vision": "To make careful, unhurried homeopathic care accessible to patients wherever they are, and to raise the standard of what people expect from a hair consultation.",
+    "values": [
+      {
+        "title": "Honesty about outcomes",
+        "detail": "Patients are told at the first consultation what is realistically achievable in their case — including when the answer is limited. No guaranteed results, no fixed-outcome packages."
+      },
+      {
+        "title": "Investigate before prescribing",
+        "detail": "Where the history points to a thyroid, iron or hormonal cause, testing comes before treatment. Treating the scalp alone rarely holds."
+      },
+      {
+        "title": "Alongside, not instead of",
+        "detail": "Homeopathic treatment complements conventional care. No patient is ever advised to stop a medication prescribed by another physician."
+      },
+      {
+        "title": "Time in the consultation",
+        "detail": "A first consultation runs to roughly forty-five minutes because the history is where the diagnosis usually is."
+      }
+    ]
+  },
+  "gallery": [
+    {
+      "slot": "Clinic reception and waiting area",
+      "label": "Reception"
+    },
+    {
+      "slot": "Consultation room, wide shot",
+      "label": "Consultation room"
+    },
+    {
+      "slot": "Dr. Riji in consultation with a patient (consented)",
+      "label": "In consultation"
+    },
+    {
+      "slot": "Dispensary and medicine storage",
+      "label": "Dispensary"
+    },
+    {
+      "slot": "Product formulation workspace",
+      "label": "Formulation"
+    },
+    {
+      "slot": "Clinic exterior and signage from the road",
+      "label": "Exterior"
+    }
+  ]
+}

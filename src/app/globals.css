@@ -1,0 +1,291 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Dr. Riji's Health Care — design tokens
+   Tailwind v4 is CSS-first: there is no tailwind.config.ts. Everything below
+   in `@theme` generates utilities: a --color-x token yields bg-x, text-x,
+   border-x and friends.
+
+   Palette discipline:
+     teal  = authority + trust. Primary surfaces, CTAs, the scrolled header.
+     olive = ACCENT ONLY. Hairlines, icon strokes, ticks, small badges.
+             Never a large fill. If a block of olive reads as a "section
+             colour", it is wrong.
+   ========================================================================== */
+
+@theme {
+  /* --- Teal: primary brand. 800 is the exact brand value #044B4D --------- */
+  --color-teal-50: #f0f7f7;
+  --color-teal-100: #dcebeb;
+  --color-teal-200: #b8d6d7;
+  --color-teal-300: #8ababc;
+  --color-teal-400: #55979a;
+  --color-teal-500: #2e797c;
+  --color-teal-600: #156063;
+  --color-teal-700: #0a5456;
+  --color-teal-800: #044b4d;
+  --color-teal-900: #033a3c;
+  --color-teal-950: #022628;
+
+  /* --- Olive: accent. 500 is the exact brand value #7A9833 --------------- */
+  --color-olive-50: #f5f8ec;
+  --color-olive-100: #e9f0d6;
+  --color-olive-200: #d3e1ae;
+  --color-olive-300: #b8cd80;
+  --color-olive-400: #9db955;
+  --color-olive-500: #7a9833;
+  --color-olive-600: #647e27;
+  --color-olive-700: #4e621f;
+  --color-olive-800: #3c4c1a;
+  --color-olive-900: #2b3714;
+
+  /* --- Neutrals: exact values from the brand sheet ----------------------- */
+  --color-ink: #143434; /* primary text */
+  --color-muted: #667676; /* secondary text */
+  --color-line: #eaeded; /* borders */
+  --color-platinum: #f7f8f8; /* secondary background */
+  --color-card: #fcfcfc; /* card surface */
+
+  /* --- Typography -------------------------------------------------------- */
+  /* Capped at 4.25rem so "Whole-body Healing." holds on one line inside the
+     hero's left column at 1280px+. Raising this cap re-introduces a 3-line
+     wrap — check the hero before changing it. */
+  --text-display: clamp(2.5rem, 1.5rem + 3.6vw, 4.25rem);
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.03em;
+
+  --text-h1: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.025em;
+
+  --text-h2: clamp(1.875rem, 1.35rem + 2.1vw, 3rem);
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.02em;
+
+  --text-h3: clamp(1.375rem, 1.15rem + 0.9vw, 1.875rem);
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.015em;
+
+  --text-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-lead--line-height: 1.65;
+
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.18em;
+
+  /* --- Radii ------------------------------------------------------------- */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+  --radius-6xl: 3rem;
+
+  /* --- Shadows: layered and soft. Tinted with ink, never pure black ------ */
+  --shadow-soft: 0 1px 2px rgb(20 52 52 / 0.04),
+    0 8px 24px -10px rgb(20 52 52 / 0.08);
+  --shadow-card: 0 1px 2px rgb(20 52 52 / 0.05),
+    0 12px 32px -12px rgb(20 52 52 / 0.1);
+  --shadow-lift: 0 2px 4px rgb(20 52 52 / 0.04),
+    0 24px 48px -16px rgb(4 75 77 / 0.18);
+  --shadow-glass: 0 1px 0 rgb(255 255 255 / 0.06) inset,
+    0 8px 32px -8px rgb(2 38 40 / 0.24);
+
+  /* --- Easing ------------------------------------------------------------ */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* `@theme inline` is REQUIRED when a token references another variable —
+   plain `@theme` resolves fonts incorrectly at the cascade level with no
+   build error, which is easy to ship broken. */
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+
+    /* Floating cards and ambient blobs deliberately bleed past the container.
+       `clip` stops that becoming a sideways page scroll on small screens.
+       Deliberately NOT `hidden`: that would make <html> a scroll container and
+       break every `position: sticky` element on the site. */
+    overflow-x: clip;
+  }
+
+  /* Next 16 no longer forces smooth scrolling on navigation; the matching
+     data-scroll-behavior="smooth" attribute lives on <html> in the layout. */
+  html[data-scroll-behavior="smooth"] {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-teal-800);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-olive-200);
+    color: var(--color-teal-900);
+  }
+
+  /* One consistent focus treatment everywhere, including inside dark sections. */
+  :focus-visible {
+    outline: 2px solid var(--color-olive-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Anchored sections clear the sticky header. */
+  :target {
+    scroll-margin-top: 7rem;
+  }
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+
+/* The one place the teal->olive gradient is allowed, plus its text variant. */
+@utility bg-brand-gradient {
+  background-image: linear-gradient(
+    135deg,
+    var(--color-teal-800) 0%,
+    var(--color-teal-600) 45%,
+    var(--color-olive-600) 100%
+  );
+}
+
+@utility text-brand-gradient {
+  background-image: linear-gradient(
+    120deg,
+    var(--color-teal-700) 0%,
+    var(--color-olive-500) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Subtle glass — used only on the scrolled header and floating chips. */
+@utility glass-dark {
+  background-color: color-mix(in oklab, var(--color-teal-900) 82%, transparent);
+  backdrop-filter: saturate(150%) blur(14px);
+  -webkit-backdrop-filter: saturate(150%) blur(14px);
+}
+
+@utility glass-light {
+  background-color: color-mix(in oklab, white 72%, transparent);
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+}
+
+/* Consistent page gutter + max width. Used by <Container>. */
+@utility container-page {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 2rem;
+  }
+
+  @media (width >= 64rem) {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Organic blob shapes behind hero/feature imagery. */
+@utility blob-a {
+  border-radius: 62% 38% 46% 54% / 55% 48% 52% 45%;
+}
+
+@utility blob-b {
+  border-radius: 42% 58% 63% 37% / 48% 62% 38% 52%;
+}
+
+/* Fine olive hairline used to separate editorial blocks. */
+@utility rule-olive {
+  height: 1px;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-olive-500),
+    color-mix(in oklab, var(--color-olive-500) 0%, transparent)
+  );
+}
+
+/* ==========================================================================
+   Motion — every animation is opt-out via prefers-reduced-motion
+   ========================================================================== */
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-1.5deg);
+  }
+}
+
+@keyframes float-slower {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(2deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-float-slow {
+  animation: float-slow 7s var(--ease-in-out-soft) infinite;
+}
+
+@utility animate-float-slower {
+  animation: float-slower 9s var(--ease-in-out-soft) infinite;
+}
+
+@utility animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,2775 @@
+[
+  {
+    "name": "Hair Fall",
+    "category": "hair",
+    "featured": true,
+    "summary": "Excessive daily shedding, a widening parting or a thinning ponytail — assessed for the underlying cause rather than treated on the scalp alone.",
+    "intro": "Losing 50–100 hairs a day is normal. Persistent shedding beyond that, or hair that no longer grows back at the same density, usually points to something systemic — nutrition, thyroid function, hormones, illness, stress or post-partum change. Homeopathic treatment at the clinic begins by identifying which of these applies to you, because scalp-only treatment rarely holds if the cause sits elsewhere.",
+    "heroImage": "/uploads/7320be79-f93b-49f8-b2fb-d7ccb1ab69cb.png",
+    "introImage": "/uploads/hair-fall-intro.jpg",
+    "symptoms": [
+      "More than 100 hairs shed daily, noticeable on the pillow, comb or shower floor",
+      "A parting that has visibly widened over months",
+      "Reduced ponytail thickness",
+      "Hair that breaks mid-shaft rather than falling from the root",
+      "Scalp becoming visible under direct light",
+      "Slow regrowth after a shedding episode"
+    ],
+    "causes": [
+      "Iron, vitamin D, vitamin B12 or protein deficiency",
+      "Thyroid dysfunction (hypo- or hyperthyroidism)",
+      "Hormonal shifts — PCOD, post-partum, perimenopause",
+      "Telogen effluvium following fever, surgery, illness or acute stress",
+      "Genetic predisposition to androgenetic pattern loss",
+      "Chronic scalp inflammation or untreated dandruff",
+      "Certain medications and crash dieting"
+    ],
+    "treatment": [
+      "A detailed first consultation covering medical history, family history, diet, sleep, stress and menstrual history",
+      "Review of existing blood reports; referral for thyroid, ferritin, vitamin D or hormonal testing where indicated",
+      "Scalp and hair-shaft examination, in person or via clear photographs for online consultations",
+      "An individualised homeopathic prescription — selected for your constitution and cause, not a fixed protocol",
+      "Nutritional and hair-care guidance, including what to stop doing",
+      "Scheduled follow-ups to reassess and adjust the prescription"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–6",
+        "detail": "The focus is on identifying and addressing the underlying cause. Shedding often continues during this period — this is expected and not a sign of failure."
+      },
+      {
+        "phase": "Months 2–4",
+        "detail": "Many patients report that daily shedding begins to settle. Fine regrowth may appear along the hairline and parting."
+      },
+      {
+        "phase": "Months 4–9",
+        "detail": "Where regrowth occurs, this is when it becomes visible in density. Progress is reviewed at each follow-up with comparison photographs."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Response varies considerably between individuals depending on cause, duration and adherence. Some conditions require long-term management rather than a fixed course."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How soon will I see a difference?",
+        "answer": "This varies genuinely from person to person. Hair grows roughly one centimetre a month, so any treatment needs time before visible change is possible. Most patients are asked to allow three to four months before assessing progress, with follow-ups along the way."
+      },
+      {
+        "question": "Do I need blood tests before starting?",
+        "answer": "Not always, but often. If your history suggests thyroid, iron or hormonal involvement, Dr. Riji will ask for specific tests. If you already have recent reports, bring or upload them — it saves both time and cost."
+      },
+      {
+        "question": "Will the hair fall return if I stop treatment?",
+        "answer": "It depends entirely on the cause. Shedding triggered by a one-off event such as illness or childbirth usually settles and stays settled. Hair fall driven by an ongoing condition — thyroid disease or PCOD, for instance — needs that condition managed continuously."
+      },
+      {
+        "question": "Can homeopathy be taken alongside my other medicines?",
+        "answer": "In most cases yes, but you must disclose everything you are taking, including supplements and topical treatments. Never stop a prescribed conventional medication without speaking to the doctor who prescribed it."
+      }
+    ],
+    "results": [],
+    "slug": "hair-fall"
+  },
+  {
+    "name": "Alopecia Areata",
+    "category": "hair",
+    "featured": true,
+    "summary": "Sudden, well-defined bald patches on the scalp or beard, usually autoimmune in origin and often responsive to constitutional treatment.",
+    "intro": "Alopecia areata appears as smooth, round patches of hair loss that develop over days or weeks. It is an autoimmune condition — the body's own immune response targets the hair follicle. The follicle is usually not destroyed, which is why regrowth is possible. Because it is systemic rather than local, treatment addresses the immune picture and the person as a whole.",
+    "heroImage": "/uploads/5fa651b2-064b-4162-9e2a-7f3c65d89cba.png",
+    "introImage": "/uploads/dbabfdc6-2313-4510-a7fb-b607cb23bf30.webp",
+    "symptoms": [
+      "One or more smooth, coin-sized bald patches with clearly defined edges",
+      "Patches appearing rapidly, sometimes overnight",
+      "Short broken hairs at the patch edge, narrower at the base",
+      "Occasional tingling, itching or tenderness before a patch appears",
+      "Nail pitting or ridging in some cases",
+      "Loss in the beard, eyebrows or eyelashes"
+    ],
+    "causes": [
+      "Autoimmune activity directed at the hair follicle",
+      "Genetic predisposition — a family history of autoimmune conditions is common",
+      "Significant emotional or physical stress as a trigger",
+      "Associated thyroid disease, vitiligo or other autoimmune conditions",
+      "Recent viral illness in some presentations"
+    ],
+    "treatment": [
+      "Careful history-taking covering onset, triggers, family autoimmune history and emotional context",
+      "Examination of patch borders to assess whether the condition is active or stabilising",
+      "Screening for associated thyroid and autoimmune involvement where indicated",
+      "Constitutional homeopathic prescribing aimed at the immune picture rather than the patch alone",
+      "Support for stress and sleep, which frequently influence the course",
+      "Regular photographic review to track patch borders objectively"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–8",
+        "detail": "The first goal is stabilisation — stopping new patches from forming. Existing patches may not change during this window."
+      },
+      {
+        "phase": "Months 2–5",
+        "detail": "Fine, colourless vellus hair often appears within patches first. This is an encouraging sign and typically precedes pigmented regrowth."
+      },
+      {
+        "phase": "Months 5–12",
+        "detail": "Where the response is good, vellus hair thickens and regains pigment. Extensive or long-standing cases progress more slowly."
+      },
+      {
+        "phase": "Important",
+        "detail": "Alopecia areata can relapse even after complete regrowth, and some cases do not respond. This is discussed openly at the first consultation rather than after treatment begins."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is alopecia areata permanent?",
+        "answer": "Usually not. The follicles are typically dormant rather than destroyed, which is why regrowth is possible even after months. However, the condition is unpredictable — it can resolve, recur, or in a minority of cases progress. Nobody can reliably predict which course an individual will take."
+      },
+      {
+        "question": "Is it caused by stress?",
+        "answer": "Stress is frequently a trigger rather than the root cause. The underlying mechanism is autoimmune. That said, managing stress genuinely matters, because it influences both the course and the likelihood of relapse."
+      },
+      {
+        "question": "Is it contagious?",
+        "answer": "No. Alopecia areata cannot be passed to anyone else by any form of contact."
+      },
+      {
+        "question": "My child has a patch — is treatment different?",
+        "answer": "The approach is the same in principle but the prescription, dosage and consultation style are adapted for children. Paediatric cases are common and are handled gently, with the child's comfort prioritised."
+      }
+    ],
+    "results": [],
+    "slug": "alopecia"
+  },
+  {
+    "symptoms": [
+      "White or yellow flakes on the scalp, in the hair and on clothing",
+      "Persistent itching, often worse at night",
+      "An oily or, conversely, tight and dry scalp",
+      "Redness or visible inflammation, particularly around the hairline",
+      "Flaking extending to eyebrows, beard or the sides of the nose",
+      "Increased hair shedding during washing and combing"
+    ],
+    "causes": [
+      "Overgrowth of Malassezia yeast, which is naturally present on all skin",
+      "Excess sebum production",
+      "Underlying seborrhoeic dermatitis or scalp psoriasis",
+      "Harsh shampoos, infrequent washing, or heavy oiling that traps residue",
+      "Humidity and heat — a significant factor in Kerala's climate",
+      "Stress and dietary patterns high in sugar and refined carbohydrates"
+    ],
+    "treatment": [
+      "Direct scalp examination to distinguish simple dandruff from seborrhoeic dermatitis or psoriasis, which are managed differently",
+      "Review of current hair-care routine — products, oiling habits and washing frequency",
+      "Internal homeopathic prescription targeting the recurring tendency",
+      "Practical, specific scalp-care correction rather than generic advice",
+      "Dietary guidance where a clear pattern is identified",
+      "Assessment of any associated hair fall so both are addressed together"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–3",
+        "detail": "Itching is usually the first symptom to ease. Flaking often continues while the scalp settles."
+      },
+      {
+        "phase": "Weeks 3–8",
+        "detail": "Flaking and redness typically reduce. Correcting the hair-care routine matters as much as the prescription during this phase."
+      },
+      {
+        "phase": "Months 2–4",
+        "detail": "Focus shifts to preventing recurrence. Where hair fall was linked to scalp inflammation, shedding often settles once the scalp is calm."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Seborrhoeic dermatitis is a relapsing condition. Flare-ups during humid months or periods of stress are common and manageable."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why does my dandruff keep coming back after shampoo works?",
+        "answer": "Medicated shampoos reduce yeast on the scalp surface, which is why they work quickly — and why the problem returns once you stop. They do not change the underlying tendency toward inflammation and sebum production. Treatment aims at that tendency, which is why it takes longer but tends to hold better."
+      },
+      {
+        "question": "Does dandruff actually cause hair fall?",
+        "answer": "Not directly, but the connection is real. Sustained inflammation and repeated scratching weaken the follicle and increase shedding. Treating the scalp often reduces hair fall as a consequence."
+      },
+      {
+        "question": "Should I stop oiling my hair?",
+        "answer": "Not necessarily — but heavy oiling left on an already oily, yeast-affected scalp usually makes things worse. Dr. Riji will advise based on your scalp type rather than applying a blanket rule."
+      }
+    ],
+    "featured": true,
+    "summary": "Persistent flaking, itching or an oily, inflamed scalp — treated as a skin condition in its own right, not merely a cosmetic nuisance.",
+    "intro": "Dandruff sits on a spectrum from mild dryness to seborrhoeic dermatitis, with redness, greasy yellow scaling and constant itching. It matters beyond appearance: sustained scalp inflammation and scratching damage the follicle and are a common, overlooked contributor to hair fall. Treatment addresses the scalp environment together with the internal tendency that keeps it recurring.",
+    "slug": "dandruff",
+    "name": "Dandruff & Scalp Conditions",
+    "category": "hair",
+    "heroImage": "/uploads/dandruff-hero.jpg",
+    "introImage": "/uploads/dandruff-intro.jpg"
+  },
+  {
+    "symptoms": [
+      "Grey or white strands appearing before the age of 25",
+      "Greying concentrated at the temples or crown initially",
+      "Grey hair that is coarser or more wiry than pigmented hair",
+      "Sometimes accompanied by hair fall or thinning",
+      "A family history of early greying in many cases"
+    ],
+    "causes": [
+      "Genetic predisposition — by a considerable margin the most common factor",
+      "Vitamin B12 deficiency",
+      "Thyroid dysfunction",
+      "Iron deficiency anaemia",
+      "Chronic stress and disturbed sleep",
+      "Smoking",
+      "Rarely, associated autoimmune conditions such as vitiligo"
+    ],
+    "treatment": [
+      "Honest assessment of how much is genetic and how much is potentially correctable",
+      "Testing for B12, ferritin and thyroid function where the history warrants it",
+      "Correction of identified deficiencies alongside homeopathic prescribing",
+      "Constitutional treatment addressing stress, sleep and general vitality",
+      "Guidance on avoiding further pigment stress — harsh dyes, chemical treatments, smoking"
+    ],
+    "expectedResults": [
+      {
+        "phase": "First consultation",
+        "detail": "The realistic scope is established. Where greying is clearly genetic and long-standing, this is stated plainly rather than treated as a goal."
+      },
+      {
+        "phase": "Months 1–3",
+        "detail": "Where a deficiency is found and corrected, general hair quality and vitality often improve first."
+      },
+      {
+        "phase": "Months 3–8",
+        "detail": "Slowing the rate of new greying is the realistic aim. Some patients report isolated pigmented regrowth; this is not the expected outcome and is not promised."
+      },
+      {
+        "phase": "Important",
+        "detail": "Reversal of established grey hair is not a reliable outcome of any treatment, homeopathic or otherwise. Any clinic promising it should be treated with caution."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can grey hair turn black again?",
+        "answer": "Honestly, usually not. Where greying is caused by a correctable deficiency such as B12, some pigment recovery is occasionally seen. Where it is genetic, it is not reversible. The realistic and worthwhile goal is slowing further greying."
+      },
+      {
+        "question": "Is it worth getting tested?",
+        "answer": "If greying started before 25, yes. B12 deficiency, thyroid disease and anaemia are all common, all easily tested and all worth correcting for reasons well beyond hair colour."
+      },
+      {
+        "question": "Does plucking grey hairs make more grow?",
+        "answer": "No — that is a myth. Only one hair grows from each follicle. Plucking does damage the follicle over time, though, so it is still best avoided."
+      }
+    ],
+    "featured": true,
+    "summary": "Greying before the age of 25 — investigated for nutritional and thyroid causes, with realistic expectations set from the outset.",
+    "intro": "Hair greys when pigment-producing cells in the follicle reduce their output. When this happens before around 25, it is worth investigating: vitamin B12 deficiency, thyroid dysfunction and anaemia are recognised contributors and are all correctable. Genetics, however, remains the dominant factor, and where greying is genetic no treatment reliably reverses it. That distinction is made clearly at the first consultation.",
+    "slug": "premature-greying",
+    "name": "Premature Greying",
+    "category": "hair",
+    "heroImage": "/uploads/premature-greying-hero.jpg",
+    "introImage": "/uploads/premature-greying-intro.jpg"
+  },
+  {
+    "symptoms": [
+      "A parting that widens gradually over one to two years",
+      "Reduced density at the crown, often first noticed in photographs",
+      "Hair that feels finer and softer than it used to",
+      "Receding at the temples, more common in men",
+      "Scalp visible in bright or overhead light",
+      "Shedding that may be normal in volume — the change is in regrowth quality"
+    ],
+    "causes": [
+      "Androgenetic predisposition — sensitivity of follicles to DHT",
+      "PCOD and other conditions raising androgen levels in women",
+      "Thyroid dysfunction",
+      "Long-standing nutritional deficiency",
+      "Age-related follicular miniaturisation",
+      "Chronic traction from tight hairstyles"
+    ],
+    "treatment": [
+      "Assessment of the pattern and stage, which determines what is realistically achievable",
+      "Hormonal and thyroid evaluation, particularly for women, where PCOD is frequently involved",
+      "Individualised homeopathic prescription addressing the systemic picture",
+      "Nutritional correction and scalp-care guidance",
+      "Standardised photographic documentation at each visit, since gradual change is hard to judge by memory",
+      "Clear guidance on which hairstyling habits are accelerating the process"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "The aim is slowing progression. Existing hair often improves in texture and strength before any density change."
+      },
+      {
+        "phase": "Months 3–6",
+        "detail": "Where follicles remain viable, regrowth of finer hairs may begin in thinned areas."
+      },
+      {
+        "phase": "Months 6–12",
+        "detail": "Meaningful density change, where it occurs, becomes apparent in this window. Comparison photographs are essential — day-to-day observation is unreliable."
+      },
+      {
+        "phase": "Important",
+        "detail": "Pattern hair loss is progressive by nature. Treatment aims to slow it and support what remains viable; areas that have been completely bare for years are unlikely to regrow."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is thinning reversible?",
+        "answer": "Partially, and it depends heavily on stage. Miniaturised follicles that still produce fine hair can often be supported. Follicles that have been dormant for several years generally cannot. This is precisely why early consultation matters so much."
+      },
+      {
+        "question": "I am a woman with thinning at the parting — what should I check?",
+        "answer": "Thyroid function, ferritin and, if you have irregular cycles, acne or unwanted facial hair, a PCOD assessment. Female pattern thinning is very often driven by something correctable."
+      },
+      {
+        "question": "Will treatment help if I have been thinning for ten years?",
+        "answer": "It may help slow further loss and improve the condition of remaining hair, but restoring density in long-bare areas is not a realistic expectation. Dr. Riji will tell you what is achievable in your case before you commit to treatment."
+      }
+    ],
+    "featured": true,
+    "summary": "Gradual reduction in hair calibre and density, typically at the crown or parting, where early intervention makes the greatest difference.",
+    "intro": "Thinning differs from shedding. Here hairs are not necessarily falling in greater numbers; they are regrowing progressively finer and shorter until they no longer provide coverage. This is the pattern of androgenetic hair loss, and it is progressive. The single most important factor in outcome is how early it is addressed — dormant follicles respond, closed ones do not.",
+    "slug": "hair-thinning",
+    "name": "Hair Thinning & Pattern Loss",
+    "category": "hair",
+    "heroImage": "/uploads/hair-thinning-hero.jpg",
+    "introImage": "/uploads/hair-thinning-intro.jpg"
+  },
+  {
+    "symptoms": [
+      "Persistent itching, dryness or scaling",
+      "Recurrent rashes, hives or wheals",
+      "Acne that does not settle with topical treatment",
+      "Thickened or discoloured patches of skin",
+      "Fungal infection that recurs after each course of treatment",
+      "Flares linked to season, stress or particular foods"
+    ],
+    "causes": [
+      "Atopic tendency, often with associated asthma or allergic rhinitis",
+      "Autoimmune activity, as in psoriasis",
+      "Hormonal factors, particularly with acne",
+      "Contact and food allergens",
+      "Humidity, sweat and heat — significant in a coastal climate",
+      "Gut and digestive disturbance"
+    ],
+    "treatment": [
+      "Detailed history of onset, pattern, triggers and previous treatment",
+      "Examination or clear photographs for online consultations",
+      "Constitutional prescribing rather than suppression of the eruption alone",
+      "Identification of dietary and environmental triggers",
+      "Realistic guidance on chronic relapsing conditions such as psoriasis"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–4",
+        "detail": "Itching and discomfort are usually the first symptoms to ease."
+      },
+      {
+        "phase": "Months 1–3",
+        "detail": "Visible improvement in the eruption itself, with reducing frequency of flares."
+      },
+      {
+        "phase": "Months 3–9",
+        "detail": "Focus moves to reducing recurrence. Chronic conditions are managed rather than cured."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will my skin get worse before it gets better?",
+        "answer": "Occasionally a temporary increase in symptoms is seen early in treatment. If this happens, report it at your follow-up rather than stopping treatment on your own — it changes how the prescription is adjusted."
+      },
+      {
+        "question": "Can I continue my steroid cream?",
+        "answer": "Do not stop a prescribed topical steroid abruptly, as this can cause a rebound flare. Discuss it with Dr. Riji, who will advise on a gradual approach in coordination with your dermatologist where appropriate."
+      }
+    ],
+    "featured": false,
+    "summary": "Eczema, psoriasis, acne, urticaria and fungal infections — treated constitutionally, with attention to what drives recurrence.",
+    "intro": "Skin conditions are frequently the visible surface of something internal. Homeopathic treatment looks at the pattern of your skin complaint — where it appears, what aggravates it, how it behaves in heat or humidity — alongside your general health, and prescribes for the whole picture.",
+    "slug": "skin-disease",
+    "name": "Skin Conditions",
+    "category": "skin",
+    "heroImage": "/uploads/skin-disease-hero.jpg",
+    "introImage": "/uploads/skin-disease-intro.jpg"
+  },
+  {
+    "symptoms": [
+      "Fatigue that rest does not resolve",
+      "Unexplained weight change",
+      "Hair fall, particularly diffuse thinning and loss of the outer eyebrow",
+      "Cold or heat intolerance",
+      "Irregular menstrual cycles",
+      "Low mood, anxiety or difficulty concentrating",
+      "Dry skin, constipation or palpitations"
+    ],
+    "causes": [
+      "Hashimoto's thyroiditis and other autoimmune thyroid disease",
+      "Iodine imbalance",
+      "Post-partum thyroiditis",
+      "Genetic predisposition",
+      "Certain medications"
+    ],
+    "treatment": [
+      "Review of current TSH, T3 and T4 reports and existing prescriptions",
+      "Homeopathic treatment for associated symptoms and general vitality",
+      "Specific attention to thyroid-related hair fall, which is very common",
+      "Coordination with — not replacement of — your treating physician",
+      "Periodic re-testing to monitor objectively"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Symptomatic relief is the initial focus — energy, sleep, digestion and mood."
+      },
+      {
+        "phase": "Months 3–6",
+        "detail": "Associated hair fall often begins to settle as general health stabilises."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Thyroid disease usually requires long-term management. Any change to hormone replacement is a decision for your prescribing physician, based on blood results."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I stop my thyroxine tablets?",
+        "answer": "No — not on the basis of homeopathic treatment. Thyroid hormone replacement is prescribed on the basis of blood results and only your prescribing physician should change it. Stopping it abruptly can be genuinely dangerous."
+      },
+      {
+        "question": "Will my thyroid-related hair fall recover?",
+        "answer": "Hair fall from thyroid dysfunction commonly improves once thyroid levels are stable, though it typically lags several months behind normalised blood results."
+      }
+    ],
+    "featured": false,
+    "summary": "Hypothyroidism and hyperthyroidism, managed alongside — never instead of — your endocrinologist's monitoring.",
+    "intro": "Thyroid dysfunction affects weight, energy, mood, menstrual cycles and, very commonly, hair. Homeopathic treatment can support general wellbeing and the associated symptoms. It does not replace thyroid hormone replacement where that has been prescribed, and no one at this clinic will advise you to stop it.",
+    "slug": "thyroid",
+    "name": "Thyroid Disorders",
+    "category": "chronic",
+    "heroImage": "/uploads/thyroid-hero.jpg",
+    "introImage": "/uploads/thyroid-intro.jpg"
+  },
+  {
+    "symptoms": [
+      "Irregular, delayed or absent menstrual periods",
+      "Hair thinning at the crown and parting",
+      "Unwanted facial or body hair",
+      "Persistent acne along the jawline and chin",
+      "Weight gain that is difficult to shift",
+      "Difficulty conceiving",
+      "Mood changes and fatigue"
+    ],
+    "causes": [
+      "Insulin resistance",
+      "Elevated androgen levels",
+      "Genetic predisposition",
+      "Weight and lifestyle factors",
+      "Chronic stress affecting hormonal rhythm"
+    ],
+    "treatment": [
+      "Detailed menstrual, weight and family history",
+      "Review of ultrasound and hormonal reports where available",
+      "Constitutional homeopathic prescribing for the hormonal picture",
+      "Specific attention to scalp thinning and hirsutism",
+      "Practical dietary and exercise guidance targeting insulin resistance",
+      "Follow-up tracking of cycle regularity as the objective marker"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Early focus on cycle regularity, energy and reducing acne severity."
+      },
+      {
+        "phase": "Months 3–6",
+        "detail": "Cycles frequently become more predictable. Scalp thinning typically responds later than other symptoms."
+      },
+      {
+        "phase": "Months 6–12",
+        "detail": "Sustained improvement depends substantially on lifestyle change alongside medication. PCOD is managed long term rather than cured."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will treatment help me conceive?",
+        "answer": "Restoring cycle regularity can support fertility, but conception depends on many factors. If you are actively trying to conceive, tell Dr. Riji at the first consultation so treatment is planned appropriately and coordinated with your gynaecologist."
+      },
+      {
+        "question": "Why is my hair thinning on my scalp but growing on my face?",
+        "answer": "Both are effects of elevated androgens. Scalp follicles are sensitive to them and miniaturise, while facial follicles are stimulated by them. Addressing the hormonal picture is what improves both."
+      }
+    ],
+    "featured": false,
+    "summary": "Irregular cycles, hormonal acne, unwanted hair growth and scalp thinning — addressed together rather than symptom by symptom.",
+    "intro": "PCOD presents differently in different women, and the hair-related effects — thinning at the parting alongside unwanted growth on the face — are among the most distressing. Treatment addresses the hormonal picture as a whole, together with the lifestyle factors that materially influence it.",
+    "slug": "pcod",
+    "name": "PCOD & Women's Health",
+    "category": "womens",
+    "heroImage": "/uploads/pcod-hero.jpg",
+    "introImage": "/uploads/pcod-intro.jpg"
+  },
+  {
+    "symptoms": [
+      "Recurrent sneezing, nasal blockage and watery eyes",
+      "Wheezing, breathlessness or night-time cough",
+      "Hives appearing with heat, cold, food or stress",
+      "Seasonal or dust-triggered flares",
+      "Associated eczema, particularly in children"
+    ],
+    "causes": [
+      "Atopic constitution, usually with family history",
+      "Dust mite, pollen, mould and pet dander exposure",
+      "Food sensitivities",
+      "Humidity and monsoon-season triggers",
+      "Respiratory infections precipitating flares"
+    ],
+    "treatment": [
+      "Identification of individual trigger patterns",
+      "Constitutional prescribing to reduce underlying sensitivity",
+      "Practical guidance on reducing household allergen exposure",
+      "Clear instruction that inhalers and rescue medication continue as prescribed",
+      "Seasonal follow-ups ahead of known trigger periods"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Reduction in the intensity of acute episodes is the first aim."
+      },
+      {
+        "phase": "Months 3–9",
+        "detail": "Many patients report fewer episodes and reduced reliance on rescue medication."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Allergic tendency is constitutional. Treatment aims at long-term reduction in sensitivity rather than elimination."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I stop using my asthma inhaler?",
+        "answer": "No. Never stop or reduce asthma medication without the explicit direction of your treating physician. Asthma can become life-threatening quickly, and a rescue inhaler must always remain accessible."
+      }
+    ],
+    "featured": false,
+    "summary": "Allergic rhinitis, asthma and urticaria — treated with attention to the underlying sensitivity, not just the acute episode.",
+    "intro": "Allergic conditions tend to run together and to run in families. Homeopathic treatment aims to reduce the frequency and severity of episodes over time. Rescue medication for asthma remains essential and must always be kept available.",
+    "slug": "allergy",
+    "name": "Allergies & Asthma",
+    "category": "chronic",
+    "heroImage": "/uploads/allergy-hero.jpg",
+    "introImage": "/uploads/allergy-intro.jpg"
+  },
+  {
+    "symptoms": [
+      "Frequently recurring colds, coughs and tonsillitis",
+      "Childhood eczema and allergic tendency",
+      "Poor appetite and slow weight gain",
+      "Disturbed sleep or night terrors",
+      "Behavioural and concentration concerns",
+      "Recurrent stomach upsets"
+    ],
+    "causes": [
+      "Developing immune system with frequent early exposure",
+      "Inherited atopic tendency",
+      "Nutritional gaps",
+      "School environment and increased infection exposure",
+      "Emotional and family stress"
+    ],
+    "treatment": [
+      "Consultation paced for the child, including developmental and birth history",
+      "Age-appropriate dosage in a palatable form",
+      "Nutritional and routine guidance for parents",
+      "Clear instruction on the warning signs that require urgent conventional care",
+      "Growth and frequency-of-illness tracking across follow-ups"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Reduced severity and duration of individual episodes is usually seen first."
+      },
+      {
+        "phase": "Months 3–6",
+        "detail": "Many parents report a fall in the frequency of infections and improved appetite."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Immunity strengthens naturally with age; treatment supports this rather than replacing it."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Are homeopathic medicines safe for young children?",
+        "answer": "They are prepared in highly dilute form and are generally well tolerated. That said, any medicine for a child should be given only as prescribed, and never shared between children."
+      },
+      {
+        "question": "When should I take my child to a hospital instead?",
+        "answer": "High fever that will not come down, breathing difficulty, persistent vomiting, unusual drowsiness, a rash that does not fade under pressure, or any situation that worries you — go directly to emergency care. Homeopathic treatment is not a substitute for emergency medicine."
+      }
+    ],
+    "featured": false,
+    "summary": "Recurrent infections, allergies, eczema, appetite and behavioural concerns — treated gently and age-appropriately.",
+    "intro": "Children respond well to homeopathic treatment and generally accept the medicines without difficulty. Consultations are unhurried and paced for the child, with parents fully involved in the plan.",
+    "slug": "child-care",
+    "name": "Child Care",
+    "category": "child",
+    "heroImage": "/uploads/child-care-hero.jpg",
+    "introImage": "/uploads/child-care-intro.jpg"
+  },
+  {
+    "symptoms": [
+      "Recurrent one-sided throbbing headache",
+      "Nausea, and sensitivity to light or sound",
+      "Visual aura preceding the headache",
+      "Joint pain and morning stiffness",
+      "Persistent fatigue and disturbed sleep",
+      "Symptoms clearly linked to stress, skipped meals or menstrual cycle"
+    ],
+    "causes": [
+      "Genetic predisposition to migraine",
+      "Hormonal fluctuation",
+      "Irregular meals, sleep debt and dehydration",
+      "Stress and prolonged screen exposure",
+      "Specific dietary triggers",
+      "Sedentary routine and postural strain"
+    ],
+    "treatment": [
+      "Trigger diary review to establish an objective pattern",
+      "Constitutional prescribing for frequency and intensity",
+      "Practical routine correction — meals, sleep, hydration, screen breaks",
+      "Referral for imaging or specialist assessment where red-flag features are present",
+      "Follow-ups tracking episode frequency rather than relying on recall"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–2",
+        "detail": "Reduction in episode intensity is generally the first change."
+      },
+      {
+        "phase": "Months 2–6",
+        "detail": "Many patients report fewer episodes per month and shorter duration."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Long-term control depends on maintaining routine changes alongside treatment."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When is a headache an emergency?",
+        "answer": "A sudden, severe headache unlike any you have had before, one with fever and neck stiffness, or one accompanied by weakness, confusion or visual loss needs immediate hospital assessment. Do not wait for a homeopathic consultation in those circumstances."
+      }
+    ],
+    "featured": false,
+    "summary": "Recurrent headaches, arthritis and stress-related complaints, addressed through trigger patterns and constitutional treatment.",
+    "intro": "Recurrent migraine, joint pain and lifestyle-related complaints share a common thread: they respond best when patterns are identified rather than episodes merely suppressed. Treatment begins with understanding when and why your symptoms occur.",
+    "slug": "migraine",
+    "name": "Migraine & Lifestyle Disorders",
+    "category": "chronic",
+    "heroImage": "/uploads/migraine-hero.jpg",
+    "introImage": "/uploads/migraine-intro.jpg"
+  },
+  {
+    "slug": "androgenetic-alopecia-male",
+    "name": "Androgenetic Alopecia (Male)",
+    "category": "hair",
+    "featured": false,
+    "summary": "Male pattern hair loss — receding temples and a thinning crown driven by follicle sensitivity to DHT, where early intervention matters most.",
+    "intro": "Male androgenetic alopecia is the most common form of hair loss in men. Follicles genetically sensitive to dihydrotestosterone (DHT) shrink over successive growth cycles, producing progressively finer, shorter hair at the temples and crown. It is progressive by nature, which is why the stage at which treatment begins matters more than any other factor: miniaturised follicles that still produce fine hair can be supported, while follicles that have been bare for years rarely recover.",
+    "symptoms": [
+      "Gradual recession at the temples, forming an 'M' shape",
+      "Thinning at the crown that widens over time",
+      "Hair that regrows finer and shorter after each cycle",
+      "Family history of similar loss on either side",
+      "Normal daily shedding — the change is in regrowth quality, not fall count"
+    ],
+    "causes": [
+      "Genetic sensitivity of follicles to DHT",
+      "Family history of pattern loss",
+      "Age-related progression of follicular miniaturisation",
+      "Aggravation by smoking, poor sleep and chronic stress",
+      "Occasionally compounded by nutritional deficiency or scalp inflammation"
+    ],
+    "treatment": [
+      "Assessment of the pattern and stage, which determines what is realistically achievable",
+      "Screening for compounding factors — scalp inflammation, nutrition, sleep and stress",
+      "An individualised homeopathic prescription selected for your constitution and the whole clinical picture",
+      "Practical hair-care and lifestyle guidance specific to the condition",
+      "Follow-up every four to six weeks with standardised comparison photographs"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "The aim is slowing progression. Existing hair often improves in texture and strength before any density change."
+      },
+      {
+        "phase": "Months 3–9",
+        "detail": "Where follicles remain viable, finer regrowth may appear at the margins of thinned areas. Comparison photographs are essential."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Pattern loss is progressive; treatment aims to slow it and support viable follicles. Long-bare areas are unlikely to regrow, and this is discussed honestly at the first visit."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is male pattern baldness reversible?",
+        "answer": "Partially, and only in areas where follicles are still active. Miniaturised follicles producing fine hair can often be supported; follicles that have been dormant for years generally cannot. This is why consulting early makes a genuine difference."
+      },
+      {
+        "question": "My father is bald — will I definitely lose my hair?",
+        "answer": "Not definitely. Genetics from both sides of the family influence risk, but onset age and speed vary widely, and factors within your control — scalp health, nutrition, sleep, smoking — influence how fast it progresses."
+      },
+      {
+        "question": "Do helmets or caps cause this?",
+        "answer": "No. Pattern loss is hormonal and genetic. Headwear does not cause it, though very tight or constantly rubbing headwear can add frictional damage on top."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/androgenetic-alopecia-male-hero.jpg",
+    "introImage": "/uploads/androgenetic-alopecia-male-intro.jpg"
+  },
+  {
+    "slug": "female-pattern-hair-loss",
+    "name": "Female Pattern Hair Loss",
+    "category": "hair",
+    "featured": false,
+    "summary": "Gradual widening of the parting with a preserved front hairline — the female pattern of androgenetic loss, frequently entangled with hormonal and nutritional factors.",
+    "intro": "Female pattern hair loss shows itself differently from the male form: the frontal hairline is usually preserved while density reduces along the central parting, in what clinicians describe with the Ludwig scale. Because thyroid disorders, iron deficiency and PCOS are common in the same age groups and produce overlapping pictures, careful investigation matters more here than in almost any other hair condition — treating the wrong cause wastes months.",
+    "symptoms": [
+      "A parting that looks progressively wider under light",
+      "Reduced ponytail volume over months to years",
+      "Preserved frontal hairline, unlike male-pattern recession",
+      "Scalp show-through at the crown in photographs",
+      "Shedding may be normal — regrowth is finer and shorter"
+    ],
+    "causes": [
+      "Genetic follicle sensitivity to androgens",
+      "Hormonal shifts — PCOS, post-partum change, perimenopause",
+      "Thyroid dysfunction",
+      "Iron and vitamin D deficiency, frequently co-existing",
+      "Family history on either side"
+    ],
+    "treatment": [
+      "Detailed menstrual, hormonal and family history",
+      "Testing for ferritin, thyroid function, vitamin D and androgens where the history indicates",
+      "An individualised homeopathic prescription selected for your constitution and the whole clinical picture",
+      "Practical hair-care and lifestyle guidance specific to the condition",
+      "Follow-up every four to six weeks with standardised comparison photographs"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Investigation and correction of any co-existing deficiency; texture and breakage usually improve first."
+      },
+      {
+        "phase": "Months 3–6",
+        "detail": "Shedding settles where a systemic driver was found; fine regrowth may appear along the parting."
+      },
+      {
+        "phase": "Months 6–12",
+        "detail": "Density change, where it occurs, becomes visible in comparison photographs. Progress is reviewed objectively at each visit."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will I go bald like men do?",
+        "answer": "Almost never. Female pattern loss thins the parting and crown but rarely progresses to baldness. The realistic concern is progressive density loss, which is worth addressing early."
+      },
+      {
+        "question": "Which tests should I do first?",
+        "answer": "Ferritin, thyroid profile and vitamin D cover the most common correctable drivers; an androgen panel is added when cycles are irregular or there are other signs. Bring existing reports — even 'normal' ones are worth re-reading for hair."
+      },
+      {
+        "question": "Can hairstyle changes help?",
+        "answer": "Styling can disguise thinning but tight styles worsen it. Avoiding traction and harsh chemical processing protects what you have while treatment addresses the cause."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/female-pattern-hair-loss-hero.jpg",
+    "introImage": "/uploads/female-pattern-hair-loss-intro.jpg"
+  },
+  {
+    "slug": "acute-telogen-effluvium",
+    "name": "Acute Telogen Effluvium",
+    "category": "hair",
+    "featured": false,
+    "summary": "Sudden heavy shedding starting two to three months after a trigger — illness, childbirth, surgery or acute stress — and usually self-limiting.",
+    "intro": "Acute telogen effluvium is the scalp's delayed response to a systemic shock. A fever, operation, delivery, crash diet or intensely stressful period pushes a large share of follicles into their resting phase together; two to three months later those hairs shed in unison, often alarmingly. Understanding the delay matters: the shedding you notice today reflects an event months ago, and in most cases the condition resolves on its own once the trigger has passed.",
+    "symptoms": [
+      "Sudden increase in daily hair fall, often handfuls in the shower",
+      "Diffuse loss across the whole scalp rather than patches",
+      "Onset roughly two to three months after an identifiable event",
+      "Shed hairs carry a small white bulb at the root",
+      "Overall density reduced but no bare patches"
+    ],
+    "causes": [
+      "High fever or significant infection",
+      "Surgery or major illness",
+      "Childbirth (postpartum effluvium)",
+      "Crash dieting or rapid weight loss",
+      "Severe emotional stress",
+      "Starting or stopping certain medications"
+    ],
+    "treatment": [
+      "Careful history to identify the trigger two to three months before onset",
+      "Screening for iron, thyroid and vitamin D so recovery is not held back by deficiency",
+      "An individualised homeopathic prescription selected for your constitution and the whole clinical picture",
+      "Practical hair-care and lifestyle guidance specific to the condition",
+      "Follow-up every four to six weeks with standardised comparison photographs"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–6",
+        "detail": "The trigger is identified and any co-existing deficiency corrected. Shedding may continue through this period — expected, not failure."
+      },
+      {
+        "phase": "Months 2–4",
+        "detail": "Shedding typically settles. Short regrowth hairs appear along the hairline and parting."
+      },
+      {
+        "phase": "Months 4–9",
+        "detail": "Density visibly recovers in most cases. If shedding persists beyond six months the case is reassessed as chronic."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will my hair grow back?",
+        "answer": "In acute telogen effluvium, almost always yes. The follicles are resting, not damaged. Density typically recovers over six to nine months once the trigger has passed."
+      },
+      {
+        "question": "Why did this start when my life was calm?",
+        "answer": "Because of the built-in delay. Follicles pushed into rest by an event shed their hairs two to three months later — count back and the trigger usually reveals itself."
+      },
+      {
+        "question": "Should I take supplements to speed it up?",
+        "answer": "Only what testing shows you actually need. Correcting a genuine iron or vitamin D deficiency helps recovery; random high-dose supplements do not, and high-dose biotin interferes with thyroid blood tests."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/acute-telogen-effluvium-hero.jpg",
+    "introImage": "/uploads/acute-telogen-effluvium-intro.jpg"
+  },
+  {
+    "slug": "chronic-telogen-effluvium",
+    "name": "Chronic Telogen Effluvium",
+    "category": "hair",
+    "featured": false,
+    "summary": "Fluctuating, diffuse shedding that persists beyond six months, most often in women aged 30–60, frequently without one obvious trigger.",
+    "intro": "When diffuse shedding continues or keeps returning for more than six months it is described as chronic telogen effluvium. It most often affects women between thirty and sixty, tends to fluctuate — better months, worse months — and can be deeply distressing precisely because a single clear trigger is often missing. The reassuring feature: it rarely causes visible baldness, because follicles keep cycling rather than miniaturising. The work is in finding and correcting the sustaining factors.",
+    "symptoms": [
+      "Diffuse shedding persisting or relapsing beyond six months",
+      "Fluctuating course — better and worse phases",
+      "Bitemporal thinning in some cases",
+      "Ponytail thinner than years ago, but no bald patches",
+      "Often distressing out of proportion to visible change"
+    ],
+    "causes": [
+      "Sustained low iron stores (ferritin)",
+      "Thyroid dysfunction",
+      "Ongoing psychological or physiological stress",
+      "Nutritional insufficiency, including low protein intake",
+      "Sometimes no single identifiable cause"
+    ],
+    "treatment": [
+      "Systematic exclusion of sustaining factors — ferritin, thyroid, vitamin D, diet, medication review",
+      "Objective baseline photographs, because fluctuation makes memory unreliable",
+      "An individualised homeopathic prescription selected for your constitution and the whole clinical picture",
+      "Practical hair-care and lifestyle guidance specific to the condition",
+      "Follow-up every four to six weeks with standardised comparison photographs"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Sustaining factors are hunted down and corrected. Objective photographic baselines are set."
+      },
+      {
+        "phase": "Months 3–6",
+        "detail": "Shedding episodes usually become shorter and less intense."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "The condition fluctuates by nature; management aims at longer, more stable good phases, and comparison photographs keep progress honest."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why can't anyone find the cause?",
+        "answer": "Sometimes several small factors sustain it together — borderline ferritin, disturbed sleep, stress — rather than one large one. Methodically correcting each is more productive than searching for a single culprit."
+      },
+      {
+        "question": "Will I go bald?",
+        "answer": "Chronic telogen effluvium very rarely leads to visible baldness. Follicles continue to cycle; density fluctuates but the follicle population is preserved."
+      },
+      {
+        "question": "How is this different from female pattern loss?",
+        "answer": "Pattern loss progressively miniaturises follicles along the parting; chronic effluvium sheds diffusely without miniaturisation. They can co-exist, which is why examination matters."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/chronic-telogen-effluvium-hero.jpg",
+    "introImage": "/uploads/chronic-telogen-effluvium-intro.jpg"
+  },
+  {
+    "slug": "anagen-effluvium",
+    "name": "Anagen Effluvium",
+    "category": "hair",
+    "featured": false,
+    "summary": "Rapid hair loss beginning within days to weeks of chemotherapy, radiation or certain toxins — managed supportively, in coordination with your treating specialists.",
+    "intro": "Anagen effluvium is loss of actively growing hairs, most commonly during chemotherapy or radiotherapy, occasionally from toxin exposure. Because around ninety per cent of scalp hair is in its growth phase at any time, loss is fast and extensive. Two things are said plainly here: this condition is managed alongside — never instead of — your oncology team, and in most cases hair regrows once the causative treatment ends, sometimes with temporary changes in texture or colour.",
+    "symptoms": [
+      "Hair loss beginning within days to weeks of the causative treatment",
+      "Rapid, extensive loss affecting most of the scalp",
+      "Broken, tapered hair shafts rather than shed bulbs",
+      "May involve brows, lashes and body hair",
+      "Regrowth usually begins within months of the cause ending"
+    ],
+    "causes": [
+      "Chemotherapy agents",
+      "Radiotherapy to the scalp",
+      "Certain toxins and heavy metals",
+      "Rarely, severe protein-calorie malnutrition"
+    ],
+    "treatment": [
+      "Coordination with your oncologist or treating physician — their treatment always takes precedence",
+      "Gentle scalp care guidance during the loss phase",
+      "Supportive homeopathic care for general wellbeing during and after treatment",
+      "Nutritional support for regrowth once the causative treatment has finished",
+      "Follow-up as regrowth establishes"
+    ],
+    "expectedResults": [
+      {
+        "phase": "During treatment",
+        "detail": "The focus is comfort, gentle scalp care and general wellbeing. Hair loss during chemotherapy cannot usually be prevented."
+      },
+      {
+        "phase": "First months after",
+        "detail": "Regrowth typically begins within one to three months of the causative treatment ending, sometimes with different texture or colour at first."
+      },
+      {
+        "phase": "Months 3–12",
+        "detail": "Density rebuilds progressively; texture usually normalises over subsequent cycles."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will my hair come back after chemotherapy?",
+        "answer": "In the great majority of cases, yes — regrowth usually starts within one to three months of finishing treatment. Early regrowth may be curlier, finer or differently coloured, and typically normalises over time."
+      },
+      {
+        "question": "Can homeopathy prevent chemotherapy hair loss?",
+        "answer": "No treatment at this clinic prevents it, and you should be cautious of anyone claiming otherwise. Our role is supportive care, and everything is coordinated with your oncology team."
+      },
+      {
+        "question": "Is this the same as ordinary hair fall?",
+        "answer": "No. Ordinary shedding releases resting hairs with a root bulb; anagen effluvium breaks actively growing hairs, which is why onset is so much faster."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/anagen-effluvium-hero.jpg",
+    "introImage": "/uploads/anagen-effluvium-intro.jpg"
+  },
+  {
+    "slug": "alopecia-totalis",
+    "name": "Alopecia Totalis",
+    "category": "hair",
+    "featured": false,
+    "summary": "Autoimmune loss of all scalp hair — a severe form of alopecia areata, approached with realistic expectations and long-term constitutional care.",
+    "intro": "Alopecia totalis is the loss of all scalp hair, an advanced expression of the same autoimmune process as patchy alopecia areata. The follicles are usually preserved rather than destroyed, so regrowth remains biologically possible — yet it must be said honestly that response rates in totalis are considerably lower than in patchy disease, and no treatment of any system reliably reverses it. Care here combines constitutional prescribing with support for the significant emotional weight of the condition.",
+    "symptoms": [
+      "Complete or near-complete loss of scalp hair",
+      "Progression from patchy alopecia areata, sometimes rapid",
+      "Eyebrows and lashes may be preserved (their loss suggests universalis)",
+      "Nail pitting or ridging in many cases",
+      "Scalp skin looks normal — smooth, without scarring"
+    ],
+    "causes": [
+      "Autoimmune activity against hair follicles",
+      "Genetic predisposition, often with a family history of autoimmunity",
+      "Association with thyroid disease and vitiligo",
+      "Severe stress as a trigger in some cases"
+    ],
+    "treatment": [
+      "Full autoimmune and thyroid screening",
+      "Honest discussion of prognosis before treatment begins",
+      "Constitutional homeopathic prescribing aimed at the immune picture",
+      "Support for the psychological impact, which is never minimised",
+      "Practical guidance on scalp protection, and on wigs or coverings for those who want them",
+      "Periodic review, with treatment continued only while it is clinically justifiable"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Screening, stabilisation and honest goal-setting. Any active patchy spread is addressed first."
+      },
+      {
+        "phase": "Months 3–12",
+        "detail": "Where response occurs it usually begins as fine vellus regrowth in islands. Absence of early response is discussed openly."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Totalis can persist, relapse after regrowth, or occasionally remit even after years. Long-term support is offered without false promises."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What are the realistic chances of regrowth?",
+        "answer": "Lower than in patchy alopecia areata, and honesty matters more than optimism here. Spontaneous or treatment-associated regrowth does occur, including after years, but no treatment reliably produces it. We will tell you plainly how your case is responding."
+      },
+      {
+        "question": "Are my eyebrows at risk too?",
+        "answer": "If brows and lashes are also lost the condition is classed as alopecia universalis. Their preservation is a reasonable, though not certain, sign against that progression."
+      },
+      {
+        "question": "Is wearing a wig giving up?",
+        "answer": "Not at all. A well-fitted wig or covering is a legitimate part of living well with totalis, and using one does not interfere with treatment."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/alopecia-totalis-hero.jpg",
+    "introImage": "/uploads/alopecia-totalis-intro.jpg"
+  },
+  {
+    "slug": "alopecia-universalis",
+    "name": "Alopecia Universalis",
+    "category": "hair",
+    "featured": false,
+    "summary": "The most extensive form of alopecia areata — loss of all scalp and body hair — supported with honest expectations and whole-person care.",
+    "intro": "Alopecia universalis is the loss of all hair — scalp, brows, lashes and body. It is the most extensive expression of the alopecia areata spectrum and, like totalis, leaves follicles dormant rather than destroyed. Regrowth is biologically possible but response rates are the lowest on the spectrum, and any clinic promising restoration should be treated with caution. Care here is long-term and whole-person: constitutional prescribing, screening for associated autoimmune disease, and unhurried attention to the practical and emotional realities.",
+    "symptoms": [
+      "Loss of scalp hair, eyebrows, eyelashes and body hair",
+      "Absent nasal hair may increase nose and eye irritation",
+      "Nail changes — pitting, ridging, brittleness",
+      "Skin otherwise normal, without scarring",
+      "Often preceded by patchy or total scalp loss"
+    ],
+    "causes": [
+      "Autoimmune activity against follicles across the whole body",
+      "Strong genetic component",
+      "Associated thyroid disease, vitiligo and other autoimmunity",
+      "Triggering events are less clear at this severity"
+    ],
+    "treatment": [
+      "Comprehensive autoimmune screening, coordinated with specialists where indicated",
+      "Honest prognosis discussion before any treatment plan",
+      "Constitutional homeopathic prescribing",
+      "Practical guidance — eye protection without lashes, sun protection for the scalp, nasal care",
+      "Psychological support, offered as a standing part of care",
+      "Reviews that honestly assess whether treatment is helping"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Screening and adaptation come first: protecting eyes and skin, and establishing sustainable routines."
+      },
+      {
+        "phase": "Months 3–12",
+        "detail": "Any response typically appears as isolated fine regrowth. Its absence is discussed honestly rather than explained away."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Universalis often persists long-term. Support continues regardless of regrowth, because living well with the condition is itself a treatment goal."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is there any chance of my hair returning?",
+        "answer": "Regrowth has been documented even after many years, so the possibility is real — but it is the exception, not the expectation, and no treatment reliably produces it. You deserve that honesty at the outset."
+      },
+      {
+        "question": "Why do my eyes and nose feel irritated?",
+        "answer": "Lashes and nasal hair are filters; without them dust reaches eyes and airways more easily. Wraparound glasses and simple saline care help — practical guidance is part of the consultation."
+      },
+      {
+        "question": "Is this dangerous to my general health?",
+        "answer": "The hair loss itself is not. What matters is screening for associated autoimmune conditions, especially thyroid disease, which is part of care here."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/alopecia-universalis-hero.jpg",
+    "introImage": "/uploads/alopecia-universalis-intro.jpg"
+  },
+  {
+    "slug": "scarring-alopecia",
+    "name": "Scarring Alopecia (Cicatricial)",
+    "category": "hair",
+    "featured": false,
+    "summary": "A group of conditions in which inflammation destroys the follicle and replaces it with scar tissue — early diagnosis is everything, because scarred areas do not regrow.",
+    "intro": "Cicatricial (scarring) alopecias share one defining, sobering feature: the inflammation destroys the hair follicle itself, replacing it with scar tissue in which hair cannot regrow. The entire purpose of management is therefore to recognise the process early and halt its spread while follicles remain. Anyone with itching, burning, redness and smooth shiny patches of loss should be assessed promptly — and a scalp biopsy, arranged through dermatology co-care, is often needed for precise diagnosis.",
+    "symptoms": [
+      "Patches of loss where the scalp looks smooth and shiny, without visible follicular openings",
+      "Itching, burning or tenderness in and around the patches",
+      "Redness or scaling at patch margins while active",
+      "Gradual, sometimes stuttering expansion of affected areas",
+      "Loss that is permanent within established patches"
+    ],
+    "causes": [
+      "Lichen planopilaris and its frontal fibrosing variant",
+      "Discoid lupus erythematosus",
+      "Folliculitis decalvans and other neutrophilic conditions",
+      "Central centrifugal cicatricial alopecia",
+      "Severe untreated infections, burns and radiation"
+    ],
+    "treatment": [
+      "Prompt assessment of any suspicious patch — speed genuinely matters here",
+      "Referral for dermatological co-care and scalp biopsy where diagnosis is uncertain",
+      "Honest explanation of what is and is not recoverable before treatment starts",
+      "Constitutional homeopathic care alongside — never instead of — indicated conventional treatment",
+      "Photographic mapping of patch borders at every review to verify the process is halted"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Immediately",
+        "detail": "Establishing the diagnosis and halting active inflammation is the whole game. Symptoms — itch, burning — usually ease first."
+      },
+      {
+        "phase": "Months 2–6",
+        "detail": "Success is measured by stable patch borders on comparison photographs, not by regrowth within scarred skin."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Scarred areas do not regrow; stated plainly. Long-term surveillance guards against reactivation, and cosmetic options are discussed openly."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will the bald patches fill in again?",
+        "answer": "Within truly scarred areas, no — the follicles there are gone, and honesty about this protects you from false promises. At the active margins, where follicles still survive, halting inflammation can preserve them."
+      },
+      {
+        "question": "Do I really need a biopsy?",
+        "answer": "Often, yes. Different scarring alopecias need different management, and they can look alike. A small scalp biopsy, arranged through dermatology, frequently settles the diagnosis."
+      },
+      {
+        "question": "Can homeopathy alone control this?",
+        "answer": "Scarring alopecias often warrant conventional anti-inflammatory treatment, and our care runs alongside it, not instead of it. Sacrificing follicles you can never regrow to test a single approach is not a trade we recommend."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/scarring-alopecia-hero.jpg",
+    "introImage": "/uploads/scarring-alopecia-intro.jpg"
+  },
+  {
+    "slug": "lichen-planopilaris",
+    "name": "Lichen Planopilaris",
+    "category": "hair",
+    "featured": false,
+    "summary": "An inflammatory scarring alopecia with itching, burning and redness around follicles — treated urgently to preserve unaffected hair.",
+    "intro": "Lichen planopilaris is the follicular form of lichen planus and one of the more common scarring alopecias. Lymphocytic inflammation attacks the upper follicle, producing itch, burning, perifollicular redness and scale, and — if unchecked — permanent patches. Because destroyed follicles cannot be recovered, it is treated as a condition of urgency: dermatological co-care, often with biopsy confirmation, alongside constitutional support.",
+    "symptoms": [
+      "Itching, burning or tenderness of the scalp, often out of proportion to visible change",
+      "Redness and fine scale hugging individual follicles",
+      "Patchy loss, frequently at the crown and vertex",
+      "Smooth, shiny skin within established patches",
+      "Sometimes associated lichen planus of skin, nails or mouth"
+    ],
+    "causes": [
+      "Autoimmune lymphocytic inflammation directed at the follicle",
+      "Possible hormonal influence — most patients are middle-aged women",
+      "Associations with thyroid autoimmunity",
+      "Triggers remain incompletely understood"
+    ],
+    "treatment": [
+      "Prompt referral for dermatological assessment and biopsy confirmation",
+      "Constitutional homeopathic prescribing alongside indicated conventional anti-inflammatories",
+      "Scalp comfort measures for itch and burning",
+      "Screening for lichen planus elsewhere — mouth, nails, skin",
+      "Photographic border-mapping at each review to confirm arrest"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–8",
+        "detail": "Reducing active inflammation is the priority; itch and burning typically ease before anything visible changes."
+      },
+      {
+        "phase": "Months 2–6",
+        "detail": "Stable patch borders on photographs are the marker of success; redness and scale around follicles fade."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Established patches are permanent. The condition can smoulder and reactivate, so periodic surveillance continues after apparent quiet."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why does my scalp burn when the loss looks small?",
+        "answer": "The inflammation sits deep around the follicle, so symptoms often precede and exceed visible loss. Burning and itch are useful early warnings — take them seriously."
+      },
+      {
+        "question": "Is lichen planopilaris contagious or cancerous?",
+        "answer": "Neither. It is an inflammatory autoimmune condition, not an infection or malignancy."
+      },
+      {
+        "question": "What happens if I wait and watch?",
+        "answer": "With scarring alopecias, waiting is the one strategy with an irreversible price: every follicle destroyed during observation is permanent. Early assessment costs little; delay can cost hair you cannot recover."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/lichen-planopilaris-hero.jpg",
+    "introImage": "/uploads/lichen-planopilaris-intro.jpg"
+  },
+  {
+    "slug": "frontal-fibrosing-alopecia",
+    "name": "Frontal Fibrosing Alopecia",
+    "category": "hair",
+    "featured": false,
+    "summary": "A progressive band-like recession of the frontal hairline, most often in post-menopausal women, frequently with eyebrow loss — halting progression is the goal.",
+    "intro": "Frontal fibrosing alopecia is a scarring alopecia, considered a variant of lichen planopilaris, in which the frontal and temporal hairline recedes in a smooth band — often with loss of eyebrows preceding it. It predominantly affects post-menopausal women and has become strikingly more common over recent decades. The receded band is permanent, so the entire aim of care is early recognition and arrest of the advancing edge, usually in co-management with dermatology.",
+    "symptoms": [
+      "Symmetrical band-like recession of the frontal hairline",
+      "Pale, smooth skin in the receded band, its follicular openings lost",
+      "'Lonely hairs' — isolated survivors ahead of the new hairline",
+      "Eyebrow thinning or loss, often the first sign",
+      "Itch or redness along the advancing edge in active phases"
+    ],
+    "causes": [
+      "A lymphocytic scarring process akin to lichen planopilaris",
+      "Strong association with the post-menopausal hormonal state",
+      "Possible environmental contributors under active research",
+      "Occasional family clustering"
+    ],
+    "treatment": [
+      "Early assessment of any receding band or unexplained eyebrow loss",
+      "Dermatological co-care, with biopsy where the picture is unclear",
+      "Constitutional homeopathic prescribing alongside indicated conventional care",
+      "Gentle skin care for the affected margin; sun protection for exposed skin",
+      "Serial photographs of the hairline and brows at every review"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Activity at the advancing edge — itch, redness — is settled and baselines photographed."
+      },
+      {
+        "phase": "Months 3–12",
+        "detail": "Success is a hairline that stops receding; measurement, not memory, decides this."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "The receded band does not regrow, said plainly. Brow regrowth is occasionally seen when caught early; long-term surveillance continues."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will my hairline come back?",
+        "answer": "The smooth receded band is scarred and will not regrow — the honest goal is stopping further recession. This is exactly why early consultation matters so much."
+      },
+      {
+        "question": "My eyebrows thinned years before my hairline — related?",
+        "answer": "Very possibly. Eyebrow loss precedes hairline recession in a large share of cases and is an important early clue."
+      },
+      {
+        "question": "Is this caused by sunscreen?",
+        "answer": "A debated association exists in research but nothing is proven. We advise balanced sun protection rather than abandoning it, and focus on what demonstrably helps: early arrest of the inflammation."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/frontal-fibrosing-alopecia-hero.jpg",
+    "introImage": "/uploads/frontal-fibrosing-alopecia-intro.jpg"
+  },
+  {
+    "slug": "discoid-lupus-scalp",
+    "name": "Discoid Lupus Erythematosus (Scalp)",
+    "category": "hair",
+    "featured": false,
+    "summary": "Coin-shaped inflamed, scaly plaques that scar and destroy follicles — an autoimmune condition needing prompt, coordinated care.",
+    "intro": "Discoid lupus erythematosus is a chronic autoimmune condition of the skin which, on the scalp, produces well-defined inflamed plaques with adherent scale, follicular plugging and pigment change. Left active, the plaques scar and the hair within them is permanently lost. Scalp DLE requires coordinated care — rheumatological or dermatological assessment, photoprotection and monitoring — with constitutional homeopathic support alongside.",
+    "symptoms": [
+      "Coin-shaped red or violaceous plaques with adherent scale",
+      "Plugged follicles — scale pulling out with a 'carpet-tack' undersurface",
+      "Pigment change — darkening at edges, pale centres",
+      "Scarred, smooth hair loss within established plaques",
+      "Marked sensitivity to sun exposure"
+    ],
+    "causes": [
+      "Autoimmune inflammation of the skin (a form of cutaneous lupus)",
+      "Ultraviolet light as a major trigger and aggravator",
+      "Genetic predisposition",
+      "Smoking, which worsens the condition and blunts treatment"
+    ],
+    "treatment": [
+      "Coordinated assessment — dermatology/rheumatology co-care and screening for systemic lupus",
+      "Strict, practical photoprotection for the scalp",
+      "Constitutional homeopathic prescribing alongside indicated conventional treatment",
+      "Support for stopping smoking, which measurably improves outcomes",
+      "Photographic monitoring of plaques at every review"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Active plaques are settled and sun protection embedded; itch and soreness ease first."
+      },
+      {
+        "phase": "Months 3–9",
+        "detail": "Plaques flatten, scale reduces and pigment slowly evens; scarred centres do not regrow hair."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "DLE relapses with sun and stress; long-term photoprotection and periodic screening for systemic involvement continue."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is discoid lupus the same as systemic lupus?",
+        "answer": "No. DLE is primarily a skin condition; only a minority develop systemic lupus. Periodic screening is done precisely so any change is caught early."
+      },
+      {
+        "question": "Why is sun protection stressed so much?",
+        "answer": "Ultraviolet light is the most reliable trigger of new plaques. A hat and scalp sunscreen are treatment here, not lifestyle advice."
+      },
+      {
+        "question": "Will the bald patches recover?",
+        "answer": "Within scarred plaque centres, no — which is why halting active inflammation early is the entire strategy."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/discoid-lupus-scalp-hero.jpg",
+    "introImage": "/uploads/discoid-lupus-scalp-intro.jpg"
+  },
+  {
+    "slug": "ccca",
+    "name": "Central Centrifugal Cicatricial Alopecia",
+    "category": "hair",
+    "featured": false,
+    "summary": "Scarring hair loss that begins at the crown and spreads outward — most common in women of African descent, and best caught early.",
+    "intro": "Central centrifugal cicatricial alopecia begins at the crown and expands outward in a slow circle of follicle destruction. It is the most common scarring alopecia in women of African descent, and while its causes are still being clarified, long-term traction and certain chemical or heat practices are suspected contributors in genetically susceptible scalps. As with all scarring alopecias, the central scarred zone is permanent — care aims to halt the advancing margin.",
+    "symptoms": [
+      "Thinning that starts at the crown and spreads outward symmetrically",
+      "Scalp in the centre becomes smooth and shiny",
+      "Tenderness, tingling or itching, often preceding visible loss",
+      "Breakage at the crown as an early warning sign",
+      "Slow progression over years"
+    ],
+    "causes": [
+      "A follicular scarring process with genetic susceptibility",
+      "Suspected contribution of long-term traction styling",
+      "Possible contribution of chemical relaxers and repeated high heat",
+      "Family history in a significant share of cases"
+    ],
+    "treatment": [
+      "Early assessment of crown thinning, tenderness or persistent breakage",
+      "Immediate retirement of traction, relaxer and high-heat practices",
+      "Dermatological co-care with biopsy where diagnosis needs confirmation",
+      "Constitutional homeopathic prescribing alongside indicated care",
+      "Photographic mapping of the margin at every review"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Contributing practices stop and active inflammation settles; tenderness and itch ease first."
+      },
+      {
+        "phase": "Months 3–9",
+        "detail": "The advancing margin stabilises — verified photographically, not by impression."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "The scarred centre does not regrow. Preserved surrounding hair is protected long-term with gentle styling."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Did my hairstyle cause this?",
+        "answer": "Styling practices are suspected contributors in susceptible scalps rather than the sole cause. Regardless, retiring traction, relaxers and high heat is a necessary part of protecting the hair that remains."
+      },
+      {
+        "question": "Why is my crown tender before I see loss?",
+        "answer": "The inflammation runs deep around follicles, so sensation often precedes visible change. Crown tenderness or tingling with breakage deserves early assessment."
+      },
+      {
+        "question": "Can the centre regrow if I treat aggressively?",
+        "answer": "No treatment recovers scarred follicles, and promises otherwise should raise suspicion. Every effort goes into the margin, where follicles are still alive."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/ccca-hero.jpg",
+    "introImage": "/uploads/ccca-intro.jpg"
+  },
+  {
+    "slug": "tinea-capitis",
+    "name": "Tinea Capitis",
+    "category": "hair",
+    "featured": false,
+    "summary": "Fungal infection of the scalp — scaly patches with broken hairs, most common in children and contagious, requiring properly coordinated treatment.",
+    "intro": "Tinea capitis is a dermatophyte (ringworm) infection of the scalp, most common in school-age children and readily passed between close contacts. It produces scaly patches with hair broken at or near the surface, sometimes with black dots, and in severe inflammatory cases a boggy swelling called a kerion that risks scarring. One thing is stated without hedging: established tinea capitis requires systemic antifungal treatment under a physician — surface creams cannot reach fungus inside the hair shaft. The clinic coordinates that care and supports recovery.",
+    "symptoms": [
+      "Round scaly patches with hair broken close to the scalp",
+      "Black-dot stubble within patches",
+      "Itching, sometimes with tender swollen neck glands",
+      "In severe cases a boggy, pustular swelling (kerion)",
+      "Often other affected children in the household or class"
+    ],
+    "causes": [
+      "Dermatophyte fungi spread by direct contact",
+      "Shared combs, caps, pillows and barber tools",
+      "Contact with infected pets in some species",
+      "Close-contact settings — schools, hostels, sports"
+    ],
+    "treatment": [
+      "Prompt diagnosis, with fungal confirmation where available",
+      "Coordination of systemic antifungal treatment with your physician — this is non-negotiable for cure",
+      "Household measures: no shared combs or headwear, washing of bedding, checking contacts",
+      "Supportive homeopathic care for scalp comfort and general resilience",
+      "Review to confirm clearance and full regrowth"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–2",
+        "detail": "Diagnosis is confirmed and proper systemic treatment begun; household spread is closed off."
+      },
+      {
+        "phase": "Weeks 2–8",
+        "detail": "Itch and scaling settle over the treatment course; broken patches stop expanding."
+      },
+      {
+        "phase": "Months 2–6",
+        "detail": "Hair regrows fully in non-scarred areas. Kerion cases are watched closely, as delayed treatment there can scar."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can this be cured with creams or oils alone?",
+        "answer": "No — the fungus lives inside the hair shaft where surface treatments cannot reach. Established tinea capitis needs a course of oral antifungal medicine under a physician, and we will coordinate exactly that."
+      },
+      {
+        "question": "Will my child's hair grow back?",
+        "answer": "Almost always completely, provided treatment is not delayed. The exception is a severe kerion left untreated, which can scar — one reason speed matters."
+      },
+      {
+        "question": "How do I stop it spreading at home?",
+        "answer": "Separate combs, caps and pillowcases; wash bedding hot; check siblings' scalps; and mention pets, which occasionally carry the fungus."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/tinea-capitis-hero.jpg",
+    "introImage": "/uploads/tinea-capitis-intro.jpg"
+  },
+  {
+    "slug": "scalp-folliculitis",
+    "name": "Folliculitis (Scalp)",
+    "category": "hair",
+    "featured": false,
+    "summary": "Itchy or tender pustules around hair follicles — usually bacterial or fungal, uncomfortable, and very treatable once the driver is found.",
+    "intro": "Scalp folliculitis is inflammation of follicle openings, showing as small pustules or tender red bumps, often along the hairline. Bacteria, yeast overgrowth, occlusion from oils and helmets, and sweat all contribute. It is more uncomfortable than dangerous, but persistent or deep cases deserve proper assessment — recurrent deep folliculitis can damage follicles, and a rarer scarring form (folliculitis decalvans) needs specific care.",
+    "symptoms": [
+      "Small pustules or red bumps centred on follicles",
+      "Itching, stinging or tenderness",
+      "Clusters along the hairline and nape",
+      "Crusting where pustules break",
+      "Flares with sweat, oiling, helmets or humid weather"
+    ],
+    "causes": [
+      "Bacterial infection of follicle openings",
+      "Malassezia yeast overgrowth",
+      "Occlusion — heavy oils, pomades, helmets, tight caps",
+      "Sweat and humid climate",
+      "Shaving or friction at the nape"
+    ],
+    "treatment": [
+      "Examination to distinguish bacterial, fungal and occlusive patterns",
+      "Hygiene and product review — often the decisive step",
+      "Homeopathic prescription addressing the recurring tendency",
+      "Guidance on helmet and sweat management for Kerala's climate",
+      "Escalation to co-managed care if deep or scarring features appear"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–3",
+        "detail": "Occluding products and habits are corrected; new pustule formation slows."
+      },
+      {
+        "phase": "Weeks 3–8",
+        "detail": "Existing lesions settle and tenderness resolves."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Recurrence tendency is managed; flare-ups in humid months become less frequent and milder."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is scalp folliculitis contagious?",
+        "answer": "Ordinary folliculitis is not meaningfully contagious; it reflects local follicle conditions rather than a spreading infection. Shared towels and razors are still best avoided."
+      },
+      {
+        "question": "Why does it come back every summer?",
+        "answer": "Sweat, humidity and occlusion are its favourite conditions. Adjusting washing frequency and helmet habits for the season usually breaks the cycle."
+      },
+      {
+        "question": "Should I stop oiling my hair?",
+        "answer": "Heavy oil on a folliculitis-prone scalp feeds the problem. Light, wash-out use may be acceptable once settled — guidance is tailored to your scalp at consultation."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/scalp-folliculitis-hero.jpg",
+    "introImage": "/uploads/scalp-folliculitis-intro.jpg"
+  },
+  {
+    "slug": "folliculitis-decalvans",
+    "name": "Folliculitis Decalvans",
+    "category": "hair",
+    "featured": false,
+    "summary": "A rare scarring folliculitis with recurring pustules and 'tufted' hairs — needs early, coordinated care to limit permanent loss.",
+    "intro": "Folliculitis decalvans is a rare, chronic neutrophilic condition in which recurring pustules and crusting around follicles lead to scarring loss, classically with 'tufting' — multiple hairs emerging from a single opening like doll's hair. Staphylococcus aureus is usually recoverable from lesions, though the underlying problem seems to be an exaggerated immune response to it. Because each flare can destroy follicles permanently, it is managed early and in coordination with dermatology.",
+    "symptoms": [
+      "Recurring crops of pustules and crusts on the scalp",
+      "Expanding patches of scarring loss",
+      "Tufted hairs — several shafts from one follicular opening",
+      "Itch, pain or burning during flares",
+      "A relapsing course over years if untreated"
+    ],
+    "causes": [
+      "Exaggerated inflammatory response to Staphylococcus aureus",
+      "Neutrophilic scarring inflammation of the follicle",
+      "Possible genetic susceptibility",
+      "Flares triggered by occlusion and trauma in some patients"
+    ],
+    "treatment": [
+      "Early dermatological co-care — flare control usually needs conventional antimicrobial treatment",
+      "Swab-guided coordination with your physician",
+      "Constitutional homeopathic support alongside, aimed at the relapsing tendency",
+      "Strict avoidance of occlusion and scalp trauma",
+      "Photographic mapping to confirm the scarring margin is halted"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–8",
+        "detail": "Active pustular flare is brought under control in co-managed care; pain and crusting settle."
+      },
+      {
+        "phase": "Months 2–6",
+        "detail": "Flare frequency falls; the scarred area stops expanding on photographs."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Scarred zones are permanent. Long-term management aims at ever-longer intervals between flares."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why do several hairs grow from one spot?",
+        "answer": "Scarring pulls surviving follicles together so multiple shafts exit one opening — the 'tufting' that helps identify this condition."
+      },
+      {
+        "question": "Can homeopathy alone control the flares?",
+        "answer": "Active flares generally need conventional antimicrobial treatment, and delaying it costs follicles permanently. Our care runs alongside to address the relapsing tendency, not as a substitute during flares."
+      },
+      {
+        "question": "Is it curable?",
+        "answer": "It is controllable more than curable: with coordinated care, flares become infrequent and scarring stops advancing. Existing scarred patches do not regrow."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/folliculitis-decalvans-hero.jpg",
+    "introImage": "/uploads/folliculitis-decalvans-intro.jpg"
+  },
+  {
+    "slug": "seborrheic-dermatitis",
+    "name": "Seborrheic Dermatitis (Scalp)",
+    "category": "hair",
+    "featured": false,
+    "summary": "Greasy yellow scaling with redness and itch — the inflamed end of the dandruff spectrum, managed for the long game because it relapses.",
+    "intro": "Seborrheic dermatitis is the inflamed elder sibling of ordinary dandruff: greasy yellowish scale on a background of redness, favouring the scalp margins, brows and folds beside the nose. It reflects an exaggerated response to Malassezia yeast on sebum-rich skin and follows a relapsing course, flaring with humidity, stress and season. Sustained scalp inflammation also aggravates shedding, so treating it protects hair as well as comfort.",
+    "symptoms": [
+      "Greasy, yellowish scale on red skin",
+      "Persistent itch, often worse at night and with sweat",
+      "Involvement of hairline margins, brows and nasal folds",
+      "Flaking onto clothing",
+      "Increased shedding during active phases"
+    ],
+    "causes": [
+      "Exaggerated response to Malassezia yeast",
+      "Higher sebum production",
+      "Stress, fatigue and season as flare triggers",
+      "Humidity — a significant factor in Kerala",
+      "Genetic tendency"
+    ],
+    "treatment": [
+      "Scalp examination to distinguish it from psoriasis and simple dandruff",
+      "Correction of washing and oiling routine — decisive in most cases",
+      "Constitutional homeopathic prescription for the relapsing tendency",
+      "Dietary pattern review where flares track sugar-heavy periods",
+      "Seasonal follow-up ahead of known flare months"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–3",
+        "detail": "Itch is usually first to ease; routine corrections begin working."
+      },
+      {
+        "phase": "Weeks 3–8",
+        "detail": "Scale and redness reduce visibly; hairline margins clear."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "This is a relapsing condition; the goal is long quiet phases and mild, short flares — with associated shedding settling as the scalp calms."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this just bad dandruff?",
+        "answer": "It is dandruff plus inflammation — redness, itch and greasy scale — and it behaves more stubbornly. The distinction matters because management differs."
+      },
+      {
+        "question": "Why does it involve my eyebrows and nose creases?",
+        "answer": "Those areas share the same sebum-rich skin the yeast favours. Their involvement actually helps confirm the diagnosis."
+      },
+      {
+        "question": "Will it cause permanent hair loss?",
+        "answer": "By itself, rarely. But sustained inflammation and scratching increase shedding, so controlling it protects density as well as comfort."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/seborrheic-dermatitis-hero.jpg",
+    "introImage": "/uploads/seborrheic-dermatitis-intro.jpg"
+  },
+  {
+    "slug": "scalp-psoriasis",
+    "name": "Scalp Psoriasis",
+    "category": "hair",
+    "featured": false,
+    "summary": "Well-defined thick silvery plaques on the scalp, often crossing the hairline — a chronic immune condition managed for control, not cured.",
+    "intro": "Scalp psoriasis produces sharply bordered, thickened plaques with silvery scale, often extending just beyond the hairline where they become visible. It is an immune-mediated condition — skin cells cycling far too fast — that runs in families and follows a relapsing-remitting course. Hair loss within plaques is usually temporary, but scratching and forceful descaling can add damage. Honest framing: psoriasis is managed, sometimes into long remission; it is not cured.",
+    "symptoms": [
+      "Thick, well-demarcated plaques with silvery-white scale",
+      "Extension beyond the hairline, behind ears and at the nape",
+      "Itch, sometimes soreness or tightness",
+      "Temporary hair thinning within active plaques",
+      "Possible nail pitting or psoriasis elsewhere on the body"
+    ],
+    "causes": [
+      "Immune-mediated acceleration of skin cell turnover",
+      "Strong genetic component",
+      "Flares with stress, throat infections, skin injury and some medications",
+      "Winter aggravation in many patients"
+    ],
+    "treatment": [
+      "Examination to distinguish from seborrheic dermatitis (they can overlap)",
+      "Gentle descaling routine — force here damages hair",
+      "Constitutional homeopathic prescribing for the flare tendency",
+      "Trigger mapping: stress, infections, medication review",
+      "Co-management with dermatology in extensive or resistant disease"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 2–6",
+        "detail": "Itch settles and scale begins thinning with gentle routine care."
+      },
+      {
+        "phase": "Months 2–4",
+        "detail": "Plaques flatten and shrink; hairline margins clear; hair regrows within settled plaques."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "A relapsing condition managed for long remissions; flares are met early, and honest expectations are maintained throughout."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will the hair lost in plaques return?",
+        "answer": "Usually yes — follicles under psoriatic plaques generally survive, and hair regrows as plaques settle. Persistent scratching or forceful scale removal is what risks lasting damage."
+      },
+      {
+        "question": "Is scalp psoriasis contagious?",
+        "answer": "No. It is an immune condition, not an infection — it cannot be passed to anyone."
+      },
+      {
+        "question": "Why does it flare after a sore throat?",
+        "answer": "Streptococcal throat infections are a recognised trigger for some forms of psoriasis. Mentioning recent infections at consultation genuinely changes management."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/scalp-psoriasis-hero.jpg",
+    "introImage": "/uploads/scalp-psoriasis-intro.jpg"
+  },
+  {
+    "slug": "atopic-dermatitis-scalp",
+    "name": "Atopic Dermatitis (Scalp)",
+    "category": "hair",
+    "featured": false,
+    "summary": "Intensely itchy, dry, sensitive scalp in atopic individuals — the eczema tendency expressed on the scalp, managed gently and constitutionally.",
+    "intro": "Atopic dermatitis on the scalp is the eczema tendency — a genetically leaky skin barrier plus a reactive immune system — expressed in hair-bearing skin. It brings dryness, intense itch and sensitivity to products that other scalps tolerate, usually in people with a personal or family history of eczema, asthma or allergic rhinitis. The itch-scratch cycle drives breakage and shedding, so calming it protects hair as well as skin.",
+    "symptoms": [
+      "Dry, flaky scalp with intense itch",
+      "Sensitivity or stinging with ordinary shampoos",
+      "Scratch marks, crusting and disturbed sleep in flares",
+      "Eczema history elsewhere — flexures, eyelids, neck",
+      "Breakage and shedding secondary to scratching"
+    ],
+    "causes": [
+      "Genetic skin-barrier weakness (atopy)",
+      "Reactive immune response to irritants and allergens",
+      "Fragranced or harsh hair products as triggers",
+      "Sweat, heat and stress as flare factors",
+      "Family history of eczema, asthma or allergic rhinitis"
+    ],
+    "treatment": [
+      "History covering the full atopic picture — skin, airways, family",
+      "Product audit: stripping back to genuinely bland hair care",
+      "Constitutional homeopathic prescribing for the atopic tendency",
+      "Itch management to break the scratch cycle",
+      "Follow-ups tracking flare frequency and sleep"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–3",
+        "detail": "Itch intensity drops as trigger products are removed and treatment begins; sleep improves."
+      },
+      {
+        "phase": "Weeks 3–8",
+        "detail": "Dryness and flaking settle; scratch damage heals."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "The atopic tendency is constitutional; management lengthens calm phases, and hair recovery follows scalp calm."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why does every shampoo irritate me?",
+        "answer": "An atopic barrier lets irritants through that intact skin keeps out. The answer is fewer, blander products — not a longer search for the perfect one."
+      },
+      {
+        "question": "Is my hair fall caused by the eczema?",
+        "answer": "Largely indirectly: scratching breaks hair and inflammation increases shedding. As the itch settles, hair generally recovers."
+      },
+      {
+        "question": "Can children with scalp eczema be treated?",
+        "answer": "Yes — childhood atopic scalps respond well to gentle, patient care, and paediatric consultations are routine at this clinic."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/atopic-dermatitis-scalp-hero.jpg",
+    "introImage": "/uploads/atopic-dermatitis-scalp-intro.jpg"
+  },
+  {
+    "slug": "contact-dermatitis-scalp",
+    "name": "Contact Dermatitis (Scalp)",
+    "category": "hair",
+    "featured": false,
+    "summary": "Itch, redness or burning after a hair product — irritant or allergic reactions on the scalp, solved by identifying the culprit.",
+    "intro": "Contact dermatitis of the scalp is a reaction to something applied to it — either direct irritation or true allergy. Hair dye (especially PPD), fragrances and preservatives in shampoos, and some oils are frequent culprits. The pattern is often the giveaway: involvement of the hairline, ears and neck where products run, and timing that follows application. The definitive treatment is not a medicine but detective work — finding and removing the cause.",
+    "symptoms": [
+      "Itch, burning or stinging after product use",
+      "Redness, swelling or blistering in allergic reactions — classically after hair dye",
+      "Involvement of hairline, ear rims and neck where product runs",
+      "Flaking or weeping in established reactions",
+      "Clear timing relationship with a product"
+    ],
+    "causes": [
+      "Hair dye chemicals, especially paraphenylenediamine (PPD)",
+      "Fragrances and preservatives in shampoos and conditioners",
+      "Some herbal or essential-oil preparations",
+      "Cumulative irritation from harsh surfactants",
+      "Occupational exposures — salon workers especially"
+    ],
+    "treatment": [
+      "Structured product history matching timing to exposures",
+      "Elimination and reintroduction to confirm the culprit",
+      "Referral for patch testing in unclear or recurrent cases",
+      "Homeopathic support for skin recovery and reactive tendency",
+      "Guidance on safe alternatives, including dye practices"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Days–2 weeks",
+        "detail": "With the culprit removed, acute reactions settle rapidly; severe dye reactions are triaged for urgent care."
+      },
+      {
+        "phase": "Weeks 2–6",
+        "detail": "Skin barrier recovers; residual flaking and sensitivity resolve."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Avoidance keeps it away; confirmed allergies (like PPD) are permanent, so alternatives are agreed and documented for you."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "I've used the same dye for years — can I suddenly react?",
+        "answer": "Yes. Allergic sensitisation builds with repeated exposure, so a product tolerated for years can begin reacting. PPD in dark dyes is the classic example."
+      },
+      {
+        "question": "Is a home 'patch test' before dyeing reliable?",
+        "answer": "It catches some but not all reactions, and severe sensitisation can still surprise. After any true dye reaction, formal patch testing and PPD-free alternatives are the safe route."
+      },
+      {
+        "question": "How fast will it settle once I stop the product?",
+        "answer": "Irritant reactions often calm within days; allergic ones take longer. If your scalp is not clearly improving within two weeks of strict avoidance, the culprit hunt continues."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/contact-dermatitis-scalp-hero.jpg",
+    "introImage": "/uploads/contact-dermatitis-scalp-intro.jpg"
+  },
+  {
+    "slug": "trichorrhexis-nodosa",
+    "name": "Trichorrhexis Nodosa",
+    "category": "hair",
+    "featured": false,
+    "summary": "Weak points along the hair shaft that fracture like brush bristles — the commonest cause of breakage, and usually a damage story with a happy ending.",
+    "intro": "Trichorrhexis nodosa is the most common hair shaft defect: tiny weak nodes form along the shaft where the cuticle has been damaged, and the hair snaps there, leaving broom-like ends. In most adults it is acquired — the arithmetic of heat, chemicals, tight styling and rough handling — and it responds gratifyingly to changed habits, because the new hair emerging from the follicle is normal. Rare congenital forms exist and are assessed differently.",
+    "symptoms": [
+      "Hair that breaks rather than sheds — short snapped lengths without root bulbs",
+      "Tiny whitish nodes visible along shafts",
+      "Rough, frayed, broom-like broken ends",
+      "Patches of short broken hair where handling is roughest",
+      "Hair that 'never grows' — in truth, it breaks as fast as it grows"
+    ],
+    "causes": [
+      "Chemical processing — relaxers, bleach, repeated colouring",
+      "Heat styling",
+      "Tight styles and rough brushing, especially of wet hair",
+      "Vigorous towel-drying and over-washing",
+      "Rarely, congenital shaft fragility or metabolic causes in children"
+    ],
+    "treatment": [
+      "Confirmation that breakage, not shedding, is the story — the treatments differ completely",
+      "A written, realistic hair-handling protocol: what stops, what replaces it",
+      "Assessment for any underlying scalp condition driving scratching",
+      "Nutritional review where hair quality is globally poor",
+      "Progress tracked by breakage length and node visibility, not fall counts"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–4",
+        "detail": "Damaging practices stop; existing damage remains but stops multiplying."
+      },
+      {
+        "phase": "Months 1–3",
+        "detail": "Breakage rate falls sharply; snapped patches begin catching up."
+      },
+      {
+        "phase": "Months 3–9",
+        "detail": "New, structurally normal growth replaces damaged lengths; apparent 'growth' resumes because hair finally outpaces breakage."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why does my hair never get longer?",
+        "answer": "Because it is breaking at the same rate it grows. Stop the breakage and length returns — the follicles were producing normal hair all along."
+      },
+      {
+        "question": "Is any product able to repair the nodes?",
+        "answer": "No product genuinely repairs a fractured shaft; conditioners only reduce further friction. The real fix is new growth under kinder handling."
+      },
+      {
+        "question": "My child has this all over — same cause?",
+        "answer": "Widespread shaft fragility in a young child can occasionally signal a congenital or metabolic cause and deserves proper assessment rather than assumptions about handling."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/trichorrhexis-nodosa-hero.jpg",
+    "introImage": "/uploads/trichorrhexis-nodosa-intro.jpg"
+  },
+  {
+    "slug": "monilethrix",
+    "name": "Monilethrix",
+    "category": "hair",
+    "featured": false,
+    "summary": "A genetic beading of the hair shaft that breaks short, usually from infancy — managed with protection and honest, long-term support.",
+    "intro": "Monilethrix is an inherited hair shaft disorder in which the shaft forms alternating thick and thin segments — beading — and fractures at the constrictions. It typically appears in infancy or early childhood as short, stubbly, fragile hair, often worst at the nape and areas of friction, sometimes with rough follicular bumps. As a genetic keratin condition it cannot be cured; severity varies widely, often improves somewhat after puberty, and management centres on protecting the fragile shaft.",
+    "symptoms": [
+      "Short, brittle hair present from infancy or early childhood",
+      "Beaded appearance of shafts under magnification",
+      "Breakage concentrated at friction areas — nape, occiput",
+      "Rough, keratotic follicular bumps on the scalp",
+      "Family history in a parent or sibling is common"
+    ],
+    "causes": [
+      "Mutations in hair keratin genes, usually dominantly inherited",
+      "Severity varies even within one family",
+      "Friction and styling stress aggravate breakage on the fragile shaft"
+    ],
+    "treatment": [
+      "Clinical confirmation, with dermatology co-assessment where diagnosis is unsettled",
+      "A friction-minimising care protocol appropriate to the child's age",
+      "Constitutional homeopathic support; general health optimised so hair fragility is not compounded",
+      "Honest counselling with the family about the genetic nature and variable course",
+      "Long-term follow-up through childhood, watching for the common post-pubertal improvement"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Protective routine established; breakage at friction sites reduces."
+      },
+      {
+        "phase": "Years perspective",
+        "detail": "Length achievable within the condition's limits improves with sustained protection; the underlying fragility remains."
+      },
+      {
+        "phase": "Puberty and beyond",
+        "detail": "Many cases soften considerably after puberty — a genuine, biology-based hope offered honestly, without guarantee."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is monilethrix curable?",
+        "answer": "No — it is a genetic keratin condition. That said, severity varies enormously, protection meaningfully improves what is achievable, and many cases improve after puberty."
+      },
+      {
+        "question": "Will my other children have it?",
+        "answer": "With the usual dominant inheritance, each child of an affected parent has about a fifty per cent chance, though severity is unpredictable. A careful family history is part of the assessment."
+      },
+      {
+        "question": "Does cutting the hair short help?",
+        "answer": "Practically, often yes — shorter hair suffers less friction and looks fuller. It changes nothing biologically but reduces daily breakage."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/monilethrix-hero.jpg",
+    "introImage": "/uploads/monilethrix-intro.jpg"
+  },
+  {
+    "slug": "pili-torti",
+    "name": "Pili Torti",
+    "category": "hair",
+    "featured": false,
+    "summary": "Flattened, twisted hair shafts that glint unevenly and break easily — congenital or acquired, and occasionally a pointer to associated conditions.",
+    "intro": "In pili torti the hair shaft is flattened and twisted at intervals along its length, catching light with a distinctive spangled glint and fracturing easily. It may be an isolated congenital finding, part of certain syndromes (some involving hearing), or acquired later alongside scarring scalp conditions or certain medications. Assessment therefore has two jobs: protecting the fragile hair, and checking whether the twisting is a signpost to something broader — including a hearing check in early-onset cases.",
+    "symptoms": [
+      "Fragile hair with patchy short breakage",
+      "A spangled, uneven glint along shafts in good light",
+      "Flattened, twisted segments under magnification",
+      "Onset either in early childhood or newly in adult life",
+      "Occasionally associated hearing or other congenital findings"
+    ],
+    "causes": [
+      "Congenital forms, isolated or syndromic",
+      "Association with some inherited conditions, including forms with deafness",
+      "Acquired twisting alongside scarring alopecias",
+      "Certain medications (notably some retinoids)",
+      "Nutritional deficiency states in rare cases"
+    ],
+    "treatment": [
+      "Confirmation by examination, with co-assessment where syndromic features are possible",
+      "Hearing assessment recommended in early-onset cases",
+      "Review of medications and nutrition in acquired cases",
+      "Friction-minimising hair care protocol",
+      "Constitutional homeopathic support and follow-up appropriate to the underlying picture"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Protection reduces breakage; any indicated screening (hearing, associated conditions) is completed."
+      },
+      {
+        "phase": "Months 3–9",
+        "detail": "Acquired cases may improve as underlying causes are addressed; congenital fragility persists but managed hair achieves better length."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Care is tailored to the underlying diagnosis; isolated congenital cases often soften with age."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why would a hair problem need a hearing test?",
+        "answer": "Certain congenital forms of pili torti travel with inner-ear conditions (such as Björnstad syndrome). A simple hearing check in early-onset cases is prudent and often reassuring."
+      },
+      {
+        "question": "Can twisted hair become normal again?",
+        "answer": "Acquired pili torti can improve when its cause — medication, deficiency, scalp inflammation — is corrected. Congenital forms persist, though severity often eases with age and protection."
+      },
+      {
+        "question": "Is the glinting appearance diagnostic?",
+        "answer": "It is suggestive — flattened twists reflect light irregularly — but confirmation is by examining shafts under magnification."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/pili-torti-hero.jpg",
+    "introImage": "/uploads/pili-torti-intro.jpg"
+  },
+  {
+    "slug": "bubble-hair",
+    "name": "Bubble Hair",
+    "category": "hair",
+    "featured": false,
+    "summary": "Gas bubbles blown inside the hair shaft by extreme heat on damp hair — sudden patchy breakage with one cause and one fix.",
+    "intro": "Bubble hair is pure physics: when very hot styling tools meet damp hair, water inside the shaft turns to steam and blows bubbles in the cortex. The shaft becomes brittle and snaps, typically producing a sudden patch of broken, oddly textured hair after one aggressive styling session. Under the microscope the bubbles are unmistakable. It is entirely acquired, entirely preventable, and — because follicles are untouched — fully recoverable.",
+    "symptoms": [
+      "Sudden localised patch of broken, brittle hair",
+      "Distinct change of texture — dry, rough, crinkled — in the affected zone",
+      "History of high-heat tool use on damp hair, often a single memorable session",
+      "Broken shafts without root bulbs",
+      "Bubbles within the shaft on microscopy"
+    ],
+    "causes": [
+      "High-temperature irons or dryers applied to damp hair",
+      "Faulty or unregulated heating tools running hotter than indicated",
+      "Repeated maximal-heat styling as a routine"
+    ],
+    "treatment": [
+      "Confirmation of the diagnosis and exclusion of co-existing shaft damage",
+      "Retirement of the damaging heat practice — the entire cure",
+      "Trim of the irreversibly damaged lengths",
+      "Guidance on genuinely safe heat styling: dry hair, regulated temperature",
+      "Reassurance: follicles are unaffected and regrowth is normal"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Immediately",
+        "detail": "The practice stops; damaged lengths are trimmed to prevent ongoing splitting."
+      },
+      {
+        "phase": "Months 1–3",
+        "detail": "Normal new growth emerges — the follicle was never involved."
+      },
+      {
+        "phase": "Months 3–9",
+        "detail": "The patch catches up with surrounding hair; full recovery is the norm."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will the affected patch recover completely?",
+        "answer": "Yes. Bubble hair damages the shaft, not the follicle, so replacement growth is normal. The damaged lengths themselves cannot be repaired — they grow out or are trimmed."
+      },
+      {
+        "question": "My straightener has a temperature dial — am I safe?",
+        "answer": "Only if the hair is properly dry and the tool accurate. 'Damp-plus-maximum-heat' is the classic recipe; a heat-protectant and moderate settings on dry hair avoid it."
+      },
+      {
+        "question": "How is this different from ordinary heat damage?",
+        "answer": "Ordinary heat damage roughens the cuticle gradually; bubble hair is an acute steam injury inside the shaft — faster, more brittle, and usually traceable to specific sessions."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/bubble-hair-hero.jpg",
+    "introImage": "/uploads/bubble-hair-intro.jpg"
+  },
+  {
+    "slug": "trichoptilosis",
+    "name": "Trichoptilosis (Split Ends)",
+    "category": "hair",
+    "featured": false,
+    "summary": "Longitudinal splitting of the hair tip — the universal wear-and-tear sign, and a useful indicator of how hair is being treated.",
+    "intro": "Trichoptilosis — split ends — is longitudinal fraying of the oldest part of the shaft, where the protective cuticle has finally been worn away by years of washing, friction, heat and chemistry. Universal in long hair to some degree, its extent is a fair audit of hair-care habits. Splits cannot be sealed by any product, only removed and prevented; the real value of a split-end consultation is uncovering the handling pattern producing them prematurely.",
+    "symptoms": [
+      "Frayed, forked or feathered hair tips",
+      "Splits travelling upward, sometimes mid-shaft in severe cases",
+      "Rough texture and tangling at the ends",
+      "White dots at fracture points",
+      "Ends looking thin and transparent relative to roots"
+    ],
+    "causes": [
+      "Cumulative mechanical wear — brushing, friction, tight bands",
+      "Heat styling and chemical processing",
+      "Sun and hard-water exposure",
+      "Washing habits that strip the cuticle",
+      "Simple age of the hair fibre — ends are years old"
+    ],
+    "treatment": [
+      "Handling audit to find why wear is outpacing normal",
+      "Sensible trimming schedule to stop splits travelling",
+      "Protective-handling protocol: detangling, drying, night care",
+      "Assessment for any co-existing shaft disorder when severity is unusual",
+      "Nutritional review when overall hair quality is low"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Immediately",
+        "detail": "Existing splits are trimmed — the only true removal — and the causal habits change."
+      },
+      {
+        "phase": "Months 1–3",
+        "detail": "New end-wear slows dramatically; tangling and roughness reduce."
+      },
+      {
+        "phase": "Months 3–12",
+        "detail": "Ends remain intact between trims; achievable length increases because hair stops eroding from the tip."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do split-end serums repair the splits?",
+        "answer": "No — they temporarily glue and smooth, which reduces snagging, but the fibre remains split. Trimming removes them; changed handling prevents them."
+      },
+      {
+        "question": "How often should I actually trim?",
+        "answer": "Enough to remove damage before it travels: for most, every eight to twelve weeks lightly. With protective handling, the interval stretches naturally."
+      },
+      {
+        "question": "Why are my ends splitting within months of a cut?",
+        "answer": "That speed points to an active cause — heat, harsh surfactants, friction or chemical stress — rather than normal wear. Finding it is the consultation's real job."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/trichoptilosis-hero.jpg",
+    "introImage": "/uploads/trichoptilosis-intro.jpg"
+  },
+  {
+    "slug": "trichotillomania",
+    "name": "Trichotillomania",
+    "category": "hair",
+    "featured": false,
+    "summary": "A hair-pulling condition — a recognised body-focused repetitive behaviour, met here without judgement and managed alongside psychological care.",
+    "intro": "Trichotillomania is recurrent pulling of one's own hair, producing patches of irregular loss with broken hairs of varying length. It is a recognised body-focused repetitive behaviour — a neurobiological condition, not a habit of 'weak will' — often beginning in adolescence and frequently hidden for years behind shame that it does not deserve. Care at this clinic is explicitly non-judgemental: evidence-based psychological therapy (particularly habit reversal training) is the mainstay, with constitutional homeopathic support alongside, and follicles usually recover when pulling stops.",
+    "symptoms": [
+      "Patches of loss with broken hairs of many different lengths",
+      "Irregular, angular patch outlines, often within easy reach of the dominant hand",
+      "Tension before pulling and relief after, in many though not all",
+      "Rituals around the pulled hair",
+      "Concealment — styles, scarves, avoidance of salons",
+      "Brows and lashes may be involved"
+    ],
+    "causes": [
+      "A body-focused repetitive behaviour with neurobiological basis",
+      "Onset commonly in adolescence",
+      "Stress, anxiety and idle/absorbed states as triggers",
+      "Frequently co-existing anxiety or mood symptoms",
+      "Family history of similar behaviours in some"
+    ],
+    "treatment": [
+      "An unhurried, explicitly non-judgemental assessment",
+      "Referral to and coordination with psychological therapy — habit reversal training has the best evidence",
+      "Constitutional homeopathic support for anxiety and tension alongside",
+      "Practical strategies: awareness logging, barriers, competing responses",
+      "Follow-up that tracks pulling-free progress kindly, expecting and accommodating relapse"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–2",
+        "detail": "Trust first: mapping triggers and situations without shame, and connecting with appropriate therapy."
+      },
+      {
+        "phase": "Months 2–6",
+        "detail": "Pull-free periods lengthen with awareness and competing-response work; regrowth appears in rested patches."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Relapse is part of the condition, not failure. Long-standing intense pulling can occasionally leave permanent thinning, which is why early support matters."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is hair-pulling just a bad habit I should control?",
+        "answer": "No — it is a recognised medical condition with a neurobiological basis. Willpower framing produces only shame; structured therapy genuinely helps."
+      },
+      {
+        "question": "Will the hair grow back?",
+        "answer": "Usually yes once pulling stops, though regrowth takes months and may at first look different. Very long-standing intense pulling can permanently damage some follicles — one reason early help matters."
+      },
+      {
+        "question": "I do it without noticing — does that still count?",
+        "answer": "Yes. 'Automatic' pulling during absorbed states is one of the two classic patterns, and awareness training is designed exactly for it."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/trichotillomania-hero.jpg",
+    "introImage": "/uploads/trichotillomania-intro.jpg"
+  },
+  {
+    "slug": "trichophagia",
+    "name": "Trichophagia",
+    "category": "hair",
+    "featured": false,
+    "summary": "Swallowing pulled hair — a companion to hair-pulling that carries a real medical risk (hairball obstruction) and deserves prompt, kind attention.",
+    "intro": "Trichophagia is the swallowing of pulled hair, occurring in a subset of people with trichotillomania. It matters medically far beyond the scalp: swallowed hair cannot be digested and can accumulate over years into a trichobezoar — a gastric hairball — capable of causing pain, vomiting and dangerous obstruction (including the 'Rapunzel syndrome' extension into the intestine). Care is therefore twofold: the same non-judgemental behavioural support as trichotillomania, plus explicit safety-netting so any warning symptom is investigated without delay.",
+    "symptoms": [
+      "Hair-pulling accompanied by mouthing or swallowing the hair",
+      "Often concealed even more deeply than pulling itself",
+      "Warning signs of accumulation: upper abdominal pain or fullness, nausea, vomiting, early satiety, weight loss",
+      "Sometimes a palpable upper-abdominal mass in advanced cases",
+      "Most common in adolescent girls, though not exclusive"
+    ],
+    "causes": [
+      "A body-focused repetitive behaviour on the trichotillomania spectrum",
+      "Oral-ritual component of the pulling cycle",
+      "Frequently co-existing anxiety; occasionally iron deficiency and pica-like features",
+      "Concealment delaying detection"
+    ],
+    "treatment": [
+      "Direct but kind screening — everyone with hair-pulling is asked about swallowing, because hiding it is the norm",
+      "Immediate referral for abdominal assessment if any warning symptom exists — bezoars are a surgical problem, not a homeopathic one",
+      "Coordination with psychological therapy for the underlying behaviour",
+      "Iron and nutritional screening",
+      "Family education on warning signs, with a clear plan for urgent care"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Immediately",
+        "detail": "Safety first: symptom screening and, where indicated, urgent referral for imaging. This precedes everything else."
+      },
+      {
+        "phase": "Months 1–6",
+        "detail": "Behavioural therapy addresses the pulling-swallowing cycle; swallowing typically stops alongside pulling."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Continued vigilance for abdominal symptoms with an agreed action plan; behavioural relapse is met with support, not blame."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is swallowed hair really dangerous?",
+        "answer": "It can be. Hair is indigestible and accumulates; a large bezoar can obstruct the stomach or intestine and require surgery. Persistent abdominal pain, vomiting or early fullness in anyone who swallows hair needs prompt hospital assessment — please do not wait for a clinic appointment."
+      },
+      {
+        "question": "My daughter chews her hair but I'm not sure she swallows — should I worry?",
+        "answer": "Chewing often precedes swallowing and both belong on the same spectrum. Raise it gently and have it assessed; early, kind intervention is far easier than late."
+      },
+      {
+        "question": "Can homeopathy dissolve a hairball?",
+        "answer": "No, and no honest practitioner will claim otherwise. Established bezoars need endoscopic or surgical management; our role is the behavioural side and coordination of proper care."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/trichophagia-hero.jpg",
+    "introImage": "/uploads/trichophagia-intro.jpg"
+  },
+  {
+    "slug": "traction-alopecia",
+    "name": "Traction Alopecia",
+    "category": "hair",
+    "featured": false,
+    "summary": "Hair loss from sustained pulling by tight styles — fully reversible early, permanent late, so timing is everything.",
+    "intro": "Traction alopecia is mechanical: styles that pull — tight ponytails and buns, braids, extensions, tightly wrapped styles — exert chronic tension that first inflames and eventually destroys follicles along the lines of pull, classically the frontal and temporal margins. Its course has a clean fork: caught early, it is among the most fully reversible hair losses; sustained for years, the follicles scar and the loss becomes permanent. The treatment is not subtle, but it is non-negotiable — the tension must stop.",
+    "symptoms": [
+      "Thinning along the hairline and temples following the style's pull lines",
+      "'Fringe sign' — a preserved line of fine hairs at the very edge",
+      "Tender scalp, bumps or pustules after tight styling",
+      "Broken short hairs where tension is greatest",
+      "In long-standing cases, smooth shiny skin — the scarring stage"
+    ],
+    "causes": [
+      "Tight ponytails, buns, braids and cornrows",
+      "Extensions and weaves adding constant weight",
+      "Tightly wrapped or pinned religious and occupational head coverings",
+      "Rollers worn overnight",
+      "Repeated pulling styles begun in childhood"
+    ],
+    "treatment": [
+      "Honest identification of the responsible styles — and workable, culturally respectful alternatives",
+      "Complete rest from tension for the recovery period",
+      "Assessment of stage: soreness and bumps suggest recoverable; smooth skin warns of scarring",
+      "Constitutional homeopathic support for follicle recovery",
+      "Photographic review of the margins at each visit"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–4",
+        "detail": "Tension stops; tenderness and folliculitis settle."
+      },
+      {
+        "phase": "Months 2–6",
+        "detail": "Early-stage cases show regrowth at the margins — first fine, then thickening."
+      },
+      {
+        "phase": "Months 6–12",
+        "detail": "Recovery continues where follicles survived; areas already scarred (smooth, shiny) do not return, said plainly at the outset."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How tight is too tight?",
+        "answer": "If a style hurts, lifts the skin, or leaves your scalp tender that evening, it is causing traction. Pain is the follicle's complaint, not a styling norm to endure."
+      },
+      {
+        "question": "I can't abandon braiding for cultural reasons — what then?",
+        "answer": "Looser tension, larger sections, shorter wear periods, rest weeks between installs and avoiding extensions on the fragile hairline achieve most of the protection while respecting the style tradition."
+      },
+      {
+        "question": "Will my temples fill back in?",
+        "answer": "If the skin there still shows follicular openings and stubble, prospects are good over six to twelve months of rest. Smooth shiny skin means scarring, and those areas will not regrow — the reason to act now."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/traction-alopecia-hero.jpg",
+    "introImage": "/uploads/traction-alopecia-intro.jpg"
+  },
+  {
+    "slug": "friction-alopecia",
+    "name": "Friction Alopecia",
+    "category": "hair",
+    "featured": false,
+    "summary": "Hair thinning where something rubs — helmets, pillows, straps, socks — resolving when the rubbing stops.",
+    "intro": "Friction alopecia is loss from chronic rubbing rather than pulling: the zone under a daily helmet strap, the back of the head in infants and bed-bound patients, the ankle line above tight socks, areas rubbed by rough pillowcases. Repeated friction wears and breaks the shaft and, over long periods, can miniaturise follicles. It is usually reversible once the rubbing stops, and the diagnosis is often made simply by matching the thinned zone to the object that touches it daily.",
+    "symptoms": [
+      "Thinning or breakage precisely where an object rubs",
+      "Helmet-band pattern around the head in daily riders",
+      "Occipital patch in infants and the bed-bound",
+      "Sock-line loss on the lower legs",
+      "Rough, broken shafts within the zone rather than shed bulbs"
+    ],
+    "causes": [
+      "Daily helmet or cap wear with movement against hair",
+      "Sleeping friction — coarse fabrics, restless surfaces",
+      "Tight sock or clothing lines",
+      "Habitual rubbing or leaning",
+      "Occupational headgear"
+    ],
+    "treatment": [
+      "Matching the loss map to daily friction sources — usually decisive",
+      "Interruption of the friction: liners, fit adjustment, smoother fabrics",
+      "Hair-care support while the zone recovers",
+      "Assessment for co-existing causes if the map does not fully fit",
+      "Review to confirm regrowth once friction is controlled"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 1–4",
+        "detail": "Friction source is modified; breakage in the zone slows."
+      },
+      {
+        "phase": "Months 2–6",
+        "detail": "Regrowth fills the zone in most cases; infant occipital patches resolve as sleeping patterns mature."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "Long-standing intense friction occasionally leaves partial thinning; prevention is built into the daily routine."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "I must wear a helmet daily — am I stuck with this?",
+        "answer": "No. A smooth balaclava-style liner, correct fit so the helmet moves with the head, and drying sweat promptly remove most of the friction while keeping you safe. Do not stop wearing the helmet."
+      },
+      {
+        "question": "Is my baby's bald patch at the back a problem?",
+        "answer": "Almost never — occipital friction loss in infants is normal and resolves as they sit up and sleep patterns mature. Persistent or expanding patches beyond that age can be reviewed."
+      },
+      {
+        "question": "How is this different from traction loss?",
+        "answer": "Traction pulls at the root along style lines; friction rubs the shaft where surfaces touch. The maps differ, and so does the fix — release tension versus remove rubbing."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/friction-alopecia-hero.jpg",
+    "introImage": "/uploads/friction-alopecia-intro.jpg"
+  },
+  {
+    "slug": "pcos-hair-loss",
+    "name": "PCOS-related Hair Loss",
+    "category": "hair",
+    "featured": false,
+    "summary": "Scalp thinning driven by the androgen excess of polycystic ovary syndrome — often while unwanted facial hair increases — treated through the hormonal picture.",
+    "intro": "In polycystic ovary syndrome, elevated androgens act on hair in two opposite ways at once: scalp follicles at the parting and crown miniaturise, while facial and body hair coarsens. Insulin resistance frequently amplifies the process. Treating the scalp alone misses the point; care addresses the hormonal and metabolic picture — cycles, androgens, insulin — alongside the hair, coordinated with gynaecology where needed.",
+    "symptoms": [
+      "Thinning at the crown and parting with a preserved hairline",
+      "Coincident increase in facial or body hair",
+      "Irregular, delayed or absent periods",
+      "Acne along jawline and chin",
+      "Weight gain that resists effort",
+      "Skin tags or darkened skin folds suggesting insulin resistance"
+    ],
+    "causes": [
+      "Elevated androgen levels acting on sensitive scalp follicles",
+      "Insulin resistance amplifying androgen effects",
+      "Genetic predisposition to both PCOS and pattern sensitivity",
+      "Weight and lifestyle factors in a two-way loop",
+      "Chronic stress affecting hormonal rhythm"
+    ],
+    "treatment": [
+      "Full menstrual, weight and hormonal history with review of ultrasound and lab reports",
+      "Testing where gaps exist — androgens, insulin markers, thyroid, ferritin (deficiencies co-travel)",
+      "Constitutional homeopathic prescribing for the hormonal picture",
+      "Practical insulin-resistance work: food pattern, movement, sleep",
+      "Coordination with your gynaecologist, especially if conception is planned",
+      "Photographic tracking of parting width alongside cycle regularity"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "The hormonal picture is clarified and treatment begun; cycles and skin usually respond before hair."
+      },
+      {
+        "phase": "Months 3–6",
+        "detail": "Shedding settles as the internal environment steadies; cycle regularity is the objective marker."
+      },
+      {
+        "phase": "Months 6–12",
+        "detail": "Parting density improves where follicles remained viable — reviewed photographically. PCOS is managed long-term, not cured."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why is hair falling from my head but growing on my face?",
+        "answer": "Both are androgen effects: scalp follicles miniaturise under androgens while facial follicles are stimulated by them. Improving the hormonal picture addresses both directions."
+      },
+      {
+        "question": "Will losing weight really help my hair?",
+        "answer": "In PCOS with insulin resistance, even modest weight change measurably lowers androgen drive and often improves cycles first, hair after. It is one of the few levers entirely in your hands."
+      },
+      {
+        "question": "I want to conceive — does that change treatment?",
+        "answer": "Yes, tell us at the first visit. Plans are made pregnancy-compatible and coordinated with your gynaecologist from the start."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/pcos-hair-loss-hero.jpg",
+    "introImage": "/uploads/pcos-hair-loss-intro.jpg"
+  },
+  {
+    "slug": "menopausal-hair-loss",
+    "name": "Menopausal Hair Loss",
+    "category": "hair",
+    "featured": false,
+    "summary": "Thinning through perimenopause and beyond, as falling oestrogen unmasks androgen effects — supported through the transition with realistic goals.",
+    "intro": "Around menopause the hormonal shelter that oestrogen gave hair is withdrawn: relative androgen influence rises, growth phases shorten, and many women notice widening partings, slower growth and texture change, sometimes with new facial hair. It arrives amid sleep disruption, stress and frequently overlooked thyroid or iron issues of the same life stage — so assessment untangles all contributors rather than blaming 'age' and stopping there.",
+    "symptoms": [
+      "Gradual thinning at crown and parting through perimenopause",
+      "Slower growth and finer, drier texture",
+      "Increased shedding episodes during the transition years",
+      "Sometimes new chin or facial hair",
+      "Often accompanied by disturbed sleep, flushes and fatigue"
+    ],
+    "causes": [
+      "Declining oestrogen unmasking androgen effects on sensitive follicles",
+      "Age-related follicular slowing",
+      "Thyroid dysfunction — common at the same age and frequently missed",
+      "Iron and vitamin D insufficiency",
+      "Sleep disruption and stress of the transition"
+    ],
+    "treatment": [
+      "Assessment separating hormonal-transition effects from co-existing treatable causes",
+      "Testing: thyroid profile, ferritin, vitamin D as a minimum",
+      "Constitutional homeopathic prescribing for the transition as a whole — sleep, flushes and hair together",
+      "Nutritional support appropriate to the life stage, including protein adequacy",
+      "Photographic tracking with honest, realistic goals"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–3",
+        "detail": "Co-existing correctables are found and fixed; sleep and general wellbeing usually improve first."
+      },
+      {
+        "phase": "Months 3–9",
+        "detail": "Shedding settles; texture and breakage improve."
+      },
+      {
+        "phase": "Ongoing",
+        "detail": "The goal is preserving and modestly improving density through the transition — full restoration of decades-past volume is not promised, because it would be a false promise."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is thinning inevitable after menopause?",
+        "answer": "Some change is common, but the degree varies enormously and is frequently worsened by treatable co-factors — low ferritin, thyroid drift, poor sleep. Addressing those changes the trajectory."
+      },
+      {
+        "question": "Why treat sleep and flushes at a hair consultation?",
+        "answer": "Because the same transition drives them all, and constitutional treatment addresses the person, not one symptom. Hair rarely improves while sleep is wrecked."
+      },
+      {
+        "question": "Will my hair return to what it was at thirty?",
+        "answer": "Honestly, no — and any clinic promising that deserves scepticism. Meaningful goals are stopping excess loss, improving quality and density, and protecting what you have long-term."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/menopausal-hair-loss-hero.jpg",
+    "introImage": "/uploads/menopausal-hair-loss-intro.jpg"
+  },
+  {
+    "slug": "thyroid-alopecia",
+    "name": "Thyroid-related Alopecia",
+    "category": "hair",
+    "featured": false,
+    "summary": "Diffuse hair loss from an underactive or overactive thyroid — one blood test away from an answer, with recovery that lags months behind treatment.",
+    "intro": "Both hypo- and hyperthyroidism disturb the hair cycle, producing diffuse loss across the scalp — classically with dry coarse hair and outer-eyebrow thinning when underactive, fine limp hair when overactive. Because follicles are among the fastest-dividing tissues, hair often signals thyroid trouble before the classic symptoms are recognised. The cardinal rules here: test properly, never adjust thyroid medication except through the prescribing physician, and understand that hair recovery lags months behind normalised blood results.",
+    "symptoms": [
+      "Diffuse thinning across the whole scalp, not patches",
+      "Loss of the outer third of the eyebrows (hypothyroid pattern)",
+      "Dry, coarse, brittle hair — or fine and limp in overactivity",
+      "Accompanying fatigue, temperature intolerance, weight or cycle changes",
+      "Slow regrowth even after levels normalise — the expected lag"
+    ],
+    "causes": [
+      "Hypothyroidism, including autoimmune Hashimoto's thyroiditis",
+      "Hyperthyroidism, including Graves' disease",
+      "Post-partum thyroiditis, often missed",
+      "Associated alopecia areata risk with autoimmune thyroid disease",
+      "Occasionally, initial months of thyroid treatment itself"
+    ],
+    "treatment": [
+      "Proper testing — TSH with free T3/T4, and anti-TPO antibodies where autoimmunity is suspected",
+      "Review of existing reports; borderline results reinterpreted in the hair context",
+      "Absolute rule: thyroid medication is adjusted only by the prescribing physician",
+      "Constitutional homeopathic care for associated symptoms and the autoimmune tendency",
+      "Ferritin and vitamin D screening — deficiencies commonly co-exist and stall recovery",
+      "Patience built into follow-up: hair lags labs by three to six months"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–2",
+        "detail": "Diagnosis completed and thyroid management optimised with your physician; energy and general symptoms respond first."
+      },
+      {
+        "phase": "Months 2–5",
+        "detail": "Shedding settles once levels stabilise."
+      },
+      {
+        "phase": "Months 4–9",
+        "detail": "Regrowth and density visibly recover — reliably behind the blood results, which is expected and not failure."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "My thyroid reports normalised but hair is still falling — why?",
+        "answer": "Because hair works on a months-long cycle: it lags behind blood results by three to six months. Continued shedding shortly after normalisation is expected; persistent loss beyond that window is re-investigated for co-factors like low ferritin."
+      },
+      {
+        "question": "Can I stop thyroxine now that I'm taking homeopathic treatment?",
+        "answer": "No. Thyroid hormone replacement is adjusted only by the physician who prescribed it, based on blood tests. Stopping it abruptly is genuinely dangerous, and no one at this clinic will ever advise it."
+      },
+      {
+        "question": "Which tests should I bring?",
+        "answer": "TSH, free T3 and free T4 as a base; anti-TPO antibodies if autoimmune disease is suspected; plus ferritin and vitamin D, which so often travel alongside. And pause high-dose biotin three days before testing — it distorts thyroid assays."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/thyroid-alopecia-hero.jpg",
+    "introImage": "/uploads/thyroid-alopecia-intro.jpg"
+  },
+  {
+    "slug": "iron-deficiency-hair-loss",
+    "name": "Iron Deficiency Hair Loss",
+    "category": "hair",
+    "featured": false,
+    "summary": "Diffuse shedding from depleted iron stores — where ferritin, not haemoglobin, tells the truth, and correction must be test-guided.",
+    "intro": "Iron deficiency is among the most common — and most commonly missed — drivers of diffuse hair loss, because a normal haemoglobin does not exclude it. The body defends red blood cells first: tissue iron stores (measured as ferritin) empty long before anaemia appears, and follicles, as fast-dividing 'non-essential' tissue, feel it early. Menstruating women, vegetarians and frequent blood donors are most at risk. The rules are simple: test ferritin specifically, correct guided by results, and never supplement blind — iron overload is genuinely harmful.",
+    "symptoms": [
+      "Diffuse shedding across the scalp",
+      "Fatigue, poor exercise tolerance, breathlessness on stairs",
+      "Brittle nails, sometimes spoon-shaped",
+      "Pale inner eyelids, cravings for ice or unusual substances",
+      "Restless legs at night in some",
+      "'Normal blood test' history where ferritin was never actually measured"
+    ],
+    "causes": [
+      "Menstrual blood loss, especially heavy cycles",
+      "Low dietary iron — vegetarian diets need deliberate planning",
+      "Poor absorption: tea/coffee with meals, antacids, gut conditions",
+      "Pregnancy and breastfeeding demands",
+      "Frequent blood donation",
+      "Unrecognised gastrointestinal loss — investigated when unexplained"
+    ],
+    "treatment": [
+      "Specific testing: serum ferritin, not just haemoglobin — with inflammation markers where needed, since ferritin rises falsely during inflammation",
+      "Investigation of the cause of deficiency, not just the number — heavy cycles and gut losses deserve attention",
+      "Test-guided iron correction with absorption coaching: vitamin C alongside, tea/coffee/calcium away from doses",
+      "Dietary pattern rebuilt for sustained iron adequacy",
+      "Constitutional homeopathic support",
+      "Ferritin re-checked at intervals; hair reviewed photographically with the expected lag explained"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–2",
+        "detail": "Deficiency confirmed and correction begun; energy typically improves well before hair."
+      },
+      {
+        "phase": "Months 2–5",
+        "detail": "Shedding settles as stores rebuild."
+      },
+      {
+        "phase": "Months 4–9",
+        "detail": "Density visibly recovers, lagging the ferritin by months — expected biology, not treatment failure."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "My haemoglobin is normal — how can I be iron deficient?",
+        "answer": "Because haemoglobin is defended to the last: stores (ferritin) empty first, and hair suffers during that hidden stage. Ferritin is the number that matters for hair."
+      },
+      {
+        "question": "What ferritin level should I aim for?",
+        "answer": "Laboratory 'normal' often starts near 12–15 ng/mL — a threshold for anaemia, not an optimum for hair. Correction targets are set individually and rechecked, rather than chasing a single magic number."
+      },
+      {
+        "question": "Can I just start iron tablets myself?",
+        "answer": "Please don't. Iron overload harms the liver and heart, some people carry haemochromatosis unknowingly, and blind supplementation can also mask a bleeding source that needed investigating. Test first, correct under guidance."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/iron-deficiency-hair-loss-hero.jpg",
+    "introImage": "/uploads/iron-deficiency-hair-loss-intro.jpg"
+  },
+  {
+    "slug": "zinc-deficiency-hair-loss",
+    "name": "Zinc Deficiency Hair Loss",
+    "category": "hair",
+    "featured": false,
+    "summary": "Shedding with slow healing, taste changes and skin trouble — zinc deficiency affects hair among much else, and responds to careful correction.",
+    "intro": "Zinc sits in hundreds of enzymes, including those building keratin, so deficiency shows in hair (diffuse shedding, brittle texture), skin (rashes around mouth and eyes, slow wound healing), nails (white spots, ridges) and even taste. It arises from restrictive or phytate-heavy diets, absorption problems, pregnancy, and prolonged illness. Correction works — but more is not better: excess zinc induces copper deficiency, so supplementation is dosed and time-limited, never open-ended.",
+    "symptoms": [
+      "Diffuse hair shedding with brittle, lustreless texture",
+      "White spots or ridging on nails",
+      "Rashes around mouth, eyes or in skin folds",
+      "Slow wound healing, frequent minor infections",
+      "Blunted taste or smell",
+      "In children: appetite loss and faltering growth"
+    ],
+    "causes": [
+      "Low intake — restrictive diets, low animal-protein patterns",
+      "High-phytate staples binding zinc in the gut",
+      "Malabsorption: gut disease, long-term acid suppression",
+      "Pregnancy and breastfeeding demands",
+      "Alcohol excess, chronic illness",
+      "Rarely, genetic zinc transport defects in infants"
+    ],
+    "treatment": [
+      "Clinical assessment with serum zinc where indicated — interpreted cautiously, as blood levels are imperfect",
+      "Dietary rebuild: realistic zinc-adequate eating for your food pattern",
+      "Dosed, time-limited supplementation where warranted — never indefinite, to protect copper status",
+      "Correction of absorption obstacles",
+      "Constitutional homeopathic support",
+      "Review of skin, nails and shedding as the visible markers of progress"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 2–6",
+        "detail": "Skin symptoms and taste usually respond first; healing quickens."
+      },
+      {
+        "phase": "Months 2–4",
+        "detail": "Shedding settles; nail growth emerges without new white marks."
+      },
+      {
+        "phase": "Months 4–9",
+        "detail": "Hair density and texture recover with the usual biological lag."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can a blood test confirm zinc deficiency?",
+        "answer": "Serum zinc helps but is imperfect — levels swing with meals, stress and inflammation. Diagnosis leans on the whole picture: diet, symptoms and response to careful correction."
+      },
+      {
+        "question": "Why not just take a strong zinc supplement long-term?",
+        "answer": "Because sustained high-dose zinc causes copper deficiency — itself a cause of anaemia and neurological problems. Zinc correction is dosed and time-limited by design."
+      },
+      {
+        "question": "Which foods actually help?",
+        "answer": "For non-vegetarians: shellfish, meat and eggs. Vegetarian patterns lean on legumes, nuts, seeds and dairy, with soaking/sprouting of grains and pulses to unlock the zinc that phytates bind."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/zinc-deficiency-hair-loss-hero.jpg",
+    "introImage": "/uploads/zinc-deficiency-hair-loss-intro.jpg"
+  },
+  {
+    "slug": "vitamin-d-hair-loss",
+    "name": "Vitamin D Deficiency Hair Loss",
+    "category": "hair",
+    "featured": false,
+    "summary": "Low vitamin D — near-ubiquitous with indoor living — contributes to shedding and stubborn recovery, and is easy to test and correct.",
+    "intro": "Vitamin D receptors sit in the hair follicle itself, where the vitamin participates in starting new growth cycles; severe receptor defects cause profound hair loss, and low levels are consistently associated with telogen effluvium and alopecia areata. Despite Kerala's sunshine, indoor routines and covered exposure make deficiency remarkably common. It is rarely the sole cause of hair loss — but it is a frequent accomplice that stalls recovery from other causes, and it is cheap to test and straightforward to correct under guidance.",
+    "symptoms": [
+      "Diffuse shedding or slow recovery from another hair condition",
+      "Fatigue and low mood",
+      "Bone aches, muscle weakness or cramps",
+      "Frequent minor infections",
+      "Predominantly indoor lifestyle or fully covered sun exposure"
+    ],
+    "causes": [
+      "Indoor work and life despite a sunny climate",
+      "Fully covering clothing limiting skin synthesis",
+      "Darker skin requiring longer exposure for the same synthesis",
+      "Low dietary sources — few foods carry meaningful vitamin D",
+      "Obesity sequestering vitamin D; gut conditions impairing absorption"
+    ],
+    "treatment": [
+      "Testing 25-hydroxy-vitamin D rather than guessing",
+      "Dose-appropriate correction under guidance — massive self-dosing causes real toxicity",
+      "A sustainable sun-exposure plan fitted to your routine and skin",
+      "Dietary and co-factor review (vitamin D works alongside adequate calcium and magnesium)",
+      "Constitutional homeopathic care for the whole picture",
+      "Re-testing to confirm repletion, then a maintenance plan"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Months 1–2",
+        "detail": "Levels corrected; energy, mood and muscle aches usually respond first."
+      },
+      {
+        "phase": "Months 2–5",
+        "detail": "Shedding settles — particularly where vitamin D was stalling recovery from effluvium or areata."
+      },
+      {
+        "phase": "Months 4–9",
+        "detail": "Hair density recovers with the standard lag; maintenance keeps levels from sliding back."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "I live in Kerala — how can I lack vitamin D?",
+        "answer": "Sunshine outside the window does not reach skin that is indoors, in vehicles, or fully covered during peak hours. Deficiency is common across sunny India for exactly this reason; testing settles it in a day."
+      },
+      {
+        "question": "Can vitamin D alone regrow my hair?",
+        "answer": "If deficiency was the main brake, correction visibly helps; more often it is one of several factors, and fixing it lets the rest of treatment work. It is rarely the whole story — beware anyone selling it as one."
+      },
+      {
+        "question": "Is more vitamin D always better?",
+        "answer": "No. Vitamin D is fat-soluble and accumulates; aggressive self-dosing causes toxicity with high calcium, kidney strain and — ironically — sometimes hair shedding. Correct to tested levels, under guidance."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/vitamin-d-hair-loss-hero.jpg",
+    "introImage": "/uploads/vitamin-d-hair-loss-intro.jpg"
+  },
+  {
+    "slug": "protein-deficiency-hair-loss",
+    "name": "Protein Deficiency Hair Loss",
+    "category": "hair",
+    "featured": false,
+    "summary": "Hair is protein — when intake falls short, through dieting or inadequate meals, the body rations follicles first and shedding follows.",
+    "intro": "Hair shafts are almost entirely keratin, and the body treats hair as expendable: when protein intake falls short — crash diets, poorly planned vegetarian or elderly eating, illness, post-surgical phases — follicles are switched to rest within months and shafts grow finer and weaker. Alongside shedding, texture dulls, nails soften and muscles waste quietly. Recovery is gratifyingly reliable once intake is rebuilt, with the usual months-long lag between the plate and the parting.",
+    "symptoms": [
+      "Increased diffuse shedding two to four months after intake dropped",
+      "Hair that grows finer, drier and weaker",
+      "Loss of shine; increased breakage",
+      "Soft, peeling nails",
+      "Reduced muscle strength; puffiness in severe cases",
+      "History of crash dieting, tiny meals, or protein-light eating"
+    ],
+    "causes": [
+      "Crash and fad diets, skipped meals",
+      "Vegetarian or vegan patterns without deliberate protein planning",
+      "Reduced appetite and intake in the elderly",
+      "Post-surgical, bariatric or convalescent phases",
+      "Digestive conditions limiting absorption",
+      "Athletic training outstripping intake"
+    ],
+    "treatment": [
+      "Honest dietary assessment — quantities and quality, not just food names",
+      "A realistic protein target rebuilt into your actual food culture and budget",
+      "Attention to co-travelling deficits: iron, zinc, B12 commonly accompany",
+      "Medical review where poor appetite or absorption is the driver",
+      "Constitutional homeopathic support for appetite and recovery",
+      "Progress tracked by texture, breakage and shedding — then density photographs"
+    ],
+    "expectedResults": [
+      {
+        "phase": "Weeks 2–6",
+        "detail": "Intake rebuilt; energy and satiety improve first."
+      },
+      {
+        "phase": "Months 2–4",
+        "detail": "Shedding settles; new growth at the roots is stronger — often felt before seen."
+      },
+      {
+        "phase": "Months 4–9",
+        "detail": "Density and texture visibly recover as stronger shafts replace weak lengths."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How much protein do I actually need?",
+        "answer": "As a working guide, near 0.8–1 g per kilogram of body weight daily for most adults — more in recovery, training or later life. We translate that into your real meals rather than leaving it as a number."
+      },
+      {
+        "question": "I'm vegetarian — can I fix this without eggs or meat?",
+        "answer": "Absolutely, with planning: dal and legumes at every meal, dairy or soy, nuts and seeds, and attention to quantity. Vegetarian is not the problem; unplanned vegetarian is."
+      },
+      {
+        "question": "I stopped my crash diet — why is hair still falling?",
+        "answer": "Because today's shedding reflects the deficit of two to four months ago. With intake restored, expect settling over the coming two to three months, then regrowth behind it."
+      }
+    ],
+    "results": [],
+    "heroImage": "/uploads/protein-deficiency-hair-loss-hero.jpg",
+    "introImage": "/uploads/protein-deficiency-hair-loss-intro.jpg"
+  }
+]

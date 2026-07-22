@@ -1,0 +1,48 @@
+{
+  "phone": "9645119355",
+  "whatsapp": "9645119355",
+  "email": "care@drrijishealthcare.com",
+  "addressLine1": "Dr. Riji's Health Care",
+  "addressLine2": "Main Road, Kattakkada",
+  "city": "Kattakkada",
+  "district": "Thiruvananthapuram",
+  "state": "Kerala",
+  "postalCode": "695572",
+  "hours": [
+    {
+      "days": "Monday – Saturday",
+      "time": "9:00 AM – 1:00 PM"
+    },
+    {
+      "days": "Monday – Saturday",
+      "time": "4:00 PM – 7:30 PM"
+    },
+    {
+      "days": "Sunday",
+      "time": "Online consultation only"
+    }
+  ],
+  "mapQuery": "",
+  "stats": [
+    {
+      "value": 12,
+      "suffix": "+",
+      "label": "Years in practice"
+    },
+    {
+      "value": 9000,
+      "suffix": "+",
+      "label": "Consultations completed"
+    },
+    {
+      "value": 40,
+      "suffix": "+",
+      "label": "Countries consulted online"
+    },
+    {
+      "value": 9,
+      "suffix": "",
+      "label": "Doctor-formulated products"
+    }
+  ]
+}

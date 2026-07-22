@@ -1,0 +1,58 @@
+[
+  {
+    "author": "test",
+    "location": "",
+    "quote": "test",
+    "context": "",
+    "consentOnFile": false,
+    "slug": "test"
+  },
+  {
+    "id": "t1",
+    "quote": "What I valued most was that the first consultation was almost an hour. Nobody had previously asked me about my sleep, my diet or my thyroid history — they had only looked at my scalp.",
+    "author": "Meera S.",
+    "location": "Thiruvananthapuram",
+    "context": "Consulting since 2025 · Hair fall",
+    "consentOnFile": false
+  },
+  {
+    "id": "t2",
+    "quote": "I live in Dubai and consult online. Reports are uploaded before the call, the prescription arrives afterwards and the medicines reach me within the week. It has been genuinely practical.",
+    "author": "Fathima N.",
+    "location": "Dubai, UAE",
+    "context": "Online consultation · Scalp condition",
+    "consentOnFile": false
+  },
+  {
+    "id": "t3",
+    "quote": "Dr. Riji told me at the first visit that part of my greying was genetic and would not reverse. I appreciated being told that rather than being sold a package.",
+    "author": "Rahul M.",
+    "location": "Kattakkada",
+    "context": "Consulting since 2024 · Premature greying",
+    "consentOnFile": false
+  },
+  {
+    "id": "t4",
+    "quote": "My daughter is seven and was anxious about seeing any doctor. The consultation was unhurried and she was spoken to directly rather than about. That mattered more than I expected.",
+    "author": "Anjali R.",
+    "location": "Kollam",
+    "context": "Paediatric consultation · Recurrent allergy",
+    "consentOnFile": false
+  },
+  {
+    "id": "t5",
+    "quote": "The follow-up photographs are what convinced me. I could not judge my own progress month to month, but the comparison at six months was clear.",
+    "author": "Divya K.",
+    "location": "Neyyattinkara",
+    "context": "Consulting since 2025 · Hair thinning",
+    "consentOnFile": false
+  },
+  {
+    "id": "t6",
+    "quote": "I was asked to get thyroid and ferritin tests before any medicine was prescribed. It turned out my ferritin was very low. That alone changed things.",
+    "author": "Sreelakshmi P.",
+    "location": "Thiruvananthapuram",
+    "context": "Consulting since 2026 · Hair fall with anaemia",
+    "consentOnFile": false
+  }
+]
