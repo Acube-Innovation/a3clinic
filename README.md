@@ -193,10 +193,17 @@ Not yet done: Lighthouse, axe audit, and a real screen-reader pass.
 - **Content editing** — Treatments & Conditions, Shop Products, Blog Posts,
   Testimonials, Homepage FAQs, the Doctor Profile, Clinic Photos, the
   Consultation Page and Clinic & Contact settings are all editable through
-  schema-driven forms (`src/lib/admin/schemas.ts`). Saving writes JSON to
-  `/content` and revalidates the live site immediately. First-time reads fall
-  back to the in-code defaults in `src/data/*`, so a missing `/content` file is
-  never an error.
+  schema-driven forms (`src/lib/admin/schemas.ts`). Saving writes each
+  collection as a JSON document to **MySQL/MariaDB** (the `documents` table,
+  configured via `MYSQL_*` env vars — see `.env.example`) and revalidates the
+  live site immediately. Without `MYSQL_*` set, the store falls back to JSON
+  files under `/content`. First-time reads fall back to the in-code defaults
+  in `src/data/*`, so an empty database is never an error.
+  - **Setup**: create the database and user (any MySQL 8 / MariaDB 10.x,
+    including AWS RDS), fill `MYSQL_*` in `.env.local`, then load existing
+    `/content` data with `npm run db:migrate-content` (re-runnable; file copy
+    wins). Uploaded images stay on disk in `content/uploads` — back up that
+    folder and the database together.
 - **Clinic Photos** — image uploads (JPG/PNG/WebP ≤ 5 MB) stored in
   `content/uploads` and served via `app/uploads/[...path]/route.ts` (files
   added to `/public` after build are not reliably served). They render in the
