@@ -1,9 +1,11 @@
+import Image from "next/image";
 import { Beaker, Leaf, ShieldCheck, SprayCan } from "lucide-react";
 
 import { Container, Section, Eyebrow } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Reveal } from "@/components/motion/Reveal";
+import { site } from "@/lib/site";
 
 const points = [
   {
@@ -29,6 +31,34 @@ const points = [
     title: "Support, not substitute",
     detail:
       "These are cosmetic hair and skin preparations. They support treatment; they do not replace consultation, and they are not sold as cures.",
+  },
+];
+
+/**
+ * Production stages shown beside the story. Set `src` (a file under
+ * public/images) once the clinic's own photograph exists; until then the tile
+ * renders a placeholder whose `slot` describes the shot needed.
+ */
+const stages: Array<{ title: string; slot: string; src?: string }> = [
+  {
+    title: "Lab formulation",
+    slot: "Formulation at the lab bench — measuring botanical actives, gloved hands, glassware",
+    src: "/images/product-stage-formulation.jpg",
+  },
+  {
+    title: "Homeopathic mixing",
+    slot: "Homeopathic preparation being mixed and potentised in the lab",
+    src: "/images/product-stage-mixing.jpg",
+  },
+  {
+    title: "Labelling",
+    slot: "Finished bottles being labelled with the Dr. Riji's Health Care label",
+    src: "/images/product-stage-labelling.jpg",
+  },
+  {
+    title: "Packing",
+    slot: "Products being packed into branded boxes in the lab, ready for dispatch",
+    src: "/images/product-stage-packing.jpg",
   },
 ];
 
@@ -90,36 +120,52 @@ export function ProductsStory() {
 
           {/* ------------------------------ Visual ----------------------------- */}
           <Reveal direction="left" className="relative">
-            <div className="grid grid-cols-2 gap-5">
-              <div className="flex flex-col gap-5 pt-10">
-                <PlaceholderImage
-                  slot="Hair oil bottle, styled flat-lay on stone with botanical sprigs"
-                  variant="product"
-                  rounded="rounded-4xl"
-                  className="aspect-[3/4] w-full"
-                />
-                <PlaceholderImage
-                  slot="Raw botanical ingredients — bhringraj, brahmi, rosemary — arranged on linen"
-                  variant="editorial"
-                  rounded="rounded-4xl"
-                  className="aspect-square w-full"
-                />
-              </div>
-              <div className="flex flex-col gap-5">
-                <PlaceholderImage
-                  slot="Full product range grouped together on a neutral background"
-                  variant="clinic"
-                  rounded="rounded-4xl"
-                  className="aspect-square w-full"
-                />
-                <PlaceholderImage
-                  slot="Serum bottle held in hand, close-up, soft daylight"
-                  variant="product"
-                  rounded="rounded-4xl"
-                  className="aspect-[3/4] w-full"
-                />
-              </div>
-            </div>
+            {/* Four production stages, 1-2 / 3-4; the right column sits lower
+                for the staggered look of the original layout. */}
+            <ol className="grid grid-cols-2 gap-5">
+              {stages.map((stage, index) => (
+                <li
+                  key={stage.title}
+                  className={index % 2 === 1 ? "translate-y-10" : undefined}
+                >
+                  <figure className="relative aspect-[4/5] overflow-hidden rounded-4xl shadow-card ring-1 ring-line">
+                    {stage.src ? (
+                      <Image
+                        src={stage.src}
+                        alt={`${stage.title} of ${site.name} products`}
+                        fill
+                        sizes="(min-width: 1024px) 22vw, 50vw"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="absolute inset-0">
+                        <PlaceholderImage
+                          slot={stage.slot}
+                          variant={index % 2 === 0 ? "editorial" : "product"}
+                          rounded="rounded-none"
+                          className="h-full w-full"
+                        />
+                      </div>
+                    )}
+
+                    {/* Brand chip */}
+                    <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[0.6875rem] font-semibold text-teal-800 shadow-soft backdrop-blur-sm sm:left-4 sm:top-4 sm:px-3 sm:text-xs">
+                      {site.name}
+                    </span>
+
+                    {/* Stage caption */}
+                    <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-teal-950/95 via-teal-950/65 to-transparent px-4 pb-4 pt-16 sm:px-5 sm:pb-5">
+                      <span className="block text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-olive-300">
+                        Stage {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="mt-1 block font-display text-lg leading-tight text-white sm:text-xl">
+                        {stage.title}
+                      </span>
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ol>
 
             <div
               aria-hidden
