@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { ArrowRight, Check, ShieldCheck, Sparkles, Star } from "lucide-react";
+import { CalendarCheck, Check, ShieldCheck, ShoppingBag, Sparkles, Star } from "lucide-react";
 
 import { Container } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
@@ -86,16 +86,13 @@ export async function Hero() {
                 {t("description")}
               </p>
 
-              <div className="mt-10 flex flex-col gap-3.5 sm:flex-row sm:items-center">
-                <Button href="/book" size="lg">
+              <div className="mt-10 grid gap-3.5 sm:grid-cols-2">
+                <Button href="/book" size="xl" variant="lime" className="w-full">
+                  <CalendarCheck aria-hidden strokeWidth={2} className="size-5.5" />
                   {tc("bookConsultation")}
-                  <ArrowRight
-                    aria-hidden
-                    strokeWidth={2}
-                    className="size-4.5 transition-transform duration-300 group-hover:translate-x-1"
-                  />
                 </Button>
-                <Button href="/shop" size="lg" variant="secondary">
+                <Button href="/shop" size="xl" variant="secondary" className="w-full">
+                  <ShoppingBag aria-hidden strokeWidth={2} className="size-5.5" />
                   {tc("shopProducts")}
                 </Button>
               </div>

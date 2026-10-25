@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { Camera, Info, Ruler, Sun } from "lucide-react";
 
 import { Container, Section, SectionHeading } from "@/components/ui/Section";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { ResultPairsGrid } from "@/components/sections/ResultPairsGrid";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { getAllResultPairs } from "@/data/conditions";
@@ -64,17 +64,29 @@ export async function BeforeAfter() {
               <>
             <div className="grid gap-6 sm:grid-cols-2">
               {[
-                { label: "First consultation", slot: "Crown view at first consultation — standardised angle and lighting (consented patient)" },
-                { label: "Follow-up review", slot: "Crown view at a later follow-up — identical angle and lighting (consented patient)" },
+                {
+                  label: "First consultation",
+                  src: "/images/progress-first-consultation.jpg",
+                  alt: "Crown photographed with a digital trichoscope at the first consultation",
+                },
+                {
+                  label: "Follow-up review",
+                  src: "/images/progress-follow-up-review.jpg",
+                  alt: "Follow-up review comparing the earlier and current crown photographs on screen",
+                },
               ].map((image) => (
                 <figure key={image.label}>
                   <div className="relative">
-                    <PlaceholderImage
-                      slot={image.slot}
-                      variant="clinic"
-                      rounded="rounded-4xl"
-                      className="aspect-[4/3] w-full"
-                    />
+                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-4xl">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        sizes="(min-width: 640px) 45vw, 100vw"
+                        draggable={false}
+                        className="select-none object-cover object-top"
+                      />
+                    </div>
                     <figcaption className="absolute left-4 top-4 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-teal-800 backdrop-blur-sm">
                       {image.label}
                     </figcaption>

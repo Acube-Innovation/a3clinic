@@ -2,8 +2,8 @@ import type { ComponentProps } from "react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary" | "ghost" | "olive" | "onDark";
-type Size = "sm" | "md" | "lg";
+type Variant = "primary" | "secondary" | "ghost" | "olive" | "lime" | "onDark";
+type Size = "sm" | "md" | "lg" | "xl";
 
 const base =
   "group relative inline-flex items-center justify-center gap-2 rounded-full font-semibold " +
@@ -18,6 +18,9 @@ const variants: Record<Variant, string> = {
   ghost: "text-teal-800 hover:bg-teal-50",
   olive:
     "bg-olive-500 text-white shadow-soft hover:bg-olive-600 hover:shadow-lift hover:-translate-y-0.5",
+  // Matches the hero headline's olive accent; dark text for contrast on dark sections.
+  lime:
+    "bg-olive-300 text-teal-900 shadow-soft hover:bg-olive-200 hover:shadow-lift hover:-translate-y-0.5",
   onDark:
     "bg-white/10 text-white ring-1 ring-white/25 backdrop-blur-sm hover:bg-white/20 hover:-translate-y-0.5",
 };
@@ -26,6 +29,7 @@ const sizes: Record<Size, string> = {
   sm: "h-10 px-4 text-sm",
   md: "h-12 px-6 text-[0.9375rem]",
   lg: "h-14 px-8 text-base",
+  xl: "h-16 px-8 text-lg",
 };
 
 type BaseProps = {
