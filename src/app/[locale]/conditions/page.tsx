@@ -7,6 +7,7 @@ import { pageMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import type { Locale } from "@/i18n/routing";
 import { PageHero } from "@/components/layout/PageHero";
+import { ConditionCardMedia } from "@/components/conditions/ConditionCardMedia";
 import { Container, Section } from "@/components/ui/Section";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { BookingCta } from "@/components/sections/BookingCta";
@@ -83,26 +84,30 @@ export default async function ConditionsPage({
                       <StaggerItem key={condition.slug} className="h-full">
                         <Link
                           href={`/conditions/${condition.slug}`}
-                          className="group flex h-full flex-col rounded-4xl bg-card p-7 ring-1 ring-line transition-[transform,box-shadow,ring-color] duration-400 ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:shadow-lift hover:ring-teal-100"
+                          className="group flex h-full flex-col overflow-hidden rounded-4xl bg-card ring-1 ring-line transition-[transform,box-shadow,ring-color] duration-400 ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:shadow-lift hover:ring-teal-100"
                         >
-                          <div className="flex items-start justify-between gap-4">
-                            <h3 className="text-h3 text-teal-800 transition-colors duration-300 group-hover:text-teal-600">
-                              {condition.name}
-                            </h3>
-                            <ArrowUpRight
-                              aria-hidden
-                              strokeWidth={1.75}
-                              className="mt-1 size-5 shrink-0 text-line transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-olive-500"
-                            />
+                          <ConditionCardMedia condition={condition} />
+
+                          <div className="flex flex-1 flex-col p-7">
+                            <div className="flex items-start justify-between gap-4">
+                              <h3 className="text-h3 text-teal-800 transition-colors duration-300 group-hover:text-teal-600">
+                                {condition.name}
+                              </h3>
+                              <ArrowUpRight
+                                aria-hidden
+                                strokeWidth={1.75}
+                                className="mt-1 size-5 shrink-0 text-line transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-olive-500"
+                              />
+                            </div>
+
+                            <p className="mt-3.5 flex-1 text-[0.9375rem] leading-relaxed text-muted">
+                              {condition.summary}
+                            </p>
+
+                            <span className="mt-6 text-sm font-semibold text-olive-600">
+                              Read about treatment
+                            </span>
                           </div>
-
-                          <p className="mt-3.5 flex-1 text-[0.9375rem] leading-relaxed text-muted">
-                            {condition.summary}
-                          </p>
-
-                          <span className="mt-6 text-sm font-semibold text-olive-600">
-                            Read about treatment
-                          </span>
                         </Link>
                       </StaggerItem>
                     ))}

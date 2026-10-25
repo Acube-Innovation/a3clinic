@@ -241,12 +241,16 @@ function ImageField({
   watermark?: boolean;
 }) {
   const [busy, setBusy] = useState(false);
+  const [dragOver, setDragOver] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function onFile(event: React.ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0];
-    event.target.value = "";
-    if (!file) return;
+  const ACCEPTED = ["image/jpeg", "image/png", "image/webp"];
+
+  async function upload(file: File) {
+    if (!ACCEPTED.includes(file.type)) {
+      setError("Please use a JPG, PNG or WebP image.");
+      return;
+    }
 
     setBusy(true);
     setError(null);
@@ -265,6 +269,19 @@ function ImageField({
     } finally {
       setBusy(false);
     }
+  }
+
+  function onFile(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    if (file) void upload(file);
+  }
+
+  function onDrop(event: React.DragEvent<HTMLLabelElement>) {
+    event.preventDefault();
+    setDragOver(false);
+    const file = event.dataTransfer.files?.[0];
+    if (file) void upload(file);
   }
 
   return (
@@ -289,14 +306,25 @@ function ImageField({
         </div>
       ) : (
         <label
+          onDragOver={(e) => {
+            e.preventDefault();
+            if (!busy) setDragOver(true);
+          }}
+          onDragLeave={() => setDragOver(false)}
+          onDrop={onDrop}
           className={cn(
-            "flex h-36 w-52 cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line bg-white text-muted transition-colors hover:border-teal-300 hover:text-teal-800",
+            "flex h-36 w-52 cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line bg-white text-center text-muted transition-colors hover:border-teal-300 hover:text-teal-800",
+            dragOver && "border-teal-400 bg-teal-50 text-teal-800",
             busy && "pointer-events-none opacity-60",
           )}
         >
           <ImagePlus className="size-6" strokeWidth={1.6} aria-hidden />
           <span className="text-xs font-semibold">
-            {busy ? "Uploading…" : "Upload photo"}
+            {busy
+              ? "Uploading…"
+              : dragOver
+                ? "Drop to upload"
+                : "Upload or drop photo"}
           </span>
           <span className="text-[0.6875rem]">
             {watermark

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { Activity, ArrowRight, CircleAlert, Sprout, Stethoscope } from "lucide-react";
+import { Activity, ArrowRight, CircleAlert, Stethoscope } from "lucide-react";
 
 import { routing, type Locale } from "@/i18n/routing";
 import {
@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { BookingCta } from "@/components/sections/BookingCta";
 import { ResultPairsGrid } from "@/components/sections/ResultPairsGrid";
+import { ConditionCardMedia } from "@/components/conditions/ConditionCardMedia";
 import { Link } from "@/i18n/navigation";
 import {
   getConditionBySlug,
@@ -337,17 +338,18 @@ export default async function ConditionPage({
                 <StaggerItem key={item.slug} className="h-full">
                   <Link
                     href={`/conditions/${item.slug}`}
-                    className="group flex h-full flex-col rounded-4xl bg-white p-7 ring-1 ring-line transition-[transform,box-shadow] duration-400 ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:shadow-lift"
+                    className="group flex h-full flex-col overflow-hidden rounded-4xl bg-white ring-1 ring-line transition-[transform,box-shadow] duration-400 ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:shadow-lift"
                   >
-                    <span className="grid size-10 place-items-center rounded-2xl bg-teal-50 text-olive-600">
-                      <Sprout className="size-5" strokeWidth={1.7} aria-hidden />
-                    </span>
-                    <h3 className="mt-5 text-lg font-semibold text-teal-800 transition-colors group-hover:text-teal-600">
-                      {item.name}
-                    </h3>
-                    <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted">
-                      {item.summary}
-                    </p>
+                    <ConditionCardMedia condition={item} />
+
+                    <div className="flex flex-1 flex-col p-7">
+                      <h3 className="text-lg font-semibold text-teal-800 transition-colors group-hover:text-teal-600">
+                        {item.name}
+                      </h3>
+                      <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted">
+                        {item.summary}
+                      </p>
+                    </div>
                   </Link>
                 </StaggerItem>
               ))}
