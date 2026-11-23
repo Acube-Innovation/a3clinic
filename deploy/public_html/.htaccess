@@ -1,0 +1,42 @@
+# Dr. Riji's Health Care — Laravel front controller on GoDaddy (Apache).
+
+Options -MultiViews -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Live domain only: force HTTPS and drop "www" (the canonical URL is
+    # https://drrijishealthcare.com). Requests by IP or other hosts are left
+    # alone so the site can be tested before DNS points here.
+    RewriteCond %{HTTP_HOST} ^(www\.)?drrijishealthcare\.com$ [NC]
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} ^www\. [NC]
+    RewriteCond %{REQUEST_URI} !^/\.well-known/
+    RewriteRule ^ https://drrijishealthcare.com%{REQUEST_URI} [L,R=301,NE]
+
+    # Admin uploads are images only; never run a script placed there.
+    RewriteRule ^uploads/.*\.(php\d?|phtml|phar|cgi|pl|py|sh)$ - [F,NC]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Uploaded images (UUID names) and Vite build files (content-hashed names)
+# never change once written, so browsers may cache them for a year.
+<IfModule mod_headers.c>
+    <If "%{REQUEST_URI} =~ m#^/(build|uploads)/#">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </If>
+</IfModule>

@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-return Application::configure(basePath: dirname(__DIR__))
+$app = Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
@@ -45,3 +45,12 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->setStatusCode(404);
         });
     })->create();
+
+// GoDaddy shared hosting: the web root is ~/public_html beside the app
+// checkout in ~/a3clinic (see deploy/README.md). There, public files and
+// admin uploads live in public_html; locally and in tests, public/ as usual.
+if (is_file($webRoot = dirname(__DIR__, 2).'/public_html/index.php')) {
+    $app->usePublicPath(dirname($webRoot));
+}
+
+return $app;
