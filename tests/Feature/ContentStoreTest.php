@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Appointment;
+use App\Models\AppointmentFile;
 use App\Models\Condition;
+use App\Models\Enquiry;
 use App\Models\Lists\ConditionSymptom;
 use App\Models\Post;
 use App\Models\Section;
@@ -118,3 +121,26 @@ test('the default content seeder fills only unsaved sections', function () {
 test('unknown sections are rejected', function () {
     $this->store->read('nope');
 })->throws(InvalidArgumentException::class);
+
+test('content:import --merge adds only inbox items that are missing', function () {
+    Appointment::create(['id' => 'A-here', 'name' => 'Already here', 'position' => 0]);
+    Enquiry::create(['id' => 'E-here', 'name' => 'Already here', 'message' => 'x', 'position' => 0]);
+    $dump = tempnam(sys_get_temp_dir(), 'dump');
+    file_put_contents($dump, implode("\n", [
+        "INSERT INTO `appointments` (`id`, `created_at`, `status`, `mode`, `concern`, `date`, `time`, `name`, `phone`, `email`, `age`, `gender`, `notes`, `position`) VALUES ('A-here','2026-11-20T10:00:00.000Z','pending','online','hair','2026-12-01','10:00','Changed on old site','','','','','',0);",
+        "INSERT INTO `appointments` (`id`, `created_at`, `status`, `mode`, `concern`, `date`, `time`, `name`, `phone`, `email`, `age`, `gender`, `notes`, `position`) VALUES ('A-new','2026-11-23T10:00:00.000Z','pending','clinic','skin','2026-12-02','11:00','New on old site','','','','','',0);",
+        "INSERT INTO `appointment_files` (`id`, `appointment_id`, `position`, `filename`) VALUES (1,'A-new',0,'report\\'s.pdf');",
+        "INSERT INTO `appointment_files` (`id`, `appointment_id`, `position`, `filename`) VALUES (2,'A-here',0,'ignored.pdf');",
+        "INSERT INTO `enquiries` (`id`, `created_at`, `read`, `name`, `phone`, `email`, `reason`, `message`, `position`) VALUES ('E-new','2026-11-23T10:00:00.000Z',0,'New','','','general','Hello',0);",
+        "INSERT INTO `conditions` (`slug`, `name`, `category`) VALUES ('x','Not merged','hair');",
+    ]));
+
+    $this->artisan('content:import', ['file' => $dump, '--merge' => true])->assertSuccessful();
+
+    expect(Appointment::find('A-here')->name)->toBe('Already here')
+        ->and(Appointment::find('A-new')->files->pluck('filename')->all())->toBe(["report's.pdf"])
+        ->and(AppointmentFile::where('filename', 'ignored.pdf')->exists())->toBeFalse()
+        ->and(Enquiry::pluck('id')->sort()->values()->all())->toBe(['E-here', 'E-new'])
+        ->and(Condition::find('x'))->toBeNull();
+    unlink($dump);
+});

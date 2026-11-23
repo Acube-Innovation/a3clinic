@@ -34,14 +34,13 @@ config/routes/views.
   live, `SESSION_SECURE_COOKIE=true`.
 - Cron (cPanel → Cron Jobs): `* * * * * cd ~/a3clinic && php artisan schedule:run >/dev/null 2>&1`
 
-## Content import (go-live sync)
-
-On the old server, take a data-only dump, then load it here:
+## Content sync from the old AWS site
 
 ```bash
-mysqldump --no-create-info --complete-insert --skip-triggers \
-  --single-transaction --ignore-table=a3clinic.documents a3clinic > dump.sql
-php artisan content:import dump.sql
+deploy/sync-from-aws.sh           # replace all content with the AWS copy (before go-live)
+deploy/sync-from-aws.sh --merge   # only add AWS bookings/enquiries missing here (after go-live)
 ```
 
-and copy `public/uploads/` into `~/public_html/uploads/`.
+Both copy new uploads too (never deleting any). Under the hood this is
+`php artisan content:import <dump> [--merge]` with a data-only `mysqldump`
+of the old database.
