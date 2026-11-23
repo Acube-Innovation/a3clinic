@@ -66,6 +66,13 @@ return [
      | the old site's settings). Changing the password later happens in the panel.
      */
 
+    /*
+     | Where site:backup writes database dumps and upload archives — outside
+     | the web root and the app checkout (~/backups on the host).
+     */
+
+    'backup_path' => env('BACKUP_PATH', dirname(base_path()).'/backups'),
+
     'admin' => [
         'email' => env('ADMIN_EMAIL'),
         'password' => env('ADMIN_PASSWORD'),

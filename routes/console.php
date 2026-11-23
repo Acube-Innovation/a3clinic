@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schedule;
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+// Run by cron every minute: `cd ~/a3clinic && php artisan schedule:run` (deploy/README.md).
+Schedule::command('site:backup')->dailyAt('02:30')->timezone('Asia/Kolkata');
+Schedule::command('site:backup --uploads')->weeklyOn(0, '03:00')->timezone('Asia/Kolkata');
