@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Support\SiteData;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -41,6 +42,12 @@ class HandleInertiaRequests extends Middleware
             // Lazy: this middleware runs before the route's SetLocale middleware.
             'locale' => fn () => app()->getLocale(),
             'locales' => config('app.locales'),
+            // Site chrome data (header menu, footer, contact buttons).
+            'clinic' => fn () => app(SiteData::class)->clinic(),
+            'navConditions' => fn () => collect(app(SiteData::class)->conditions())
+                ->filter(fn ($c) => ! empty($c['featured']))
+                ->map(fn ($c) => ['slug' => $c['slug'], 'name' => $c['name']])
+                ->values(),
         ];
     }
 }

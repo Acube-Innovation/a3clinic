@@ -1,2 +1,9 @@
-User-agent: *
-Disallow:
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*/cart
+Disallow: /*/portal
+Disallow: /admin
+
+Host: https://drrijishealthcare.com
+Sitemap: https://drrijishealthcare.com/sitemap.xml

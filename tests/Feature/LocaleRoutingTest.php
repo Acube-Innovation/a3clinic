@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Inertia\Testing\AssertableInertia as Assert;
+
+uses(RefreshDatabase::class);
 
 test('the root redirects to english by default', function () {
     $this->get('/')->assertRedirect('/en')->assertStatus(307);
@@ -22,6 +25,7 @@ test('each locale renders the home page and remembers the choice', function (str
             ->where('locales', ['en', 'ml']));
 })->with(['en', 'ml']);
 
-test('unknown locales are not routed', function () {
-    $this->get('/fr')->assertNotFound();
+test('unknown locales are treated as unprefixed paths, which then 404', function () {
+    $this->get('/fr')->assertRedirect('/en/fr');
+    $this->get('/en/fr')->assertNotFound();
 });

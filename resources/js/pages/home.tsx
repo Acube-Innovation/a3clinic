@@ -1,28 +1,58 @@
-import { Head, usePage } from '@inertiajs/react';
+import { BeforeAfter } from "@/components/sections/BeforeAfter";
+import { BlogPreview } from "@/components/sections/BlogPreview";
+import { BookingCta } from "@/components/sections/BookingCta";
+import { ClinicLocation } from "@/components/sections/ClinicLocation";
+import { ConditionsTreated } from "@/components/sections/ConditionsTreated";
+import { ConsultationProcess } from "@/components/sections/ConsultationProcess";
+import { FaqSection } from "@/components/sections/FaqSection";
+import { FeaturedProducts } from "@/components/sections/FeaturedProducts";
+import { HairSpeciality } from "@/components/sections/HairSpeciality";
+import { Hero } from "@/components/sections/Hero";
+import { InstagramGallery } from "@/components/sections/InstagramGallery";
+import { ProductsStory } from "@/components/sections/ProductsStory";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { VideoConsultation } from "@/components/sections/VideoConsultation";
+import { WhyChoose } from "@/components/sections/WhyChoose";
+import type { ConditionCard, ResultPair } from "@/data/conditions";
+import type { Faq } from "@/data/faqs";
+import type { Post } from "@/data/posts";
+import type { Product } from "@/data/products";
+import type { Testimonial } from "@/data/testimonials";
 
-import type { SharedData } from '@/types';
+type Props = {
+  conditions: ConditionCard[];
+  resultPairs: ResultPair[];
+  featuredProducts: Product[];
+  testimonials: Testimonial[];
+  recentPosts: Post[];
+  faqs: Faq[];
+};
 
-/**
- * Phase 1 placeholder: proves the brand theme, fonts and locale routing are
- * wired up. Replaced by the real home page (ported sections) in Phase 3.
- */
-export default function Home() {
-    const { locale } = usePage<SharedData>().props;
-
-    return (
-        <>
-            <Head title="Home" />
-            <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center gap-6 px-6 py-24">
-                <p className="text-eyebrow font-semibold uppercase text-olive-600">Laravel rebuild · {locale}</p>
-                <h1 className="font-display text-display text-teal-800">Healthy Hair. Whole-body Healing.</h1>
-                <p className="max-w-2xl text-lead text-muted">
-                    Homeopathic care for hair fall, scalp disorders, skin conditions and chronic illness.
-                </p>
-                <div className="flex gap-3">
-                    <span className="rounded-full bg-teal-800 px-6 py-3 text-sm font-semibold text-white">Book a consultation</span>
-                    <span className="rounded-full border border-line bg-platinum px-6 py-3 text-sm font-semibold text-ink">Explore treatments</span>
-                </div>
-            </main>
-        </>
-    );
+export default function HomePage({
+  conditions,
+  resultPairs,
+  featuredProducts,
+  testimonials,
+  recentPosts,
+  faqs,
+}: Props) {
+  return (
+    <>
+      <Hero />
+      <WhyChoose />
+      <HairSpeciality />
+      <ConditionsTreated conditions={conditions} />
+      <ConsultationProcess />
+      <BeforeAfter results={resultPairs} />
+      <ProductsStory />
+      <FeaturedProducts products={featuredProducts} />
+      <Testimonials testimonials={testimonials} />
+      <VideoConsultation />
+      <BlogPreview posts={recentPosts} />
+      <FaqSection faqs={faqs} />
+      <InstagramGallery />
+      <ClinicLocation />
+      <BookingCta />
+    </>
+  );
 }

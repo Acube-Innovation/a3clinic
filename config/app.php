@@ -55,6 +55,13 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     /*
+     | Public canonical origin used in canonical/hreflang/Open Graph URLs and
+     | JSON-LD @id values, independent of the host serving the request.
+     */
+
+    'site_url' => env('SITE_URL', 'https://drrijishealthcare.com'),
+
+    /*
     |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
