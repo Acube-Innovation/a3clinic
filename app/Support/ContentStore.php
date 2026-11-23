@@ -19,6 +19,7 @@ use App\Models\Section;
 use App\Models\Testimonial;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 
 /**
@@ -55,6 +56,79 @@ class ContentStore
             $this->{'write'.ucfirst($section)}($data);
             Section::markInitialized($section);
         });
+    }
+
+    // ------------------------------------------- single records (admin editing)
+
+    /** Slug-keyed collections the admin edits one record at a time. */
+    private const RECORDS = [
+        'conditions' => [Condition::class, 'saveCondition'],
+        'products' => [Product::class, 'saveProduct'],
+        'posts' => [Post::class, 'savePost'],
+    ];
+
+    /**
+     * Fields a saved record always carries even when the admin form doesn't
+     * edit them (blankFor + extraBlanks in the old actions.ts), so pages that
+     * map over list fields never meet a missing key.
+     */
+    private const BLANKS = [
+        'conditions' => ['symptoms' => [], 'causes' => [], 'treatment' => [], 'expectedResults' => [], 'faqs' => [], 'results' => []],
+        'products' => ['benefits' => [], 'ingredients' => [], 'directions' => [], 'rating' => ['value' => 0, 'count' => 0], 'reviews' => [], 'related' => []],
+        'posts' => ['readingMinutes' => 3, 'body' => []],
+    ];
+
+    /** One record of a collection, in its section shape. */
+    public function record(string $section, string $slug): ?array
+    {
+        return collect($this->read($section))->firstWhere('slug', $slug);
+    }
+
+    /**
+     * Save an edited record: the stored record merged with the submitted
+     * fields, so values outside the form (ratings, reviews…) survive.
+     */
+    public function saveRecord(string $section, string $slug, array $data): void
+    {
+        [$model, $save] = self::RECORDS[$section] ?? throw new InvalidArgumentException("Not a record collection: {$section}");
+
+        DB::transaction(function () use ($section, $slug, $data, $model, $save) {
+            $this->initializeFromDefaults($section);
+            $current = $this->record($section, $slug) ?? throw new InvalidArgumentException('Record no longer exists.');
+            $position = $model::whereKey($slug)->value('position') ?? 0;
+            $this->{$save}([...self::BLANKS[$section], ...$current, ...$data, 'slug' => $slug], $position);
+        });
+    }
+
+    /** Create a record at the top of its collection with a slug derived from $title; returns the slug. */
+    public function createRecord(string $section, string $title, array $data): string
+    {
+        [$model, $save] = self::RECORDS[$section] ?? throw new InvalidArgumentException("Not a record collection: {$section}");
+
+        return DB::transaction(function () use ($section, $title, $data, $model, $save) {
+            $this->initializeFromDefaults($section);
+            $base = Str::slug($title) ?: 'untitled';
+            $slug = $base;
+            for ($n = 2; $model::whereKey($slug)->exists(); $n++) {
+                $slug = "{$base}-{$n}";
+            }
+            // Newest first, as the old admin prepended new records.
+            $model::query()->increment('position');
+            $this->{$save}([...self::BLANKS[$section], ...$data, 'slug' => $slug], 0);
+
+            return $slug;
+        });
+    }
+
+    /**
+     * Record edits work on tables; a section still showing its in-code defaults
+     * is written out first so the edit applies on top of what visitors see.
+     */
+    private function initializeFromDefaults(string $section): void
+    {
+        if (! Section::isInitialized($section)) {
+            $this->write($section, $this->defaults($section));
+        }
     }
 
     /** The in-code defaults exported from the Next.js app's src/data. */
@@ -176,34 +250,39 @@ class ContentStore
         self::deleteMissing(Condition::class, array_map(fn ($c) => (string) $c['slug'], $data));
 
         foreach (array_values($data) as $i => $c) {
-            $slug = (string) $c['slug'];
-            Condition::updateOrCreate(['slug' => $slug], [
-                'name' => self::str($c['name'] ?? null),
-                'category' => $c['category'],
-                'featured' => (bool) ($c['featured'] ?? false),
-                'summary' => self::str($c['summary'] ?? null),
-                'intro' => self::str($c['intro'] ?? null),
-                'hero_image' => $c['heroImage'] ?? null,
-                'intro_image' => $c['introImage'] ?? null,
-                'position' => $i,
-            ]);
-            $scope = ['condition_slug' => $slug];
-            self::replaceList(Lists\ConditionSymptom::class, array_map(fn ($t) => ['text' => $t], self::arr($c['symptoms'] ?? null)), $scope);
-            self::replaceList(Lists\ConditionCause::class, array_map(fn ($t) => ['text' => $t], self::arr($c['causes'] ?? null)), $scope);
-            self::replaceList(Lists\ConditionTreatment::class, array_map(fn ($t) => ['text' => $t], self::arr($c['treatment'] ?? null)), $scope);
-            self::replaceList(Lists\ConditionExpectedResult::class, array_map(fn ($e) => [
-                'phase' => self::str($e['phase'] ?? null), 'detail' => self::str($e['detail'] ?? null),
-            ], self::arr($c['expectedResults'] ?? null)), $scope);
-            self::replaceList(Lists\ConditionFaq::class, array_map(fn ($f) => [
-                'question' => self::str($f['question'] ?? null), 'answer' => self::str($f['answer'] ?? null),
-            ], self::arr($c['faqs'] ?? null)), $scope);
-            self::replaceList(Lists\ConditionResult::class, array_map(fn ($r) => [
-                'before_image' => self::str($r['before'] ?? null),
-                'after_image' => self::str($r['after'] ?? null),
-                'label' => self::str($r['label'] ?? null),
-                'note' => self::str($r['note'] ?? null),
-            ], self::arr($c['results'] ?? null)), $scope);
+            $this->saveCondition($c, $i);
         }
+    }
+
+    private function saveCondition(array $c, int $i): void
+    {
+        $slug = (string) $c['slug'];
+        Condition::updateOrCreate(['slug' => $slug], [
+            'name' => self::str($c['name'] ?? null),
+            'category' => $c['category'],
+            'featured' => (bool) ($c['featured'] ?? false),
+            'summary' => self::str($c['summary'] ?? null),
+            'intro' => self::str($c['intro'] ?? null),
+            'hero_image' => $c['heroImage'] ?? null,
+            'intro_image' => $c['introImage'] ?? null,
+            'position' => $i,
+        ]);
+        $scope = ['condition_slug' => $slug];
+        self::replaceList(Lists\ConditionSymptom::class, array_map(fn ($t) => ['text' => $t], self::arr($c['symptoms'] ?? null)), $scope);
+        self::replaceList(Lists\ConditionCause::class, array_map(fn ($t) => ['text' => $t], self::arr($c['causes'] ?? null)), $scope);
+        self::replaceList(Lists\ConditionTreatment::class, array_map(fn ($t) => ['text' => $t], self::arr($c['treatment'] ?? null)), $scope);
+        self::replaceList(Lists\ConditionExpectedResult::class, array_map(fn ($e) => [
+            'phase' => self::str($e['phase'] ?? null), 'detail' => self::str($e['detail'] ?? null),
+        ], self::arr($c['expectedResults'] ?? null)), $scope);
+        self::replaceList(Lists\ConditionFaq::class, array_map(fn ($f) => [
+            'question' => self::str($f['question'] ?? null), 'answer' => self::str($f['answer'] ?? null),
+        ], self::arr($c['faqs'] ?? null)), $scope);
+        self::replaceList(Lists\ConditionResult::class, array_map(fn ($r) => [
+            'before_image' => self::str($r['before'] ?? null),
+            'after_image' => self::str($r['after'] ?? null),
+            'label' => self::str($r['label'] ?? null),
+            'note' => self::str($r['note'] ?? null),
+        ], self::arr($c['results'] ?? null)), $scope);
     }
 
     // --------------------------------------------------------------------- products
@@ -259,41 +338,46 @@ class ContentStore
         self::deleteMissing(Product::class, array_map(fn ($p) => (string) $p['slug'], $data));
 
         foreach (array_values($data) as $i => $p) {
-            $slug = (string) $p['slug'];
-            $rating = $p['rating'] ?? [];
-            Product::updateOrCreate(['slug' => $slug], [
-                'name' => self::str($p['name'] ?? null),
-                'category' => $p['category'],
-                'image' => $p['image'] ?? null,
-                'tagline' => self::str($p['tagline'] ?? null),
-                'description' => self::str($p['description'] ?? null),
-                'price' => (int) ($p['price'] ?? 0),
-                'compare_at_price' => $p['compareAtPrice'] ?? null,
-                'size' => self::str($p['size'] ?? null),
-                'in_stock' => (bool) ($p['inStock'] ?? false),
-                'featured' => (bool) ($p['featured'] ?? false),
-                'bestseller' => (bool) ($p['bestseller'] ?? false),
-                'caution' => self::str($p['caution'] ?? null),
-                'rating_value' => (float) ($rating['value'] ?? 0),
-                'rating_count' => (int) ($rating['count'] ?? 0),
-                'position' => $i,
-            ]);
-            $scope = ['product_slug' => $slug];
-            self::replaceList(Lists\ProductBenefit::class, array_map(fn ($t) => ['text' => $t], self::arr($p['benefits'] ?? null)), $scope);
-            self::replaceList(Lists\ProductDirection::class, array_map(fn ($t) => ['text' => $t], self::arr($p['directions'] ?? null)), $scope);
-            self::replaceList(Lists\ProductRelated::class, array_map(fn ($s) => ['related_slug' => $s], self::arr($p['related'] ?? null)), $scope);
-            self::replaceList(Lists\ProductIngredient::class, array_map(fn ($g) => [
-                'name' => self::str($g['name'] ?? null), 'role' => self::str($g['role'] ?? null),
-            ], self::arr($p['ingredients'] ?? null)), $scope);
-            self::replaceList(Lists\ProductReview::class, array_map(fn ($r) => [
-                'author' => self::str($r['author'] ?? null),
-                'location' => self::str($r['location'] ?? null),
-                'rating' => (int) ($r['rating'] ?? 0),
-                'date' => self::str($r['date'] ?? null),
-                'title' => self::str($r['title'] ?? null),
-                'body' => self::str($r['body'] ?? null),
-            ], self::arr($p['reviews'] ?? null)), $scope);
+            $this->saveProduct($p, $i);
         }
+    }
+
+    private function saveProduct(array $p, int $i): void
+    {
+        $slug = (string) $p['slug'];
+        $rating = $p['rating'] ?? [];
+        Product::updateOrCreate(['slug' => $slug], [
+            'name' => self::str($p['name'] ?? null),
+            'category' => $p['category'],
+            'image' => $p['image'] ?? null,
+            'tagline' => self::str($p['tagline'] ?? null),
+            'description' => self::str($p['description'] ?? null),
+            'price' => (int) ($p['price'] ?? 0),
+            'compare_at_price' => $p['compareAtPrice'] ?? null,
+            'size' => self::str($p['size'] ?? null),
+            'in_stock' => (bool) ($p['inStock'] ?? false),
+            'featured' => (bool) ($p['featured'] ?? false),
+            'bestseller' => (bool) ($p['bestseller'] ?? false),
+            'caution' => self::str($p['caution'] ?? null),
+            'rating_value' => (float) ($rating['value'] ?? 0),
+            'rating_count' => (int) ($rating['count'] ?? 0),
+            'position' => $i,
+        ]);
+        $scope = ['product_slug' => $slug];
+        self::replaceList(Lists\ProductBenefit::class, array_map(fn ($t) => ['text' => $t], self::arr($p['benefits'] ?? null)), $scope);
+        self::replaceList(Lists\ProductDirection::class, array_map(fn ($t) => ['text' => $t], self::arr($p['directions'] ?? null)), $scope);
+        self::replaceList(Lists\ProductRelated::class, array_map(fn ($s) => ['related_slug' => $s], self::arr($p['related'] ?? null)), $scope);
+        self::replaceList(Lists\ProductIngredient::class, array_map(fn ($g) => [
+            'name' => self::str($g['name'] ?? null), 'role' => self::str($g['role'] ?? null),
+        ], self::arr($p['ingredients'] ?? null)), $scope);
+        self::replaceList(Lists\ProductReview::class, array_map(fn ($r) => [
+            'author' => self::str($r['author'] ?? null),
+            'location' => self::str($r['location'] ?? null),
+            'rating' => (int) ($r['rating'] ?? 0),
+            'date' => self::str($r['date'] ?? null),
+            'title' => self::str($r['title'] ?? null),
+            'body' => self::str($r['body'] ?? null),
+        ], self::arr($p['reviews'] ?? null)), $scope);
     }
 
     // ------------------------------------------------------------------------ posts
@@ -330,32 +414,37 @@ class ContentStore
         self::deleteMissing(Post::class, array_map(fn ($p) => (string) $p['slug'], $data));
 
         foreach (array_values($data) as $i => $p) {
-            $slug = (string) $p['slug'];
-            Post::updateOrCreate(['slug' => $slug], [
-                'title' => self::str($p['title'] ?? null),
-                'category' => $p['category'],
-                'image' => $p['image'] ?? null,
-                'excerpt' => self::str($p['excerpt'] ?? null),
-                'published_at' => self::str($p['publishedAt'] ?? null),
-                'reading_minutes' => (int) ($p['readingMinutes'] ?? 0),
-                'featured' => (bool) ($p['featured'] ?? false),
-                'position' => $i,
-            ]);
+            $this->savePost($p, $i);
+        }
+    }
 
-            // Rebuild blocks; their items cascade-delete with them.
-            PostBlock::where('post_slug', $slug)->delete();
-            foreach (self::arr($p['body'] ?? null) as $j => $b) {
-                $isList = ($b['type'] ?? null) === 'list';
-                $block = PostBlock::create([
-                    'post_slug' => $slug,
-                    'position' => $j,
-                    'type' => (string) $b['type'],
-                    'text' => $isList ? null : self::str($b['text'] ?? null),
-                ]);
-                if ($isList) {
-                    foreach (self::arr($b['items'] ?? null) as $k => $text) {
-                        $block->items()->create(['position' => $k, 'text' => $text]);
-                    }
+    private function savePost(array $p, int $i): void
+    {
+        $slug = (string) $p['slug'];
+        Post::updateOrCreate(['slug' => $slug], [
+            'title' => self::str($p['title'] ?? null),
+            'category' => $p['category'],
+            'image' => $p['image'] ?? null,
+            'excerpt' => self::str($p['excerpt'] ?? null),
+            'published_at' => self::str($p['publishedAt'] ?? null),
+            'reading_minutes' => (int) ($p['readingMinutes'] ?? 0),
+            'featured' => (bool) ($p['featured'] ?? false),
+            'position' => $i,
+        ]);
+
+        // Rebuild blocks; their items cascade-delete with them.
+        PostBlock::where('post_slug', $slug)->delete();
+        foreach (self::arr($p['body'] ?? null) as $j => $b) {
+            $isList = ($b['type'] ?? null) === 'list';
+            $block = PostBlock::create([
+                'post_slug' => $slug,
+                'position' => $j,
+                'type' => (string) $b['type'],
+                'text' => $isList ? null : self::str($b['text'] ?? null),
+            ]);
+            if ($isList) {
+                foreach (self::arr($b['items'] ?? null) as $k => $text) {
+                    $block->items()->create(['position' => $k, 'text' => $text]);
                 }
             }
         }

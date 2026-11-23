@@ -45,6 +45,16 @@ return [
             'throw' => false,
         ],
 
+        // The web root itself: admin uploads land in public/uploads and are
+        // served statically at /uploads/<name>, the URLs the content stores.
+        'site' => [
+            'driver' => 'local',
+            'root' => public_path(),
+            'url' => '',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

@@ -62,6 +62,16 @@ return [
     'site_url' => env('SITE_URL', 'https://drrijishealthcare.com'),
 
     /*
+     | The clinic admin account created by AdminUserSeeder (carried over from
+     | the old site's settings). Changing the password later happens in the panel.
+     */
+
+    'admin' => [
+        'email' => env('ADMIN_EMAIL'),
+        'password' => env('ADMIN_PASSWORD'),
+    ],
+
+    /*
     |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
