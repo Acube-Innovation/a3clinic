@@ -55,6 +55,7 @@ class BackupSite extends Command
 
                 return self::FAILURE;
             }
+            chmod($archive, 0600);
             $this->info('Uploads: '.basename($archive).' ('.round(filesize($archive) / 1048576, 1).' MB)');
         }
 
