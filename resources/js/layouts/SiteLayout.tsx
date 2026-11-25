@@ -27,11 +27,13 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
     const phone = { intl: phoneIntlOf(clinic.phone), display: phoneDisplayOf(clinic.phone) };
     const whatsappHref = waHrefOf(clinic.whatsapp, "Hello Dr. Riji's Health Care, I would like to book a consultation.");
 
-    // The Treatments dropdown is data-driven: every condition marked "Featured"
-    // in the admin, framed by the programme link and the full index.
+    // The mobile Treatments list: every condition marked "Featured" in the
+    // admin, framed by the programme link and the full index. Desktop shows
+    // the full mega-menu from `navConditions`.
     const treatmentsMenu = [
         { label: t('hairTreatment'), href: '/hair-treatment' },
-        ...navConditions.map((condition) => ({ label: condition.name, href: `/conditions/${condition.slug}` })),
+        ...navConditions.filter((condition) => condition.featured).map((condition) => ({ label: condition.name, href: `/conditions/${condition.slug}` })),
+        { label: t('results'), href: '/results' },
         { label: t('allConditions'), href: '/conditions' },
     ];
 
@@ -45,7 +47,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
                 {t('skipToContent')}
             </a>
             <CartProvider>
-                <Header treatments={treatmentsMenu} phone={phone} whatsappHref={whatsappHref} />
+                <Header treatments={treatmentsMenu} conditions={navConditions} phone={phone} whatsappHref={whatsappHref} />
                 <main id="main" className="flex-1">
                     {children}
                 </main>

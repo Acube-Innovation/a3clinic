@@ -110,6 +110,12 @@ return [
 
     'locales' => ['en', 'ml'],
 
+    /*
+    | Sample (placeholder) case reports at /results. Off in production so
+    | illustrative cases can never appear on the live site by accident.
+    */
+    'show_sample_cases' => (bool) env('SHOW_SAMPLE_CASES', env('APP_ENV', 'production') !== 'production'),
+
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),

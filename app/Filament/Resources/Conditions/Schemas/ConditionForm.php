@@ -28,7 +28,7 @@ class ConditionForm
                 TextInput::make('name')->label('Condition name')->required(),
                 Select::make('category')->options(self::CATEGORIES)->required(),
                 Toggle::make('featured')->columnSpanFull()
-                    ->helperText("Featured conditions appear in the header's Treatments dropdown, and hair conditions also feature on the hair-treatment page."),
+                    ->helperText("Featured conditions are listed first in the header's Treatments menu and appear in the mobile menu; hair conditions also feature on the hair-treatment page. Before/after photos now live in Case Reports & Results."),
                 Textarea::make('summary')->required()->rows(2)->columnSpanFull()
                     ->helperText('One sentence. Used on cards and as the meta description.'),
                 Textarea::make('intro')->label('Introduction')->required()->rows(5)->columnSpanFull(),
@@ -49,18 +49,6 @@ class ConditionForm
                     Textarea::make('answer')->rows(3),
                 ]),
             ]),
-            Section::make('Before & after photos')
-                ->description('Shown on this condition\'s page, and collected into the site-wide progress section. Photos are watermarked automatically on upload. COMPLIANCE: publish a real patient pair only with written, signed, revocable consent on file, and never name the patient.')
-                ->schema([
-                    Fields::repeater('results', 'Pairs', [
-                        Fields::image('before', 'Before photo', watermark: true),
-                        Fields::image('after', 'After photo', watermark: true),
-                        TextInput::make('label')->label('Case label')
-                            ->helperText('e.g. "Photographs 6 months apart" — no names. Leave blank to use the condition name.'),
-                        Textarea::make('note')->rows(2)
-                            ->helperText('Optional context. Describe the documentation, not a promised outcome.'),
-                    ])->columns(2),
-                ]),
         ]);
     }
 }

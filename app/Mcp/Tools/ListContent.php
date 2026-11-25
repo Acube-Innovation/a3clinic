@@ -17,7 +17,7 @@ class ListContent extends ConnectorTool
 {
     public function handle(Request $request, ContentStore $store): Response
     {
-        $paths = ['conditions' => '/en/conditions/', 'products' => '/en/shop/', 'posts' => '/en/blog/'];
+        $paths = ['conditions' => '/en/conditions/', 'products' => '/en/shop/', 'posts' => '/en/blog/', 'cases' => '/en/results/'];
         $out = [];
         foreach (array_keys(ContentEditor::RECORD_FIELDS) as $section) {
             $out[$section] = collect($store->read($section))->map(fn ($r) => [

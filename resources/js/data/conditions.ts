@@ -16,6 +16,10 @@ export type ResultPair = {
   /** e.g. "Photographs 6 months apart" — never a patient name. */
   label: string;
   note: string;
+  /** Case report the pair comes from (/results/<slug>). */
+  href?: string;
+  /** From an illustrative sample case. */
+  sample?: boolean;
 };
 
 export type Condition = {
@@ -43,11 +47,6 @@ export type Condition = {
   /** YouTube link or /uploads/videos/… file, shown after the introduction. */
   video?: string;
 };
-
-/** Complete pairs from a condition (both photos present). */
-export function pairsOf(condition: Condition): ResultPair[] {
-  return (condition.results ?? []).filter((r) => Boolean(r.before) && Boolean(r.after));
-}
 
 export const categoryLabels: Record<ConditionCategory, string> = {
   hair: "Hair & Scalp",

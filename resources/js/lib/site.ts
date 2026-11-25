@@ -133,6 +133,7 @@ export const footerNav = {
   clinic: [
     { key: "about", href: "/about" },
     { key: "consultation", href: "/consultation" },
+    { key: "results", href: "/results" },
     { key: "book", href: "/book" },
     { key: "portal", href: "/portal" },
     { key: "blog", href: "/blog" },

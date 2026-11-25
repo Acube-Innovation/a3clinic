@@ -90,7 +90,7 @@ test('product and post pages emit their structured data', function () {
 
 test('the sitemap lists every route in both locales with alternates', function () {
     $xml = $this->get('/sitemap.xml')->assertOk()->assertHeader('Content-Type', 'application/xml')->getContent();
-    $routes = 11 + count(app(ContentStore::class)->read('conditions')) + count(app(ContentStore::class)->read('products'))
+    $routes = 12 + count(app(ContentStore::class)->read('conditions')) + count(app(ContentStore::class)->read('products'))
         + count(app(ContentStore::class)->read('posts'));
 
     expect(substr_count($xml, '<url>'))->toBe($routes * 2)

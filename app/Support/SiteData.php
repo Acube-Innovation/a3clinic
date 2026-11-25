@@ -48,19 +48,97 @@ class SiteData
         return collect($this->conditions())->firstWhere('slug', $slug);
     }
 
-    /** Complete before/after pairs (both photos present). */
-    public static function pairsOf(array $condition): array
-    {
-        return array_values(array_filter($condition['results'] ?? [], fn ($r) => ! empty($r['before']) && ! empty($r['after'])));
-    }
-
-    /** Every complete pair across conditions; an empty label falls back to the condition name. */
+    /**
+     * Before/after pairs for the home and hair-treatment progress sections:
+     * featured case reports (else the first three), each linking to its case.
+     */
     public function allResultPairs(): array
     {
-        return collect($this->conditions())->flatMap(fn ($c) => array_map(
-            fn ($pair) => [...$pair, 'label' => ($pair['label'] ?? '') !== '' ? $pair['label'] : $c['name']],
-            self::pairsOf($c),
-        ))->values()->all();
+        $cases = $this->cases();
+        $featured = array_values(array_filter($cases, fn ($c) => ! empty($c['featured'])));
+
+        return collect($featured ?: array_slice($cases, 0, 3))
+            ->map(function ($c) {
+                $cover = CaseReports::coverPair($c);
+
+                return $cover ? [
+                    'before' => $cover['before'],
+                    'after' => $cover['after'],
+                    'label' => trim("{$c['conditionName']} · {$c['code']}", ' ·'),
+                    'note' => $c['summary'],
+                    'href' => "/results/{$c['slug']}",
+                    'sample' => ! empty($c['sample']),
+                ] : null;
+            })->filter()->values()->all();
+    }
+
+    // ---------------------------------------------------------------- case reports
+
+    /**
+     * Published cases in stored order, public fields only, each with its
+     * condition's name and category. Sample cases only where allowed.
+     */
+    public function cases(): array
+    {
+        $showSamples = (bool) config('app.show_sample_cases');
+
+        return collect($this->section('cases'))
+            ->filter(fn ($c) => ! empty($c['published']) && ($showSamples || empty($c['sample'])))
+            ->map(fn ($c) => $this->publicCase($c))->values()->all();
+    }
+
+    /** Any case, published or not, for a signed-in admin's preview. */
+    public function caseForPreview(string $slug): ?array
+    {
+        $case = collect($this->section('cases'))->firstWhere('slug', $slug);
+
+        return $case ? $this->publicCase($case) : null;
+    }
+
+    private function publicCase(array $c): array
+    {
+        $condition = collect($this->conditions())->firstWhere('slug', $c['conditionSlug'] ?? '');
+
+        return [
+            ...CaseReports::public($c),
+            'conditionName' => $condition['name'] ?? '',
+            'category' => $condition['category'] ?? '',
+        ];
+    }
+
+    /** Listing-card fields (CaseCard in resources/js/data/cases.ts). */
+    public function caseCards(?array $cases = null): array
+    {
+        $keys = array_flip(['slug', 'code', 'title', 'summary', 'conditionSlug', 'conditionName', 'category',
+            'sex', 'ageBand', 'followUp', 'featured', 'sample']);
+
+        return array_map(fn ($c) => [
+            ...array_intersect_key($c, $keys),
+            'cover' => CaseReports::coverPair($c),
+            'stageCount' => count($c['stages'] ?? []),
+        ], $cases ?? $this->cases());
+    }
+
+    public function caseBySlug(string $slug): ?array
+    {
+        return collect($this->cases())->firstWhere('slug', $slug);
+    }
+
+    public function casesForCondition(string $conditionSlug): array
+    {
+        return array_values(array_filter($this->cases(), fn ($c) => $c['conditionSlug'] === $conditionSlug));
+    }
+
+    /** Same condition first, then same category, excluding the case itself. */
+    public function relatedCases(array $case, int $limit = 3): array
+    {
+        // Real cases relate to real cases, samples to samples.
+        $others = collect($this->cases())->where('slug', '!=', $case['slug'])
+            ->filter(fn ($c) => ! empty($c['sample']) === ! empty($case['sample']));
+
+        return $others->where('conditionSlug', $case['conditionSlug'])
+            ->concat($others->where('conditionSlug', '!=', $case['conditionSlug'])->where('category', $case['category']))
+            ->take($limit)->values()->all();
     }
 
     /** Header "Treatments" menu: the programme, every featured condition, the index. */

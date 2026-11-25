@@ -44,6 +44,8 @@ Route::prefix('{locale}')
         Route::get('book', 'book');
         Route::get('conditions', 'conditions');
         Route::get('conditions/{slug}', 'condition');
+        Route::get('results', 'results');
+        Route::get('results/{slug}', 'caseReport');
         Route::get('shop', 'shop');
         Route::get('shop/{slug}', 'product');
         Route::get('blog', 'blog');

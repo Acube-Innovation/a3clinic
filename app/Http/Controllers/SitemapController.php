@@ -17,6 +17,7 @@ class SitemapController extends Controller
         ['', 1, 'weekly'],
         ['/hair-treatment', 0.9, 'monthly'],
         ['/conditions', 0.8, 'monthly'],
+        ['/results', 0.7, 'monthly'],
         ['/shop', 0.8, 'weekly'],
         ['/consultation', 0.8, 'monthly'],
         ['/book', 0.9, 'monthly'],
@@ -32,6 +33,9 @@ class SitemapController extends Controller
         $routes = [
             ...self::ROUTES,
             ...array_map(fn ($c) => ["/conditions/{$c['slug']}", 0.8, 'monthly'], $data->conditions()),
+            ...array_map(fn ($c) => ["/results/{$c['slug']}", 0.6, 'monthly'], array_filter(
+                $data->cases(), fn ($c) => empty($c['noindex']) && empty($c['sample']),
+            )),
             ...array_map(fn ($p) => ["/shop/{$p['slug']}", 0.7, 'weekly'], $data->products()),
             ...array_map(fn ($p) => ["/blog/{$p['slug']}", 0.6, 'monthly'], $data->posts()),
         ];

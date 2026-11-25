@@ -30,7 +30,12 @@
     "closeMenu": "Close menu",
     "openMenu": "Open menu",
     "skipToContent": "Skip to content",
-    "testimonials": "Testimonials"
+    "testimonials": "Testimonials",
+    "browseByCategory": "Browse by category",
+    "ourSpeciality": "Our speciality",
+    "hairTreatmentBlurb": "A structured, doctor-led programme for hair fall, thinning and scalp health.",
+    "explore": "Explore the programme",
+    "results": "Patient Results"
   },
   "common": {
     "bookConsultation": "Book Consultation",

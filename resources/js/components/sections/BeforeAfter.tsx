@@ -1,8 +1,9 @@
 import Image from "@/lib/image";
-import { Camera, Info, Ruler, Sun } from "lucide-react";
+import { Camera, Ruler, Sun } from "lucide-react";
 
 import { Container, Section, SectionHeading } from "@/components/ui/Section";
 import { ResultPairsGrid } from "@/components/sections/ResultPairsGrid";
+import { ResultsDisclaimer } from "@/components/cases/ResultsDisclaimer";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import type { ResultPair } from "@/data/conditions";
 
@@ -95,25 +96,7 @@ export function BeforeAfter({ results }: { results: ResultPair[] }) {
             </div>
 
             {/* Non-negotiable disclaimer — do not remove. */}
-            <div className="mt-8 flex gap-3.5 rounded-3xl bg-white p-5 ring-1 ring-line sm:p-6">
-              <Info
-                className="mt-0.5 size-5 shrink-0 text-olive-600"
-                strokeWidth={1.75}
-                aria-hidden
-              />
-              <p className="text-sm leading-relaxed text-muted">
-                <span className="font-semibold text-teal-800">
-                  Results vary from person to person.
-                </span>{" "}
-                Photographs are illustrative of how the clinic documents
-                treatment, and are published only with the written consent of the
-                patient concerned. They are not a prediction or a guarantee of
-                any individual outcome. Response depends on the underlying cause,
-                how long the condition has been present, and factors outside the
-                clinic&rsquo;s control. Some conditions are managed rather than
-                resolved, and some do not respond.
-              </p>
-            </div>
+            <ResultsDisclaimer className="mt-8" />
               </>
             )}
           </div>

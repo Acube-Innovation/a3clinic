@@ -10,6 +10,7 @@ import { Logo } from "./Logo";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { MobileNav } from "./MobileNav";
 import { CartDrawer } from "@/components/shop/CartDrawer";
+import { TreatmentsMegaMenu, type MenuCondition } from "./TreatmentsMegaMenu";
 
 export type NavItem = { label: string; href: string };
 
@@ -17,10 +18,12 @@ export type PhoneInfo = { intl: string; display: string };
 
 export function Header({
   treatments,
+  conditions,
   phone,
   whatsappHref,
 }: {
   treatments: NavItem[];
+  conditions: MenuCondition[];
   phone: PhoneInfo;
   whatsappHref: string;
 }) {
@@ -49,6 +52,14 @@ export function Header({
     setOpenMenu(null);
     setMobileOpen(false);
   }
+
+  // Escape closes the desktop mega-menu.
+  useEffect(() => {
+    if (!openMenu) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpenMenu(null);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [openMenu]);
 
   const dark = scrolled;
 
@@ -83,13 +94,11 @@ export function Header({
 
                 if ("children" in item && item.children) {
                   const isOpen = openMenu === item.key;
-                  // "treatments" is the only nav group, and its entries come
-                  // from the content store via the layout.
-                  const entries: NavItem[] = treatments;
+                  // "treatments" is the only nav group. Its mega-menu spans the
+                  // header, so the wrapper is not `relative`.
                   return (
                     <div
                       key={item.key}
-                      className="relative"
                       onMouseEnter={() => setOpenMenu(item.key)}
                     >
                       <button
@@ -117,19 +126,10 @@ export function Header({
                       </button>
 
                       {isOpen ? (
-                        <div className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3">
-                          <div className="max-h-[70svh] overflow-y-auto rounded-3xl bg-white p-2 shadow-lift ring-1 ring-line">
-                            {entries.map((entry) => (
-                              <Link
-                                key={entry.href}
-                                href={entry.href}
-                                className="flex items-center justify-between rounded-2xl px-4 py-3 text-[0.9375rem] text-ink/80 transition-colors duration-200 hover:bg-teal-50 hover:text-teal-800"
-                              >
-                                {entry.label}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
+                        <TreatmentsMegaMenu
+                          conditions={conditions}
+                          onNavigate={() => setOpenMenu(null)}
+                        />
                       ) : null}
                     </div>
                   );
@@ -139,6 +139,7 @@ export function Header({
                   <Link
                     key={item.key}
                     href={item.href}
+                    onMouseEnter={() => setOpenMenu(null)}
                     className={cn(
                       "rounded-full px-4 py-2.5 text-[0.9375rem] font-medium transition-colors duration-200",
                       dark

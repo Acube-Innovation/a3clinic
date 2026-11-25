@@ -5,6 +5,7 @@ namespace App\Support;
 use App\Filament\Resources\Conditions\Schemas\ConditionForm;
 use App\Filament\Resources\Posts\Schemas\PostForm;
 use App\Filament\Resources\Products\Schemas\ProductForm;
+use App\Models\Condition;
 use App\Models\ContentChange;
 use Illuminate\Support\Facades\DB;
 use InvalidArgumentException;
@@ -19,11 +20,16 @@ final class ContentEditor
     /** Collections edited one record at a time, and the fields a record may carry. */
     public const RECORD_FIELDS = [
         'conditions' => ['name', 'category', 'featured', 'summary', 'intro', 'heroImage', 'introImage', 'video',
-            'symptoms', 'causes', 'treatment', 'expectedResults', 'faqs', 'results'],
+            'symptoms', 'causes', 'treatment', 'expectedResults', 'faqs'],
         'products' => ['name', 'category', 'tagline', 'description', 'price', 'compareAtPrice', 'size', 'inStock',
             'featured', 'bestseller', 'caution', 'image', 'video', 'benefits', 'ingredients', 'directions',
             'rating', 'reviews', 'related'],
         'posts' => ['title', 'category', 'excerpt', 'publishedAt', 'readingMinutes', 'featured', 'image', 'body'],
+        // No "sample" (it would skip the consent rule) and no "consentDocument"
+        // (signed forms are uploaded privately in the admin).
+        'cases' => ['code', 'title', 'conditionSlug', 'sex', 'ageBand', 'complaintDuration', 'followUp', 'summary',
+            'presentation', 'history', 'assessment', 'approach', 'remedies', 'outcome', 'doctorNote', 'stages',
+            'consentOnFile', 'consentDate', 'published', 'featured', 'noindex'],
     ];
 
     /** Sections saved whole: lists are replaced, objects are merged key by key. */
@@ -46,6 +52,9 @@ final class ContentEditor
         $this->assertRecordSection($section);
         $before = $this->store->record($section, $slug) ?? throw new InvalidArgumentException("No {$section} record with slug \"{$slug}\".");
         $fields = $this->cleanRecord($section, $fields);
+        if ($section === 'cases') {
+            CaseReports::assertPublishable([...$before, ...$fields]);
+        }
 
         return $this->logged($section, $slug, 'update', $before, function () use ($section, $slug, $fields) {
             $this->store->saveRecord($section, $slug, $fields);
@@ -58,9 +67,19 @@ final class ContentEditor
     public function createRecord(string $section, string $title, array $fields, ?string $actor): array
     {
         $this->assertRecordSection($section);
-        $titleKey = $section === 'posts' ? 'title' : 'name';
+        $titleKey = match ($section) {
+            'posts' => 'title',
+            'cases' => 'code',
+            default => 'name',
+        };
         $fields = $this->cleanRecord($section, [...$fields, $titleKey => $title]);
-        if (! isset($fields['category'])) {
+        if ($section === 'cases') {
+            if (empty($fields['conditionSlug']) || empty($fields['title'])) {
+                throw new InvalidArgumentException('A new case needs "conditionSlug" and a "title" (headline); the tool\'s title is the case code.');
+            }
+            // Connector cases always start as drafts for the clinic to review.
+            $fields['published'] = false;
+        } elseif (! isset($fields['category'])) {
             throw new InvalidArgumentException('A new record needs a category: '.implode(', ', array_keys(self::categories($section))));
         }
 
@@ -173,6 +192,7 @@ final class ContentEditor
             'conditions' => ConditionForm::CATEGORIES,
             'products' => ProductForm::CATEGORIES,
             'posts' => PostForm::CATEGORIES,
+            'cases' => [],
         };
     }
 
@@ -196,12 +216,8 @@ final class ContentEditor
         if (array_key_exists('video', $fields)) {
             $fields['video'] = VideoSource::normalize($fields['video']);
         }
-        if (isset($fields['results'])) {
-            $fields['results'] = array_map(fn ($r) => [
-                ...$r,
-                'before' => self::image($r['before'] ?? '', required: true),
-                'after' => self::image($r['after'] ?? '', required: true),
-            ], self::listOf($fields['results'], 'results'));
+        if ($section === 'cases') {
+            $fields = self::cleanCase($fields);
         }
         if (isset($fields['body'])) {
             $fields['body'] = array_map(function ($b) {
@@ -216,6 +232,36 @@ final class ContentEditor
                     default => ['type' => $type, 'text' => (string) ($b['text'] ?? '')],
                 };
             }, self::listOf($fields['body'], 'body'));
+        }
+
+        return $fields;
+    }
+
+    private static function cleanCase(array $fields): array
+    {
+        if (isset($fields['conditionSlug']) && ! Condition::whereKey($fields['conditionSlug'])->exists()) {
+            throw new InvalidArgumentException("No condition with slug \"{$fields['conditionSlug']}\".");
+        }
+        if (! empty($fields['sex']) && ! isset(CaseReports::SEXES[$fields['sex']])) {
+            throw new InvalidArgumentException('"sex" must be one of: '.implode(', ', array_keys(CaseReports::SEXES)).', or "".');
+        }
+        if (! empty($fields['consentDate']) && ! preg_match('/^\d{4}-\d{2}-\d{2}$/', (string) $fields['consentDate'])) {
+            throw new InvalidArgumentException('"consentDate" must be YYYY-MM-DD.');
+        }
+        if (isset($fields['approach'])) {
+            $fields['approach'] = array_values(array_map('strval', self::listOf($fields['approach'], 'approach')));
+        }
+        if (isset($fields['stages'])) {
+            $fields['stages'] = array_map(fn ($s) => [
+                'label' => (string) ($s['label'] ?? ''),
+                'timepoint' => (string) ($s['timepoint'] ?? ''),
+                'note' => (string) ($s['note'] ?? ''),
+                'photos' => array_map(fn ($p) => [
+                    'view' => in_array($p['view'] ?? '', CaseReports::VIEWS, true) ? $p['view']
+                        : throw new InvalidArgumentException('Photo "view" must be one of: '.implode(', ', CaseReports::VIEWS)),
+                    'image' => self::image($p['image'] ?? '', required: true),
+                ], self::listOf($s['photos'] ?? [], 'photos')),
+            ], self::listOf($fields['stages'], 'stages'));
         }
 
         return $fields;

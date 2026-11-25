@@ -31,7 +31,12 @@
     "closeMenu": "Close menu",
     "openMenu": "Open menu",
     "skipToContent": "Skip to content",
-    "testimonials": "Testimonials"
+    "testimonials": "Testimonials",
+    "browseByCategory": "വിഭാഗം അനുസരിച്ച്",
+    "ourSpeciality": "ഞങ്ങളുടെ പ്രത്യേകത",
+    "hairTreatmentBlurb": "മുടികൊഴിച്ചിൽ, മുടി കനം കുറയൽ, തലയോട്ടിയുടെ ആരോഗ്യം എന്നിവയ്ക്കായി ഡോക്ടർ നയിക്കുന്ന ചികിത്സാ പദ്ധതി.",
+    "explore": "പദ്ധതി കാണുക",
+    "results": "രോഗികളുടെ ഫലങ്ങൾ"
   },
   "common": {
     "bookConsultation": "Book Consultation",

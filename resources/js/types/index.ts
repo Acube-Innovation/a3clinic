@@ -9,7 +9,7 @@ export interface SharedData {
     locale: Locale;
     locales: Locale[];
     clinic: ClinicSettings;
-    /** Conditions marked "featured": the header's Treatments dropdown. */
-    navConditions: { slug: string; name: string }[];
+    /** Every condition (name, category, featured flag): the Treatments mega-menu. */
+    navConditions: { slug: string; name: string; category: string; featured: boolean }[];
     [key: string]: unknown;
 }

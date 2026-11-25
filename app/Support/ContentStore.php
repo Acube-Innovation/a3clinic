@@ -4,6 +4,7 @@ namespace App\Support;
 
 use App\Models\Appointment;
 use App\Models\AppointmentFile;
+use App\Models\CaseReport;
 use App\Models\Clinic;
 use App\Models\Condition;
 use App\Models\Consultation;
@@ -34,7 +35,7 @@ use InvalidArgumentException;
 class ContentStore
 {
     public const SECTIONS = [
-        'conditions', 'products', 'posts', 'testimonials', 'faqs',
+        'conditions', 'cases', 'products', 'posts', 'testimonials', 'faqs',
         'doctor', 'clinic', 'consultation', 'gallery', 'videos', 'appointments', 'enquiries',
     ];
 
@@ -66,6 +67,7 @@ class ContentStore
         'conditions' => [Condition::class, 'saveCondition'],
         'products' => [Product::class, 'saveProduct'],
         'posts' => [Post::class, 'savePost'],
+        'cases' => [CaseReport::class, 'saveCase'],
     ];
 
     /**
@@ -77,6 +79,7 @@ class ContentStore
         'conditions' => ['symptoms' => [], 'causes' => [], 'treatment' => [], 'expectedResults' => [], 'faqs' => [], 'results' => []],
         'products' => ['benefits' => [], 'ingredients' => [], 'directions' => [], 'rating' => ['value' => 0, 'count' => 0], 'reviews' => [], 'related' => []],
         'posts' => ['readingMinutes' => 3, 'body' => []],
+        'cases' => ['approach' => [], 'stages' => []],
     ];
 
     /** One record of a collection, in its section shape. */
@@ -288,6 +291,86 @@ class ContentStore
             'label' => self::str($r['label'] ?? null),
             'note' => self::str($r['note'] ?? null),
         ], self::arr($c['results'] ?? null)), $scope);
+    }
+
+    // ------------------------------------------------------------------ case reports
+
+    /** Scalar case fields: section key => column. */
+    private const CASE_COLUMNS = [
+        'code' => 'code', 'title' => 'title', 'conditionSlug' => 'condition_slug',
+        'sex' => 'sex', 'ageBand' => 'age_band', 'complaintDuration' => 'complaint_duration',
+        'followUp' => 'follow_up', 'summary' => 'summary', 'presentation' => 'presentation',
+        'history' => 'history', 'assessment' => 'assessment', 'remedies' => 'remedies',
+        'outcome' => 'outcome', 'doctorNote' => 'doctor_note', 'consentDate' => 'consent_date',
+        'consentDocument' => 'consent_document',
+    ];
+
+    private const CASE_FLAGS = [
+        'consentOnFile' => 'consent_on_file', 'published' => 'published', 'featured' => 'featured',
+        'sample' => 'sample', 'noindex' => 'noindex',
+    ];
+
+    private function readCases(): array
+    {
+        return CaseReport::with(['approach', 'stages'])->orderBy('position')->get()
+            ->map(function (CaseReport $c) {
+                $rec = ['slug' => $c->slug];
+                foreach (self::CASE_COLUMNS as $key => $column) {
+                    $rec[$key] = self::str($c->{$column});
+                }
+                foreach (self::CASE_FLAGS as $key => $column) {
+                    $rec[$key] = (bool) $c->{$column};
+                }
+                $rec['approach'] = self::texts($c->approach);
+                $rec['stages'] = $c->stages->map(fn ($s) => [
+                    'label' => self::str($s->label),
+                    'timepoint' => self::str($s->timepoint),
+                    'note' => self::str($s->note),
+                    'photos' => array_values(array_map(fn ($p) => [
+                        'view' => self::str($p['view'] ?? null),
+                        'image' => self::str($p['image'] ?? null),
+                    ], is_array($s->photos) ? $s->photos : [])),
+                ])->all();
+
+                return $rec;
+            })->all();
+    }
+
+    private function writeCases(array $data): void
+    {
+        self::deleteMissing(CaseReport::class, array_map(fn ($c) => (string) $c['slug'], $data));
+
+        foreach (array_values($data) as $i => $c) {
+            $this->saveCase($c, $i);
+        }
+    }
+
+    private function saveCase(array $c, int $i): void
+    {
+        $slug = (string) $c['slug'];
+        $values = ['position' => $i];
+        foreach (self::CASE_COLUMNS as $key => $column) {
+            $value = $c[$key] ?? null;
+            // Optional columns store NULL, not '' (consent_date is a DATE).
+            $values[$column] = ($value === null || $value === '') && ! in_array($column, ['code', 'title'], true)
+                ? null : self::str($value);
+        }
+        foreach (self::CASE_FLAGS as $key => $column) {
+            $values[$column] = (bool) ($c[$key] ?? false);
+        }
+        CaseReport::updateOrCreate(['slug' => $slug], $values);
+
+        $scope = ['case_slug' => $slug];
+        self::replaceList(Lists\CaseReportApproach::class, array_map(fn ($t) => ['text' => $t], self::arr($c['approach'] ?? null)), $scope);
+        self::replaceList(Lists\CaseReportStage::class, array_map(fn ($s) => [
+            'label' => self::str($s['label'] ?? null),
+            'timepoint' => self::str($s['timepoint'] ?? null),
+            'note' => self::str($s['note'] ?? null),
+            'photos' => array_values(array_filter(array_map(fn ($p) => [
+                'view' => self::str($p['view'] ?? null),
+                'image' => self::str(is_array($p['image'] ?? null) ? (array_values($p['image'])[0] ?? null) : ($p['image'] ?? null)),
+            ], self::arr($s['photos'] ?? null)), fn ($p) => $p['image'] !== '')),
+        ], self::arr($c['stages'] ?? null)), $scope);
     }
 
     // --------------------------------------------------------------------- products

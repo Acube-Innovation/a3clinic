@@ -45,7 +45,8 @@ export function BookingCta() {
               <Button
                 href="/book"
                 size="lg"
-                className="bg-white text-teal-800 hover:bg-olive-50"
+                variant="secondary"
+                className="ring-0 hover:bg-olive-50"
               >
                 Book consultation
                 <ArrowRight

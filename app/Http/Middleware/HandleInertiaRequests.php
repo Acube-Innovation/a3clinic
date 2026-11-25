@@ -44,9 +44,15 @@ class HandleInertiaRequests extends Middleware
             'locales' => config('app.locales'),
             // Site chrome data (header menu, footer, contact buttons).
             'clinic' => fn () => app(SiteData::class)->clinic(),
+            // Every condition, so the Treatments mega-menu can list them all by
+            // category; featured ones also feed the mobile menu.
             'navConditions' => fn () => collect(app(SiteData::class)->conditions())
-                ->filter(fn ($c) => ! empty($c['featured']))
-                ->map(fn ($c) => ['slug' => $c['slug'], 'name' => $c['name']])
+                ->map(fn ($c) => [
+                    'slug' => $c['slug'],
+                    'name' => $c['name'],
+                    'category' => $c['category'] ?? 'hair',
+                    'featured' => ! empty($c['featured']),
+                ])
                 ->values(),
         ];
     }

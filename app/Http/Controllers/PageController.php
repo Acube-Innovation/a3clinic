@@ -116,11 +116,63 @@ class PageController extends Controller
         return $this->page('conditions/show', [
             'condition' => $condition,
             'related' => $this->data->conditionCards($related),
+            'cases' => $this->data->caseCards($this->data->casesForCondition($condition['slug'])),
         ], Seo::page("{$condition['name']} — Homeopathic Treatment", $condition['summary'], $path), [
             Seo::medicalCondition($condition),
             ...($condition['faqs'] ? [Seo::faq($condition['faqs'])] : []),
             Seo::breadcrumb([['name' => 'Conditions', 'href' => '/conditions'], ['name' => $condition['name'], 'href' => $path]]),
         ]);
+    }
+
+    public function results(): Response
+    {
+        $cases = $this->data->cases();
+        $conditionSlugs = array_unique(array_column($cases, 'conditionSlug'));
+
+        return $this->page('results/index', [
+            'cases' => $this->data->caseCards($cases),
+            // Only conditions that have at least one case, for the filter.
+            'conditions' => array_values(array_map(
+                fn ($c) => ['slug' => $c['slug'], 'name' => $c['name'], 'category' => $c['category']],
+                array_filter($this->data->conditions(), fn ($c) => in_array($c['slug'], $conditionSlugs, true)),
+            )),
+        ], Seo::page(
+            'Patient Results & Case Reports',
+            "Anonymised case reports from Dr. Riji's Health Care: how hair, skin and chronic conditions were assessed, treated and documented over time. Published with written patient consent. Results vary.",
+            '/results',
+        ), [Seo::breadcrumb([['name' => 'Patient Results', 'href' => '/results']])]);
+    }
+
+    public function caseReport(string $slug): Response
+    {
+        $case = $this->data->caseBySlug($slug);
+        // Signed-in clinic staff can preview drafts; visitors get a 404.
+        $preview = ! $case && auth()->check();
+        $case ??= ($preview ? $this->data->caseForPreview($slug) : null) ?? abort(404);
+        $path = "/results/{$case['slug']}";
+        $condition = $this->data->conditionBySlug($case['conditionSlug']);
+        $title = $case['conditionName'] ? "{$case['title']} — {$case['conditionName']} Case Report" : "{$case['title']} — Case Report";
+
+        return $this->page('results/show', [
+            'report' => $case,
+            'preview' => $preview,
+            'condition' => $condition ? $this->data->conditionCards([$condition])[0] : null,
+            'related' => $this->data->caseCards($this->data->relatedCases($case)),
+        ], Seo::page(
+            $title,
+            $case['summary'] ?: "Anonymised case report ({$case['code']}) from Dr. Riji's Health Care. Results vary from person to person.",
+            $path,
+            type: 'article',
+            // Placeholder cases and cases the clinic marks private stay out of search.
+            robots: match (true) {
+                $preview => 'noindex, nofollow',
+                ! empty($case['noindex']) || ! empty($case['sample']) => 'noindex, follow',
+                default => null,
+            },
+        ), [Seo::breadcrumb([
+            ['name' => 'Patient Results', 'href' => '/results'],
+            ['name' => $case['code'], 'href' => $path],
+        ])]);
     }
 
     public function shop(): Response

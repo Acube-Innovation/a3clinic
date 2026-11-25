@@ -7,26 +7,27 @@ import { Accordion } from "@/components/ui/Accordion";
 import { Button } from "@/components/ui/Button";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { BookingCta } from "@/components/sections/BookingCta";
-import { ResultPairsGrid } from "@/components/sections/ResultPairsGrid";
+import { CaseCard } from "@/components/cases/CaseCard";
+import { ResultsDisclaimer } from "@/components/cases/ResultsDisclaimer";
 import { ConditionCardMedia } from "@/components/conditions/ConditionCardMedia";
 import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { Link } from "@/i18n/navigation";
 import {
   categoryLabels,
-  pairsOf,
   type Condition,
   type ConditionCard,
 } from "@/data/conditions";
+import type { CaseCard as CaseCardData } from "@/data/cases";
 
 export default function ConditionPage({
   condition,
   related,
+  cases,
 }: {
   condition: Condition;
   related: ConditionCard[];
+  cases: CaseCardData[];
 }) {
-
-  const pairs = pairsOf(condition);
 
   const crumbs = [
     { name: "Conditions", href: "/conditions" },
@@ -242,24 +243,34 @@ export default function ConditionPage({
       </Section>
       ) : null}
 
-      {/* --------------------------- Before & after -------------------------- */}
-      {pairs.length > 0 ? (
+      {/* ----------------------------- Case reports ---------------------------- */}
+      {cases.length > 0 ? (
         <Section tone="platinum">
           <Container>
-            <div className="mx-auto max-w-4xl">
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <Reveal>
-                <Eyebrow>Documenting progress</Eyebrow>
+                <Eyebrow>Documented cases</Eyebrow>
                 <h2 className="mt-6 text-h2 text-teal-800">
-                  Before &amp; after — {condition.name.toLowerCase()}
+                  {condition.name} case reports
                 </h2>
               </Reveal>
-
-              <Reveal delay={0.1} className="mt-10">
-                <div className="overflow-hidden rounded-5xl bg-white p-6 ring-1 ring-line sm:p-10">
-                  <ResultPairsGrid pairs={pairs} />
-                </div>
-              </Reveal>
+              {cases.length > 3 ? (
+                <Button href={`/results?condition=${condition.slug}`} variant="secondary">
+                  See all {cases.length} cases
+                  <ArrowRight aria-hidden className="size-4" />
+                </Button>
+              ) : null}
             </div>
+
+            <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {cases.slice(0, 3).map((item) => (
+                <StaggerItem key={item.slug} className="h-full">
+                  <CaseCard item={item} />
+                </StaggerItem>
+              ))}
+            </Stagger>
+
+            <ResultsDisclaimer className="mt-10" />
           </Container>
         </Section>
       ) : null}
