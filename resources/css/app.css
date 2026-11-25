@@ -166,8 +166,10 @@
     border-radius: 4px;
   }
 
-  /* Anchored sections clear the sticky header. */
-  :target {
+  /* Anchored sections clear the sticky header, including when Inertia
+     scrolls to them after a visit (before :target applies). */
+  :target,
+  section[id] {
     scroll-margin-top: 7rem;
   }
 }

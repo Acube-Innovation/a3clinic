@@ -28,7 +28,10 @@ export function PageHero({
   /** Optional background photograph; forces the dark treatment for contrast. */
   image?: string;
 }) {
-  const effectiveTone = image ? "dark" : tone;
+  // Plain light mastheads now carry the home banner's clinic photograph
+  // under a dark-green overlay, so they take the dark (white text) treatment.
+  const clinicPhoto = !image && tone === "light";
+  const effectiveTone = image || clinicPhoto ? "dark" : tone;
   return (
     <section
       className={cn(
@@ -47,6 +50,18 @@ export function PageHero({
           {/* Scrim keeps the H1 legible over any photograph. */}
           <div className="absolute inset-0 bg-teal-950/70" />
           <div className="absolute inset-0 bg-gradient-to-r from-teal-950/70 via-teal-950/30 to-transparent" />
+        </div>
+      ) : clinicPhoto ? (
+        <div aria-hidden className="absolute inset-0 -z-10">
+          {/* The home banner's clinic photograph under a 75% dark-green
+              overlay; the left fade keeps the white copy legible. */}
+          <img
+            src="/images/hero-clinic.jpg"
+            alt=""
+            className="h-full w-full object-cover object-left"
+          />
+          <div className="absolute inset-0 bg-teal-900/75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-950/60 via-teal-950/25 to-transparent" />
         </div>
       ) : (
         <AmbientBlobs tone={effectiveTone} />

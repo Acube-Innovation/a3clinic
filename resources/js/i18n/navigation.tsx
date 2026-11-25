@@ -18,7 +18,9 @@ export function localizeHref(href: string, locale: Locale): string {
         return href;
     }
 
-    return `/${locale}${href === '/' ? '' : href}`;
+    // "/", "/#section" and "/?q" all mean the home page: "/en", "/en#section".
+    // "/en/#section" would redirect to "/en" and lose the anchor.
+    return `/${locale}${href === '/' || /^\/[?#]/.test(href) ? href.slice(1) : href}`;
 }
 
 /** The current path without its locale prefix ("/en/shop" -> "/shop"). */
@@ -39,8 +41,12 @@ export function Link({ href, locale, replace, preserveScroll, prefetch, ...props
     const current = useLocale();
     const target = localizeHref(href, locale ?? current);
 
-    // Plain anchors for non-app targets (tel:, mailto:, #hash, external URLs).
-    if (!target.startsWith('/')) {
+    // Plain anchors for non-app targets (tel:, mailto:, #hash, external URLs),
+    // and for an anchor on the current page, so the browser just scrolls.
+    const [targetPath, hash] = target.split('#');
+    const currentPath = usePage().url.split(/[?#]/)[0];
+    const onThisPage = hash !== undefined && currentPath === targetPath;
+    if (!target.startsWith('/') || onThisPage) {
         return <a href={target} {...props} />;
     }
 

@@ -78,8 +78,8 @@ export default function BlogPostPage({ post, related }: { post: Post; related: P
         description={post.excerpt}
         crumbs={crumbs}
       >
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
-          <span className="font-medium text-teal-800">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-teal-100/75">
+          <span className="font-medium text-white">
             {doctor.name}, {doctor.credentials}
           </span>
           <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
