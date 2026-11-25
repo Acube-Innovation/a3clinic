@@ -20,6 +20,8 @@ export type Product = {
   category: ProductCategory;
   /** Product photo uploaded via admin; site falls back to placeholder art. */
   image?: string;
+  /** YouTube link or /uploads/videos/… file, shown on the product page. */
+  video?: string;
   tagline: string;
   description: string;
   price: number; // paise

@@ -23,6 +23,7 @@ class PageController extends Controller
             'testimonials' => $this->data->testimonials(),
             'recentPosts' => $this->data->recentPosts(3),
             'faqs' => $this->data->homeFaqs(),
+            'videos' => $this->data->homeVideos(),
         ], Seo::page(
             'Homeopathy for Hair, Skin & Whole-body Wellness in Kattakkada, Kerala',
             'Consult Dr. Riji Rasheed (BHMS) online or at the Kattakkada clinic for homeopathic treatment of hair fall, alopecia, dandruff, skin conditions, thyroid, PCOD and more.',

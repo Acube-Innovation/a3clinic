@@ -4,6 +4,7 @@ import { Container, Section } from "@/components/ui/Section";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { ProductDetail } from "@/components/shop/ProductDetail";
 import { ProductCard } from "@/components/shop/ProductCard";
+import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { BookingCta } from "@/components/sections/BookingCta";
 import {
   categoryLabels,
@@ -27,6 +28,11 @@ export default function ProductPage({ product, related }: { product: Product; re
             {categoryLabels[product.category]}
           </p>
           <ProductDetail product={product} />
+          {product.video ? (
+            <div className="mx-auto mt-16 max-w-4xl">
+              <VideoEmbed src={product.video} title={product.name} />
+            </div>
+          ) : null}
         </Container>
       </Section>
 

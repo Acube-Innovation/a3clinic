@@ -11,6 +11,7 @@ use App\Models\Doctor;
 use App\Models\Enquiry;
 use App\Models\GalleryItem;
 use App\Models\HomepageFaq;
+use App\Models\HomeVideo;
 use App\Models\Lists;
 use App\Models\Post;
 use App\Models\PostBlock;
@@ -34,7 +35,7 @@ class ContentStore
 {
     public const SECTIONS = [
         'conditions', 'products', 'posts', 'testimonials', 'faqs',
-        'doctor', 'clinic', 'consultation', 'gallery', 'appointments', 'enquiries',
+        'doctor', 'clinic', 'consultation', 'gallery', 'videos', 'appointments', 'enquiries',
     ];
 
     public function read(string $section): mixed
@@ -240,6 +241,9 @@ class ContentStore
                 if ($c->intro_image) {
                     $rec['introImage'] = $c->intro_image;
                 }
+                if ($c->video) {
+                    $rec['video'] = $c->video;
+                }
 
                 return $rec;
             })->all();
@@ -265,6 +269,7 @@ class ContentStore
             'intro' => self::str($c['intro'] ?? null),
             'hero_image' => $c['heroImage'] ?? null,
             'intro_image' => $c['introImage'] ?? null,
+            'video' => ($c['video'] ?? null) ?: null,
             'position' => $i,
         ]);
         $scope = ['condition_slug' => $slug];
@@ -319,6 +324,9 @@ class ContentStore
                 if ($p->image) {
                     $rec['image'] = $p->image;
                 }
+                if ($p->video) {
+                    $rec['video'] = $p->video;
+                }
                 if ($p->compare_at_price !== null) {
                     $rec['compareAtPrice'] = $p->compare_at_price;
                 }
@@ -350,6 +358,7 @@ class ContentStore
             'name' => self::str($p['name'] ?? null),
             'category' => $p['category'],
             'image' => $p['image'] ?? null,
+            'video' => ($p['video'] ?? null) ?: null,
             'tagline' => self::str($p['tagline'] ?? null),
             'description' => self::str($p['description'] ?? null),
             'price' => (int) ($p['price'] ?? 0),
@@ -510,6 +519,18 @@ class ContentStore
     {
         self::replaceList(GalleryItem::class, array_map(fn ($g) => [
             'image' => self::str($g['image'] ?? null), 'label' => self::str($g['label'] ?? null),
+        ], $data));
+    }
+
+    private function readVideos(): array
+    {
+        return self::rows(HomeVideo::orderBy('position')->get(), ['title', 'video']);
+    }
+
+    private function writeVideos(array $data): void
+    {
+        self::replaceList(HomeVideo::class, array_map(fn ($v) => [
+            'title' => self::str($v['title'] ?? null), 'video' => self::str($v['video'] ?? null),
         ], $data));
     }
 

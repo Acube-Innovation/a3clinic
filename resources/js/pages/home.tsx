@@ -12,6 +12,7 @@ import { InstagramGallery } from "@/components/sections/InstagramGallery";
 import { ProductsStory } from "@/components/sections/ProductsStory";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { VideoConsultation } from "@/components/sections/VideoConsultation";
+import { VideoGallery, type HomeVideo } from "@/components/sections/VideoGallery";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import type { ConditionCard, ResultPair } from "@/data/conditions";
 import type { Faq } from "@/data/faqs";
@@ -26,6 +27,7 @@ type Props = {
   testimonials: Testimonial[];
   recentPosts: Post[];
   faqs: Faq[];
+  videos: HomeVideo[];
 };
 
 export default function HomePage({
@@ -35,6 +37,7 @@ export default function HomePage({
   testimonials,
   recentPosts,
   faqs,
+  videos,
 }: Props) {
   return (
     <>
@@ -47,6 +50,7 @@ export default function HomePage({
       <ProductsStory />
       <FeaturedProducts products={featuredProducts} />
       <Testimonials testimonials={testimonials} />
+      <VideoGallery videos={videos} />
       <VideoConsultation />
       <BlogPreview posts={recentPosts} />
       <FaqSection faqs={faqs} />

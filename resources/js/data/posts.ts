@@ -24,7 +24,9 @@ export type Block =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string }
   | { type: "list"; items: string[] }
-  | { type: "callout"; text: string };
+  | { type: "callout"; text: string }
+  /** text = YouTube link or /uploads/videos/… file */
+  | { type: "video"; text: string };
 
 export type Post = {
   slug: string;

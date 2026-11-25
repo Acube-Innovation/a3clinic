@@ -177,4 +177,10 @@ class SiteData
     {
         return $this->section('faqs');
     }
+
+    /** Home page videos; entries without a video are skipped. */
+    public function homeVideos(): array
+    {
+        return array_values(array_filter($this->section('videos'), fn ($v) => ! empty($v['video'])));
+    }
 }

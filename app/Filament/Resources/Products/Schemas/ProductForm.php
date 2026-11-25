@@ -31,6 +31,7 @@ class ProductForm
                 TextInput::make('name')->label('Product name')->required(),
                 Select::make('category')->options(self::CATEGORIES)->required(),
                 Fields::image('image', 'Product photo', 'Square images (around 1200×1200) work best. Shown on shop cards and the product page.')->columnSpanFull(),
+                Fields::video('video', 'Product video', 'Shown below the product details. Paste a YouTube link, or upload a short MP4 below (max 30 MB).')->columnSpanFull(),
                 TextInput::make('tagline')->required()->columnSpanFull(),
                 Textarea::make('description')->required()->rows(4)->columnSpanFull(),
                 Fields::price('price', 'Price (₹)')->required(),

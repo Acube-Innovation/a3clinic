@@ -29,3 +29,4 @@ yarn-error.log
 
 # Admin uploads (synced from the live site, never committed)
 /public/uploads
+.claude/scheduled_tasks.lock

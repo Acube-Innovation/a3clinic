@@ -34,6 +34,7 @@ class ConditionForm
                 Textarea::make('intro')->label('Introduction')->required()->rows(5)->columnSpanFull(),
                 Fields::image('heroImage', 'Header background image', "Shown behind this condition's page title. Wide images (around 1600×700) work best."),
                 Fields::image('introImage', 'Introduction image', 'Shown beside the introduction — what the condition looks like. Use only images you have rights to; patient photos need written consent.'),
+                Fields::video('video', 'Video', 'Shown after the introduction. Paste a YouTube link, or upload a short MP4 below (max 30 MB).')->columnSpanFull(),
             ]),
             Section::make('Details')->schema([
                 Fields::lines('symptoms', 'Symptoms', 'One symptom per line.'),

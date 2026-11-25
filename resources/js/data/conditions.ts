@@ -40,6 +40,8 @@ export type Condition = {
   heroImage?: string;
   /** Illustration beside the introduction (admin upload). */
   introImage?: string;
+  /** YouTube link or /uploads/videos/… file, shown after the introduction. */
+  video?: string;
 };
 
 /** Complete pairs from a condition (both photos present). */

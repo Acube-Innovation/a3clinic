@@ -2,11 +2,14 @@
 
 namespace App\Filament\Support;
 
+use App\Support\MediaStore;
+use App\Support\VideoSource;
 use App\Support\Watermark;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Group;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
@@ -62,6 +65,35 @@ final class Fields
         return $field;
     }
 
+    /**
+     * A video: a YouTube link typed in, or an MP4/WebM uploaded to
+     * public/uploads/videos. The upload lands in "<name>Upload" and
+     * normalizeUploads() moves it into <name> on save.
+     */
+    public static function video(string $name, string $label = 'Video', ?string $hint = null): Group
+    {
+        return Group::make([
+            TextInput::make($name)
+                ->label($label)
+                ->helperText($hint ?? 'Paste a YouTube link, or upload a short MP4 below (max 30 MB). Leave blank for none.')
+                ->placeholder('https://www.youtube.com/watch?v=…')
+                ->rule(fn () => function (string $attribute, mixed $value, \Closure $fail) {
+                    if (filled($value) && ! VideoSource::isValid($value)) {
+                        $fail('Use a YouTube link or an uploaded video.');
+                    }
+                })
+                ->dehydrateStateUsing(fn ($state) => VideoSource::isValid($state) ? VideoSource::normalize($state) : $state),
+            FileUpload::make($name.'Upload')
+                ->label('Upload a video file instead')
+                ->disk('site')
+                ->directory('uploads/videos')
+                ->visibility('public')
+                ->maxSize(MediaStore::MAX_VIDEO_BYTES / 1024)
+                ->acceptedFileTypes(array_keys(MediaStore::VIDEO_TYPES))
+                ->getUploadedFileNameForStorageUsing(fn (TemporaryUploadedFile $file) => Str::uuid().'.'.(MediaStore::VIDEO_TYPES[$file->getMimeType()] ?? 'mp4')),
+        ]);
+    }
+
     /** Rupees in the form, paise in the content. Zero or blank means "none" when $optional. */
     public static function price(string $name, string $label, ?string $hint = null, bool $optional = false): TextInput
     {
@@ -96,11 +128,34 @@ final class Fields
      */
     public static function normalizeUploads(array $data): array
     {
+        $data = self::mergeVideoUploads($data);
+
         array_walk_recursive($data, function (&$value) {
             if (is_string($value) && preg_match('#^(uploads|images)/[^/\s]+$#', $value)) {
                 $value = '/'.$value;
             }
         });
+
+        return $data;
+    }
+
+    /** A freshly uploaded video file ("<key>Upload") replaces the typed <key>, at any depth. */
+    private static function mergeVideoUploads(array $data): array
+    {
+        foreach ($data as $key => $value) {
+            if (is_array($value)) {
+                $data[$key] = self::mergeVideoUploads($value);
+            }
+        }
+        foreach ($data as $key => $value) {
+            if (is_string($key) && str_ends_with($key, 'Upload') && array_key_exists($base = substr($key, 0, -6), $data)) {
+                $file = is_array($value) ? (array_values($value)[0] ?? null) : $value;
+                if (is_string($file) && $file !== '') {
+                    $data[$base] = '/'.ltrim($file, '/');
+                }
+                unset($data[$key]);
+            }
+        }
 
         return $data;
     }

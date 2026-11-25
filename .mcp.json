@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "a3clinic-site": {
+      "type": "http",
+      "url": "https://drrijishealthcare.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${A3CLINIC_TOKEN}"
+      }
+    }
+  }
+}

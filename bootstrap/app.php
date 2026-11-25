@@ -13,6 +13,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 $app = Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
+        api: __DIR__.'/../routes/api.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
@@ -26,10 +27,13 @@ $app = Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
+        // The Claude connector (MCP + media upload) always answers in JSON.
+        $exceptions->shouldRenderJsonWhen(fn (Request $request) => $request->is('api/*', 'mcp') || $request->expectsJson());
+
         // Public 404s render the site's own not-found page inside the normal
         // chrome (the Next.js [locale]/not-found.tsx), in the URL's locale.
         $exceptions->render(function (NotFoundHttpException $e, Request $request) {
-            if ($request->expectsJson() || $request->is('admin', 'admin/*')) {
+            if ($request->expectsJson() || $request->is('admin', 'admin/*', 'api/*', 'mcp')) {
                 return null;
             }
             $locale = $request->segment(1);

@@ -9,6 +9,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { BookingCta } from "@/components/sections/BookingCta";
 import { ResultPairsGrid } from "@/components/sections/ResultPairsGrid";
 import { ConditionCardMedia } from "@/components/conditions/ConditionCardMedia";
+import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { Link } from "@/i18n/navigation";
 import {
   categoryLabels,
@@ -88,6 +89,17 @@ export default function ConditionPage({
           )}
         </Container>
       </Section>
+
+      {/* ------------------------------ Video ------------------------------ */}
+      {condition.video ? (
+        <Section size="sm">
+          <Container>
+            <Reveal className="mx-auto max-w-4xl">
+              <VideoEmbed src={condition.video} title={condition.name} />
+            </Reveal>
+          </Container>
+        </Section>
+      ) : null}
 
       {/* ------------------------ Symptoms & causes ------------------------ */}
       {condition.symptoms.length > 0 || condition.causes.length > 0 ? (

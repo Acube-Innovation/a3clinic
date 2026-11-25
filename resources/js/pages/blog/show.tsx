@@ -3,6 +3,7 @@ import { Clock, Info } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container, Section } from "@/components/ui/Section";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { PostCard } from "@/components/blog/PostCard";
 import { BookingCta } from "@/components/sections/BookingCta";
@@ -55,6 +56,9 @@ function ContentBlock({ block }: { block: Block }) {
           <p className="leading-relaxed text-ink/80">{block.text}</p>
         </aside>
       );
+
+    case "video":
+      return <VideoEmbed src={block.text} title="Video" className="mt-10" />;
   }
 }
 
