@@ -9,7 +9,7 @@ export function VideoGallery({ videos }: { videos: HomeVideo[] }) {
   if (videos.length === 0) return null;
 
   return (
-    <Section tone="platinum">
+    <Section tone="platinum" id="videos">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
