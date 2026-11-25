@@ -5,18 +5,24 @@ use App\Filament\Resources\Posts\Pages\EditPost;
 use App\Filament\Support\Fields;
 use App\Mcp\Servers\SiteServer;
 use App\Mcp\Tools\CreateRecord;
+use App\Mcp\Tools\CreateUploadLink;
 use App\Mcp\Tools\GetContent;
+use App\Mcp\Tools\GetUploads;
 use App\Mcp\Tools\ListChanges;
 use App\Mcp\Tools\ListContent;
 use App\Mcp\Tools\RevertChange;
 use App\Mcp\Tools\UpdateRecord;
 use App\Mcp\Tools\UpdateSection;
 use App\Models\ContentChange;
+use App\Models\UploadLink;
 use App\Models\User;
 use App\Support\ContentStore;
 use App\Support\VideoSource;
 use Database\Seeders\DefaultContentSeeder;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Str;
+use Laravel\Passport\ClientRepository;
 use Livewire\Livewire;
 
 const YT = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
@@ -26,7 +32,17 @@ beforeEach(function () {
     $this->store = app(ContentStore::class);
     $this->user = User::factory()->create();
     $this->created = [];
+    if (! is_file(storage_path('oauth-private.key'))) {
+        Artisan::call('passport:keys');
+    }
+    app(ClientRepository::class)->createPersonalAccessGrantClient('test tokens', 'users');
 });
+
+/** A personal connector token, as `php artisan connector:token` issues. */
+function token(string $name = 't'): string
+{
+    return test()->user->createToken($name, ['mcp:use'])->accessToken;
+}
 
 afterEach(function () {
     foreach ($this->created as $path) {
@@ -52,11 +68,11 @@ test('the connector refuses requests without a valid token', function () {
 
 test('a token from connector:token lists the tools; revoking it locks it out', function () {
     $this->artisan('connector:token', ['name' => 'tester'])->assertSuccessful();
-    $token = $this->user->createToken('tester')->plainTextToken;
+    $token = token('tester');
 
     $names = collect(mcp('tools/list', token: $token)->assertOk()->json('result.tools'))->pluck('name');
     expect($names)->toContain('list_content', 'get_content', 'update_record', 'create_record', 'update_section',
-        'upload_media_from_url', 'list_media', 'list_changes', 'revert_change');
+        'upload_media_from_url', 'create_upload_link', 'get_uploads', 'list_media', 'list_changes', 'revert_change');
 
     $this->artisan('connector:token', ['name' => 'tester', '--revoke' => true])->assertSuccessful();
     $this->app['auth']->forgetGuards();
@@ -156,7 +172,7 @@ test('home videos show on the home page', function () {
 // ------------------------------------------------------------------- media upload
 
 test('images upload to /uploads and can be watermarked', function () {
-    $token = $this->user->createToken('t')->plainTextToken;
+    $token = token();
     $upload = fn (array $extra = []) => $this->withToken($token)->post('/api/media', [
         'file' => UploadedFile::fake()->image('photo.jpg', 2400, 1600), ...$extra,
     ], ['Accept' => 'application/json']);
@@ -172,7 +188,7 @@ test('images upload to /uploads and can be watermarked', function () {
 });
 
 test('videos upload to /uploads/videos; scripts and other files are refused', function () {
-    $token = $this->user->createToken('t')->plainTextToken;
+    $token = token();
     $mp4 = tempnam(sys_get_temp_dir(), 'v');
     // Minimal ISO-BMFF header: enough for finfo to call it video/mp4.
     file_put_contents($mp4, "\x00\x00\x00\x18ftypmp42\x00\x00\x00\x00mp42isom".str_repeat("\x00", 64));
@@ -239,4 +255,94 @@ test('reverting removes fields the record did not have before', function () {
     SiteServer::actingAs($this->user)->tool(RevertChange::class, ['id' => ContentChange::first()->id])->assertOk();
 
     expect($this->store->record('conditions', $c['slug']))->toBe($c);
+});
+
+// ------------------------------------------------------------------- claude.ai (OAuth)
+
+test('claude.ai can discover the sign-in and only Claude redirect addresses may register', function () {
+    mcp('tools/list')->assertUnauthorized()->assertHeader('WWW-Authenticate');
+    $this->getJson('/.well-known/oauth-authorization-server')->assertOk()
+        ->assertJsonPath('authorization_endpoint', url('/oauth/authorize'))
+        ->assertJsonPath('registration_endpoint', url('/oauth/register'));
+
+    $this->postJson('/oauth/register', ['client_name' => 'x', 'redirect_uris' => ['https://claude.ai.evil.example/cb']])
+        ->assertStatus(400)->assertJsonPath('error', 'invalid_redirect_uri');
+    $this->postJson('/oauth/register', ['client_name' => 'Claude', 'redirect_uris' => ['https://claude.ai/api/mcp/auth_callback']])
+        ->assertSuccessful()->assertJsonStructure(['client_id']);
+});
+
+test('guests are sent to the admin login before connecting', function () {
+    $client = $this->postJson('/oauth/register', ['client_name' => 'Claude', 'redirect_uris' => ['https://claude.ai/api/mcp/auth_callback']])->json('client_id');
+    $verifier = Str::random(64);
+
+    $this->get('/oauth/authorize?'.http_build_query([
+        'client_id' => $client, 'redirect_uri' => 'https://claude.ai/api/mcp/auth_callback', 'response_type' => 'code',
+        'scope' => 'mcp:use', 'state' => 's', 'code_challenge' => rtrim(strtr(base64_encode(hash('sha256', $verifier, true)), '+/', '-_'), '='),
+        'code_challenge_method' => 'S256',
+    ]))->assertRedirect('/admin/login');
+});
+
+test('a signed-in admin can connect claude.ai with OAuth and use the tools', function () {
+    $redirect = 'https://claude.ai/api/mcp/auth_callback';
+    $client = $this->postJson('/oauth/register', ['client_name' => 'Claude', 'redirect_uris' => [$redirect]])->json('client_id');
+    $verifier = Str::random(64);
+    $challenge = rtrim(strtr(base64_encode(hash('sha256', $verifier, true)), '+/', '-_'), '=');
+
+    $this->actingAs($this->user);
+    $this->get('/oauth/authorize?'.http_build_query([
+        'client_id' => $client, 'redirect_uri' => $redirect, 'response_type' => 'code', 'scope' => 'mcp:use',
+        'state' => 'xyz', 'code_challenge' => $challenge, 'code_challenge_method' => 'S256',
+    ]))->assertOk()->assertSee('Allow Claude to edit the website?')->assertSee($this->user->email);
+
+    $approved = $this->post('/oauth/authorize', ['auth_token' => session('authToken')]);
+    $location = $approved->headers->get('Location');
+    expect($location)->toStartWith($redirect.'?');
+    parse_str(parse_url($location, PHP_URL_QUERY), $query);
+    expect($query['state'])->toBe('xyz');
+
+    auth()->forgetGuards();
+    $token = $this->postJson('/oauth/token', [
+        'grant_type' => 'authorization_code', 'client_id' => $client, 'redirect_uri' => $redirect,
+        'code' => $query['code'], 'code_verifier' => $verifier,
+    ])->assertOk()->json('access_token');
+
+    $names = collect(mcp('tools/list', token: $token)->assertOk()->json('result.tools'))->pluck('name');
+    expect($names)->toContain('create_upload_link', 'update_record');
+});
+
+// ------------------------------------------------------------------- upload links
+
+test('an upload link takes files and hands their paths back to Claude', function () {
+    $res = SiteServer::actingAs($this->user)->tool(CreateUploadLink::class, ['purpose' => 'Clinic tour'])->assertOk();
+    $link = UploadLink::firstOrFail();
+
+    $this->get($link->url())->assertOk()->assertSee('Upload photos')->assertSee('Clinic tour');
+
+    $stored = $this->post($link->uploadUrl(), ['file' => UploadedFile::fake()->image('front.jpg', 800, 600)], ['Accept' => 'application/json'])
+        ->assertCreated()->json();
+    $this->created[] = $stored['path'];
+    expect($stored['name'])->toBe('front.jpg')->and($stored['path'])->toStartWith('/uploads/');
+
+    SiteServer::actingAs($this->user)->tool(GetUploads::class, ['id' => $link->id])
+        ->assertOk()->assertSee($stored['path'])->assertSee('front.jpg');
+});
+
+test('upload links refuse tampered, expired and unsafe uploads', function () {
+    $link = UploadLink::create(['expires_at' => now()->addMinutes(30)]);
+
+    $this->get($link->url().'x')->assertForbidden();
+    $script = UploadedFile::fake()->createWithContent('a.jpg', '<?php echo 1;');
+    $this->post($link->uploadUrl(), ['file' => $script], ['Accept' => 'application/json'])->assertStatus(422);
+
+    $this->travel(31)->minutes();
+    $this->get($link->url())->assertForbidden();
+});
+
+test('a watermark upload link watermarks photos', function () {
+    $link = UploadLink::create(['expires_at' => now()->addMinutes(30), 'watermark' => true]);
+    $stored = $this->post($link->uploadUrl(), ['file' => UploadedFile::fake()->image('before.jpg', 2400, 1600)], ['Accept' => 'application/json'])
+        ->assertCreated()->json();
+    $this->created[] = $stored['path'];
+
+    expect(getimagesize(public_path($stored['path']))[0])->toBe(1600); // Watermark caps width at 1600
 });

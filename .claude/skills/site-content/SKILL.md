@@ -33,6 +33,7 @@ curl -sS -H "Authorization: Bearer $A3CLINIC_TOKEN" \
 - Images: JPEG, PNG or WebP, up to 10 MB (wider than 2000 px is scaled down).
 - Videos: MP4 or WebM, up to **30 MB**. Larger videos → upload to the clinic's YouTube channel and use the YouTube link instead. If `ffmpeg` is available locally and the user agrees, a large MP4 can be compressed first: `ffmpeg -i in.mp4 -vf "scale=-2:720" -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 96k -movflags +faststart out.mp4`.
 - A file already online: `upload_media_from_url` (public https URL).
+- No token / curl not possible (or the user is on a phone): `create_upload_link` gives a 30-minute upload page; send the user the link, then `get_uploads` with its id.
 - Then put the returned `path` into content.
 
 ## Where images and videos go

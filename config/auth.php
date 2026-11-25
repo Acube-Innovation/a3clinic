@@ -42,6 +42,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        // The Claude connector (/mcp, /api/media): Passport tokens, either
+        // personal tokens (Claude Code) or OAuth logins (claude.ai apps).
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+        ],
     ],
 
     /*

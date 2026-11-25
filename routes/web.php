@@ -3,6 +3,7 @@
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\UploadLinkController;
 use App\Http\Middleware\SetLocale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,12 @@ Route::get('sitemap.xml', SitemapController::class);
 Route::middleware('throttle:5,1')->group(function () {
     Route::post('forms/booking', [FormController::class, 'booking']);
     Route::post('forms/enquiry', [FormController::class, 'enquiry']);
+});
+
+// One-time upload pages handed out by the Claude connector (signed, 30 min).
+Route::middleware(['signed', 'throttle:60,1'])->group(function () {
+    Route::get('upload/{link}', [UploadLinkController::class, 'show'])->name('upload-link.show');
+    Route::post('upload/{link}', [UploadLinkController::class, 'store'])->name('upload-link.store');
 });
 
 Route::prefix('{locale}')

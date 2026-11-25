@@ -21,6 +21,10 @@ $app = Application::configure(basePath: dirname(__DIR__))
         // Plain-text cookie shared with the old Next.js site (see SetLocale).
         $middleware->encryptCookies(except: ['NEXT_LOCALE']);
 
+        // Guests (e.g. someone connecting claude.ai) sign in on the admin login,
+        // which sends them back to where they came from.
+        $middleware->redirectGuestsTo('/admin/login');
+
         $middleware->web(append: [
             HandleInertiaRequests::class,
             AddLinkHeadersForPreloadedAssets::class,
