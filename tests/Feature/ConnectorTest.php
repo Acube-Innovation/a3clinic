@@ -228,3 +228,15 @@ test('an admin video file upload replaces the typed link, at any depth', functio
         'image' => '/uploads/y.jpg',
     ]);
 });
+
+test('reverting removes fields the record did not have before', function () {
+    $c = $this->store->read('conditions')[0];
+    expect($c)->not->toHaveKey('video');
+
+    SiteServer::actingAs($this->user)->tool(UpdateRecord::class, [
+        'section' => 'conditions', 'slug' => $c['slug'], 'fields' => ['video' => YT, 'summary' => 'Changed.'],
+    ])->assertOk();
+    SiteServer::actingAs($this->user)->tool(RevertChange::class, ['id' => ContentChange::first()->id])->assertOk();
+
+    expect($this->store->record('conditions', $c['slug']))->toBe($c);
+});

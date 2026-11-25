@@ -118,7 +118,10 @@ final class ContentEditor
                     // Undo a create: drop the record.
                     $this->store->write($section, $records->reject(fn ($r) => $r['slug'] === $change->slug)->values()->all());
                 } elseif ($records->contains('slug', $change->slug)) {
-                    $this->store->saveRecord($section, $change->slug, $change->before);
+                    // Fields the old record didn't have (a video added later…) must be
+                    // cleared, not kept: saveRecord merges over the current record.
+                    $cleared = array_fill_keys(array_diff(self::RECORD_FIELDS[$section], array_keys($change->before)), null);
+                    $this->store->saveRecord($section, $change->slug, [...$cleared, ...$change->before]);
                 } else {
                     $this->store->write($section, [$change->before, ...$records->all()]);
                 }
